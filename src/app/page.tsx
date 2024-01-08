@@ -1,95 +1,60 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import { Overlay, Container, Title, Button, Text } from "@mantine/core";
+import classes from "./page.module.css"
+import { ContactUs } from "@/components/Home/ContactUs";
+import { Features } from "@/components/Home/Features";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <div>
+      <div className={classes.hero}>
+        <Overlay
+          gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, .65) 80%)"
+          opacity={1}
+          zIndex={0}
         />
+        <Container className={classes.container} size="md">
+          <Title className={classes.title}>Descubre tu potencial con WellFit Clinics</Title>
+          <Text className={classes.description} size="xl" mt="xl">
+            Revoluciona tu enfoque hacia la salud y el bienestar con nuestros programas de bienestar hechos a medida. En WellFit Clinics, combinamos la ciencia del fitness con atención personalizada para guiarte hacia tu mejor versión. Únete a nosotros y experimenta el poder de una salud óptima y personalizada.
+          </Text>
+
+          <div style={{
+            width: "100%",
+            justifyItems: "right"
+
+          }}>
+
+            <Button
+              variant="gradient"
+              size="lg"
+              radius="xl"
+              style={{
+                justifySelf: "right"
+              }}
+              className={classes.control}
+              onClick={() => {
+                const contactUsSection = document.getElementById('contact-us');
+                if (contactUsSection) {
+                  contactUsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Contactanos
+            </Button >
+          </div>
+
+
+        </Container>
       </div>
+      <Container>
+        <Features/>
+      </Container>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <Container className={classes.contactUsContainer} id="contact-us">
+        <ContactUs />
+      </Container>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div> 
+    )
 }
