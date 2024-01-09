@@ -69,7 +69,7 @@ const mockdata = [
   },
   {
     icon: IconStatusChange,
-    title: "Cambios de Humos /Ansiedad  / Depresion",
+    title: "Cambios de Humor /Ansiedad  / Depresion",
     description:
       "Alteraciones del estado de ánimo, inquietud y tristeza profunda.",
     path: "/sintomas/ansiedad",

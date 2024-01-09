@@ -1,0 +1,52 @@
+/* ClientsComments.module.css */
+
+/* Asegúrate de que el contenedor ocupe todo el ancho */
+.container {
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  margin: 0 auto; /* Centra el contenedor si es necesario */
+  padding: 50px 0; /* Espaciado superior e inferior */
+  background-color: #0c1f47;
+  color: white; /* Color de texto */
+  /* Resto de tus estilos */
+}
+.title {
+  color: white; /* Color dorado para el título y las estrellas */
+  text-align: center;
+  margin-bottom: 20px; /* Espaciado debajo del título */
+}
+
+.commentsCarousel {
+  margin: 0 auto;
+  max-width: 800px; /* Ancho máximo del carrusel */
+  padding: 0 15px; /* Espaciado lateral para el contenedor */
+}
+
+.comment {
+  background-color: #ffffff; /* Color de fondo para los comentarios */
+  color: rgb(0, 0, 0); /* Color del texto para los comentarios */
+  border-radius: 8px; /* Bor
+  des redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para los comentarios */
+  margin: 20px auto; /* Espaciado alrededor de los comentarios */
+  padding: 40px; /* Espaciado interno para los comentarios */
+  max-width: 100%; /* Ancho máximo del comentario */
+  text-align: left; /* Alineación del texto */
+}
+
+/* Clases adicionales para estilos específicos como las estrellas, las citas, etc. */
+.stars {
+  color: #ffd700; /* Color de las estrellas */
+  text-align: center; /* Centrar estrellas */
+  margin-bottom: 20px; /* Espaciado debajo de las estrellas */
+}
+
+.quote {
+  font-style: italic; /* Estilo de fuente para la cita */
+}
+
+.author {
+  font-weight: bold; /* Negrita para el autor */
+  text-align: right; /* Alineación a la derecha para el autor */
+}
+
+/* Asegúrate de añadir las clases adicionales en tu componente JSX */

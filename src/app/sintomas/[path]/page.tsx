@@ -6,9 +6,12 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import classes from "./page.module.css";
 import { getInfoPost } from "@/util/getInfoPost";
 import { NotFound } from "@/components/NotFound";
+import { HowWorks } from "@/components/Sintomas/HowWorks";
+import { ClientsComments } from "@/components/Sintomas/ClientsComments";
 
 const components = {
   h1: (props: any) => <Title {...props} className={classes.titleContac} />,
+  h2: (props: any) => <Title {...props} className={classes.text} />,
   h3: (props: any) => <Title {...props} className={classes.text} />,
   h4: (props: any) => <Title {...props} className={classes.subtitle} />,
   p: (props: any) => <Text {...props} className={classes.descriptionContac} size="md" mt="xl" />,
@@ -57,9 +60,10 @@ async function page({ params }: { params: { path: string }}) {
           {post.banner_title}
         </Title>
 
-        <Text className={classes.bannerDescription}>
-          {post.banner_content}
-        </Text>
+
+        <div className={classes.bannerDescription}>
+        <MDXRemote source={post.banner_content} components={components}/>
+        </div>
 
         <Button
           variant="gradient"
@@ -67,11 +71,14 @@ async function page({ params }: { params: { path: string }}) {
           radius="xl"
           className={classes.bannerButton}
         >
-          Quiero Mejorar mi
+          Quiero Mejorar mi vida
         </Button>
       </div>
 
-      <div className={classes.heroContac}>
+      <div className={classes.heroContac} style={{
+        backgroundImage: `url(/${post.image_path_2})`
+      }}>
+        
         <div>
           <div className={classes.containerContac}>
           <MDXRemote source={post.questions_section} components={components}/>
@@ -88,9 +95,22 @@ async function page({ params }: { params: { path: string }}) {
         </div>
       </div>
 
+      <Container className={classes.HowWorks} id="HowWorks">
+        <HowWorks />
+      </Container>
+
+
+      <div style={{ width: '100%', backgroundColor:"#0c1f47 "}}>
+        <ClientsComments />
+      </div>
+
+
+
       <Container className={classes.contactUsContainer} id="contact-us">
         <ContactUs />
       </Container>
+
+
     </div>
   );
 }
