@@ -7,7 +7,7 @@ function ImageCardGrid({ posts }: { posts: BlogPost[] }) {
   return (
     <SimpleGrid cols={3}>
       {posts.map((post) => (
-        <ImageCard key={post.id} post={post} />
+          <ImageCard key={post.id} post={post} />
       ))}
     </SimpleGrid>
   );

@@ -100,7 +100,7 @@ export function Header() {
   const theme1 = useMantineTheme();
 
   const links = mockdata.map((item) => (
-    <Link href={item.path} key={item.title}>
+    <Link href={item.path} key={item.title} shallow style={{ textDecoration: "none", color: "black"}}>
       <UnstyledButton className={classes.subLink}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
@@ -123,7 +123,7 @@ export function Header() {
   ));
 
   const linksCategorias = mockdataCategorias.map((item) => (
-    <Link href={item.path} key={item.title}>
+    <Link href={item.path} key={item.title} shallow style={{ textDecoration: "none", color: "black"}}>
       <UnstyledButton className={classes.subLink}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
