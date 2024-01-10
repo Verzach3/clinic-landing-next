@@ -5,6 +5,9 @@ import ImageCardGrid from "@/components/blog/ImageCardGrid";
 import { BlogPost } from "@/types/BlogPost";
 import { getBlogPosts } from "@/util/getBlogPosts";
 import { Center, Container } from "@mantine/core";
+
+export const dynamic = 'force-dynamic'
+
 async function Blog() {
   const posts = await getBlogPosts()
   console.log(posts);
