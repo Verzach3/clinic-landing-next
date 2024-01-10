@@ -26,7 +26,9 @@ async function page({ params }: { params: { path: string }}) {
   }
 
   return (
-    <div>
+    <div style={{
+      width: "100%"
+    }}>
       <div className={classes.hero} style={{
         backgroundImage: `url(/${post.image_path})`
       }}>

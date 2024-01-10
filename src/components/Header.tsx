@@ -34,6 +34,8 @@ import {
 import classes from "./Header.module.css";
 import Logo from "./Logo";
 import Link from "next/link";
+import { useAtom } from "jotai";
+import { navShown } from "@/state/navShown";
 
 const mockdata = [
   {
@@ -91,8 +93,7 @@ const mockdataCategorias = [
 ];
 
 export function Header() {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
-    useDisclosure(false);
+  const [drawerOpened, setDrawerOpened] = useAtom(navShown);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const [linksOpenedCategorias, { toggle: toggleLinksCategorias }] =
     useDisclosure(false);
@@ -100,8 +101,13 @@ export function Header() {
   const theme1 = useMantineTheme();
 
   const links = mockdata.map((item) => (
-    <Link href={item.path} key={item.title} shallow style={{ textDecoration: "none", color: "black"}}>
-      <UnstyledButton className={classes.subLink}>
+    <Link
+      href={item.path}
+      key={item.title}
+      shallow
+      style={{ textDecoration: "none", color: "black" }}
+    >
+      <UnstyledButton className={classes.subLink} onClick={() => setDrawerOpened(false)}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
             <item.icon
@@ -123,8 +129,13 @@ export function Header() {
   ));
 
   const linksCategorias = mockdataCategorias.map((item) => (
-    <Link href={item.path} key={item.title} shallow style={{ textDecoration: "none", color: "black"}}>
-      <UnstyledButton className={classes.subLink}>
+    <Link
+      href={item.path}
+      key={item.title}
+      shallow
+      style={{ textDecoration: "none", color: "black" }}
+    >
+      <UnstyledButton className={classes.subLink} onClick={() => setDrawerOpened(false)}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
             <item.icon
@@ -257,7 +268,7 @@ export function Header() {
 
           <Burger
             opened={drawerOpened}
-            onClick={toggleDrawer}
+            onClick={() => setDrawerOpened((o) => !o)}
             hiddenFrom="sm"
           />
         </Group>
@@ -265,7 +276,7 @@ export function Header() {
 
       <Drawer
         opened={drawerOpened}
-        onClose={closeDrawer}
+        onClose={() => setDrawerOpened(false)}
         size="100%"
         padding="md"
         title="Navigation"

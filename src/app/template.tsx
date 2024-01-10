@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -10,9 +10,11 @@ function HomeTemplate({ children }: { children: React.ReactNode }) {
       <AppShell.Header>
         <Header />
       </AppShell.Header>
-      <AppShell.Main>
+      <AppShell.Main style={{
+        width: "100%"
+      }}>
         {children}
-        <Footer /> {/* El Footer se mostrará en todas las páginas */}
+        <Footer />
       </AppShell.Main>
     </AppShell>
   );
