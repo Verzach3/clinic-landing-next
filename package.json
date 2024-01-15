@@ -18,6 +18,7 @@
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.4",
+    "@swc-jotai/react-refresh": "^0.1.0",
     "@tabler/icons-react": "^2.45.0",
     "@types/mdx": "^2.0.10",
     "clsx": "^2.1.0",
