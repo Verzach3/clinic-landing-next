@@ -44,31 +44,38 @@ const mockdata = [
     description:
       "Sensación dolorosa en cualquier parte de la cabeza, variando en intensidad.",
     path: "/sintomas/dolorcabeza",
+
   },
+
   {
     icon: IconMoodSick,
     title: "Fatiga",
     description: " Cansancio extremo y falta de energía persistente",
     path: "/sintomas/fatiga",
+
   },
+
   {
     icon: IconCircuitSwitchClosed,
     title: "Perdida de cabello",
     description: "Reducción notable de cabello en el cuero cabelludo.",
     path: "/sintomas/perdidacabello",
   },
+
   {
     icon: IconArrowDownBar,
     title: "Bajo deseo sexual",
     description: "Disminución del interés en la actividad sexual.",
     path: "/sintomas/bajodeseo",
   },
+
   {
     icon: IconHazeMoon,
     title: "Sofocos / Sudores nocturnos",
     description: "Calor repentino y transpiración excesiva durante la noche",
     path: "/sintomas/sofocos",
   },
+
   {
     icon: IconStatusChange,
     title: "Cambios de Humor /Ansiedad  / Depresion",
@@ -76,6 +83,7 @@ const mockdata = [
       "Alteraciones del estado de ánimo, inquietud y tristeza profunda.",
     path: "/sintomas/ansiedad",
   },
+
 ];
 const mockdataCategorias = [
   {
@@ -84,12 +92,14 @@ const mockdataCategorias = [
     description: "Conocer mas para contenido de caballero",
     path: "/info/men",
   },
+
   {
     icon: IconGenderFemale,
     title: "Recursos para mujeres",
     description: "Conocer mas para contenido de Femenino",
     path: "/info/woman",
   },
+  
 ];
 
 export function Header() {

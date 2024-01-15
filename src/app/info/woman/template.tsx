@@ -79,8 +79,8 @@ export function InfoForWomens({ children }: { children: React.ReactNode }) {
 
   return (
     <AppShell
-      styles={{ navbar: { marginTop: "4rem" } }}
-      navbar={{ width: 300, breakpoint: "sm" }}
+
+      navbar={{ width:"1.5rem", breakpoint: "sm" }}
     >
       <AppShell.Navbar>
         <nav className={classes.navbar}>

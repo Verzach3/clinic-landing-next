@@ -22,6 +22,9 @@
 }
 
 .comment {
+  display: flex; /* Usa flexbox */
+  flex-direction: column; /* Elementos apilados verticalmente */
+  align-items: center; /* Alinea los elementos horizontalmente al centro */
   background-color: #ffffff; /* Color de fondo para los comentarios */
   color: rgb(0, 0, 0); /* Color del texto para los comentarios */
   border-radius: 8px; /* Bor
@@ -31,7 +34,9 @@
   padding: 40px; /* Espaciado interno para los comentarios */
   max-width: 100%; /* Ancho máximo del comentario */
   text-align: left; /* Alineación del texto */
+  justify-content: center; /* Alinea los elementos verticalmente al centro */
 }
+
 
 /* Clases adicionales para estilos específicos como las estrellas, las citas, etc. */
 .stars {
@@ -50,3 +55,9 @@
 }
 
 /* Asegúrate de añadir las clases adicionales en tu componente JSX */
+.stars {
+  margin-top: 10px; /* Añade un margen superior si es necesario */
+  color: #ffd700; /* Color dorado para las estrellas */
+  text-align: center; /* Centrar las estrellas */
+  margin-bottom: 10px; /* Espaciado debajo de las estrellas */
+}

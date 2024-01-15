@@ -1,248 +1,245 @@
-
-
-/*// Estas son solo ejemplos comunes, ajusta según tus necesidades
-$mantine-breakpoint-xs: 480px; // Extra pequeños dispositivos - teléfonos
-$mantine-breakpoint-sm: 768px; // Pequeños dispositivos - tabletas en modo retrato
-$mantine-breakpoint-md: 992px; // Dispositivos medianos - tabletas en modo paisaje
-$mantine-breakpoint-lg: 1200px; // Grandes dispositivos - desktops*/
 .hero {
-  position: relative;
-  background-image: url(/Bajodeseo.png);
-  background-size: cover;
-  background-position: center;
-}
-
-
-.container {
-  height: rem(950px);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding-bottom: calc(var(--mantine-spacing-xl) * 7); /* Aumentar el valor aquí según sea necesario */
-  z-index: 1;
-  position: relative;
-
-  @media (max-width: $mantine-breakpoint-sm) {
-    height: rem(500px);
-    padding-bottom: calc(var(--mantine-spacing-xl) * 3);
+    position: relative;
+    background-size: cover;
+    background-position: center;
   }
-}
-
-.contactUsContainer {
-  margin-top: 50px; /* Ajusta este valor según sea necesario */
-}
-.title {
-  color: var(--mantine-color-white);
-  font-size: rem(60px);
-  font-weight: 900;
-  line-height: 1.1;
-
-  @media (max-width: $mantine-breakpoint-sm) {
-    font-size: rem(40px);
-    line-height: 1.2;
-  }
-
-  @media (max-width: $mantine-breakpoint-xs) {
-    font-size: rem(28px);
-    line-height: 1.3;
-  }
-
-}
-
-.description {
-  color: var(--mantine-color-white);
-  max-width: rem(600px);
-
-  @media (max-width: $mantine-breakpoint-sm) {
-    max-width: 100%;
-    font-size: var(--mantine-font-size-sm);
-  }
-}
-
-.control {
-  margin-top: calc(var(--mantine-spacing-xl) * 1.5);
-
-  @media (max-width: $mantine-breakpoint-sm) {
+  .overlayContac {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.65) 80%);
+    opacity: 0.3; /* Ajusta la opacidad según sea necesario */
+    z-index: 0;
   }
-}
+ 
+  
+  .container {
+    height: rem(900px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: calc(var(--mantine-spacing-xl) * 7); /* Aumentar el valor aquí según sea necesario */
+    z-index: 1;
+    position: relative;
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      height: rem(500px);
+      padding-bottom: calc(var(--mantine-spacing-xl) * 3);
+    }
+  }
+
+  .contactUsContainer {
+    margin-top: 50px; /* Ajusta este valor según sea necesario */
+  }
+  .title {
+    color: var(--mantine-color-white);
+    font-size: rem(60px);
+    font-weight: 900;
+    line-height: 1.1;
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      font-size: rem(40px);
+      line-height: 1.2;
+    }
+  
+    @media (max-width: $mantine-breakpoint-xs) {
+      font-size: rem(28px);
+      line-height: 1.3;
+    }
+  
+  }
+ 
+  .description {
+    color: var(--mantine-color-white);
+    max-width: rem(600px);
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      max-width: 100%;
+      font-size: var(--mantine-font-size-sm);
+    }
+  }
+  
+  .control {
+    margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      width: 100%;
+    }
+  }
 /* Styles Sección Hero 2 */
 
 .heroContac {
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-position: relative;
-background-image: url(/CoupleHappy.png);
-background-size: cover;
-background-position: center;
-/* Añadir regla para hacer la imagen de fondo más pequeña en dispositivos pequeños */
-@media (max-width: $mantine-breakpoint-sm) {
- 
-  background-repeat: no-repeat;
-}
+
+
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+
 }
 
 .containerContac {
-width: 70%; /* Cambia el ancho del container según tus preferencias */ 
-height: rem(950px);flex: 1;
-align-items: flex-start;
-justify-items: flex-start;
-justify-content: center;
-padding-left: 130px; /* Añade margen a la izquierda */
-@media (max-width: $mantine-breakpoint-sm) {
-  padding-left: 30px; /* Añade margen a la izquierda */
-  width: 90%; /* Cambia el ancho del container según tus preferencias */ 
-}
+  width: 60%; /* Cambia el ancho del container según tus preferencias */ 
+  flex: 1;
+  align-items: flex-start;
+  justify-items: flex-start;
+  justify-content: center;
+  padding-left: 130px; /* Añade margen a la izquierda */
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding-left: 30px; /* Añade margen a la izquierda */
+    width: 90%; /* Cambia el ancho del container según tus preferencias */ 
+  }
 }
 
 .titleContac {
-color: var(--mantine-color-white);
-font-size: rem(30px);
-font-weight: 900;
-line-height: 1.1;
-margin-bottom: rem(30px);
-margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  color: var(--mantine-color-white);
+  font-size: rem(30px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: rem(30px);
+  margin-top: calc(var(--mantine-spacing-xl) * 1.5);
 
-@media (max-width: $mantine-breakpoint-sm) {
-  font-size: rem(24px);
-}
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(24px);
+  }
 }
 
 .subtitle {
-color: var(--mantine-color-white);
-font-size: rem(15px);
-font-weight: 700;
-line-height: 1.1;
+  color: var(--mantine-color-white);
+  font-size: rem(15px);
+  font-weight: 700;
+  line-height: 1.1;
 
 
-@media (max-width: $mantine-breakpoint-sm) {
-  font-size: rem(18px);
-}
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(18px);
+  }
 }
 
 .text {
-color: var(--mantine-color-white);
-font-size: rem(15px);
-font-weight: 700;
-line-height: 1.0;
-margin-bottom: rem(10px);
-margin-top: calc(var(--mantine-spacing-xl) * 1.0);
+  color: var(--mantine-color-white);
+  font-size: rem(15px);
+  font-weight: 700;
+  line-height: 1.0;
+  margin-bottom: rem(10px);
+  margin-top: calc(var(--mantine-spacing-xl) * 1.0);
 
-@media (max-width: $mantine-breakpoint-sm) {
-  font-size: rem(16px);
-}
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(16px);
+  }
 }
 
 .descriptionContac {
-color: var(--mantine-color-white);
-max-width: rem(800px);
+  color: var(--mantine-color-white);
+  max-width: rem(800px);
 
-@media (max-width: $mantine-breakpoint-sm) {
-  max-width: 100%;
-  font-size: rem(10px);
-}
+  @media (max-width: $mantine-breakpoint-sm) {
+    max-width: 100%;
+    font-size: rem(10px);
+  }
 
-text-align: left;
+  text-align: left;
 }
 
 .controlContac {
-margin-top: calc(var(--mantine-spacing-xl) * 1.5);
-max-width: rem(300px);
-margin-bottom: rem(20px);
+  margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  max-width: rem(300px);
+  margin-bottom: rem(20px);
 
-@media (max-width: $mantine-breakpoint-sm) {
-  width: 100%;
-  max-width: 100%;
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 100%;
+    max-width: 100%;
+  }
 }
-}
 
 
-/* Banner.module.css */
+  /* Banner.module.css */
 .banner {
-display: grid;
-grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-align-items: center; /* Alinea verticalmente el contenido */
-gap: 2rem; /* Espacio entre las columnas */
-padding: var(--mantine-spacing-md) 0;
-background-color: #0c1f47;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  align-items: center; /* Alinea verticalmente el contenido */
+  gap: 2rem; /* Espacio entre las columnas */
+  padding: var(--mantine-spacing-md) 0;
+  background-color: #0c1f47;
 
 
 }
 
 .bannerTitle {
-grid-column: 1 / 2;
-margin-left: 160px;
-color: var(--mantine-color-white);
-  font-size: rem(30px);
-  font-weight: 900;
-  line-height: 1.1;
+  grid-column: 1 / 2;
+  margin-left: 160px;
+  color: var(--mantine-color-white);
+    font-size: rem(30px);
+    font-weight: 900;
+    line-height: 1.1;
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      font-size: rem(40px);
+      line-height: 1.2;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+    @media (max-width: $mantine-breakpoint-xs) {
+      font-size: rem(28px);
+      line-height: 1.3;
+    }
 
-  @media (max-width: $mantine-breakpoint-sm) {
-    font-size: rem(40px);
-    line-height: 1.2;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  @media (max-width: $mantine-breakpoint-xs) {
-    font-size: rem(28px);
-    line-height: 1.3;
-  }
-
-
+  
 }
 
 .bannerDescription {
-grid-column: 2 / 3;  
-margin: 30px;
-color: white;  color: var(--mantine-color-white);
-max-width: rem(600px);
-justify-content: flex-end;
-@media (max-width: $mantine-breakpoint-sm) {
-  max-width: 100%;
-  font-size: var(--mantine-font-size-sm);
-}
+  grid-column: 2 / 3;  
+  margin: 30px;
+  color: white;  color: var(--mantine-color-white);
+  max-width: rem(600px);
+ justify-content: flex-end;
+  @media (max-width: $mantine-breakpoint-sm) {
+    max-width: 100%;
+    font-size: var(--mantine-font-size-sm);
+  }
 
 
 }
 
 .bannerButton {
-grid-column: 2 / 3; /* Coloca el botón en la segunda columna */
-justify-self: start; /* Alinea el botón al inicio de la columna */
-background-color: #4CAF50; /* Un verde bonito */
-color: white;
-border: none;
-border-radius: 20px; /* Botón redondeado */
-padding: 10px 20px;
-font-size: 1rem;
-cursor: pointer;
-margin: 20px;
-transition: background-color 0.3s ease;
+  grid-column: 2 / 3; /* Coloca el botón en la segunda columna */
+  justify-self: start; /* Alinea el botón al inicio de la columna */
+  background-color: #4CAF50; /* Un verde bonito */
+  color: white;
+  border: none;
+  border-radius: 20px; /* Botón redondeado */
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 20px;
+  transition: background-color 0.3s ease;
 
-&:hover {
-  background-color: #45a049; /* Un poco más oscuro al pasar el mouse */
-}
+  &:hover {
+    background-color: #45a049; /* Un poco más oscuro al pasar el mouse */
+  }
 }
 
 /* Asegúrate de ajustar los breakpoints para la responsividad */
 @media (max-width: $mantine-breakpoint-md) {
-.banner {
-  grid-template-columns: 1fr; /* Una sola columna para dispositivos más pequeños */
-}
+  .banner {
+    grid-template-columns: 1fr; /* Una sola columna para dispositivos más pequeños */
+  }
 
-.bannerTitle, .bannerDescription, .bannerButton {
-  grid-column: 1 / 2;
-}
+  .bannerTitle, .bannerDescription, .bannerButton {
+    grid-column: 1 / 2;
+  }
 
-.bannerButton {
-  justify-self: center; /* Centra el botón en dispositivos más pequeños */
-  @media (max-width: $mantine-breakpoint-sm) {
-    width: 100%;
-    max-width: 90%;
+  .bannerButton {
+    justify-self: center; /* Centra el botón en dispositivos más pequeños */
+    @media (max-width: $mantine-breakpoint-sm) {
+      width: 100%;
+      max-width: 90%;
+    }
   }
 }
-}
-
-
