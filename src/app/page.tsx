@@ -1,6 +1,7 @@
 "use client";
 import { Overlay, Container, Title, Button, Text } from "@mantine/core";
 import classes from "./page.module.css";
+import Image from "next/image";
 import { ContactUs } from "@/components/Home/ContactUs";
 import { Features } from "@/components/Home/Features";
 
@@ -8,6 +9,17 @@ export default function Home() {
   return (
     <div>
       <div className={classes.hero}>
+        <Image
+          alt="Mountains"
+          src={`/Logo3.png`}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+          priority
+        />
         <Overlay
           gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, .65) 80%)"
           opacity={1}

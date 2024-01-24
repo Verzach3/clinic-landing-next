@@ -1,8 +1,8 @@
-
 import { ContactUs } from "@/components/Home/ContactUs";
 import { Overlay, Container, Title, Button, Text } from "@mantine/core";
+import Image from "next/image";
 import React from "react";
-import { MDXRemote } from "next-mdx-remote/rsc"
+import { MDXRemote } from "next-mdx-remote/rsc";
 import classes from "./page.module.css";
 import { getInfoPost } from "@/util/getInfoPost";
 import { NotFound } from "@/components/NotFound";
@@ -14,33 +14,46 @@ const components = {
   h2: (props: any) => <Title {...props} className={classes.text} />,
   h3: (props: any) => <Title {...props} className={classes.text} />,
   h4: (props: any) => <Title {...props} className={classes.subtitle} />,
-  p: (props: any) => <Text {...props} className={classes.descriptionContac} size="md" mt="xl" />,
-}
+  p: (props: any) => (
+    <Text {...props} className={classes.descriptionContac} size="md" mt="xl" />
+  ),
+};
 
-async function page({ params }: { params: { path: string }}) {
-  const post = await getInfoPost(params.path)
+async function page({ params }: { params: { path: string } }) {
+  const post = await getInfoPost(params.path);
   console.log(post);
 
   if (!post) {
-    return <NotFound/>
+    return <NotFound />;
   }
 
   return (
-    <div style={{
-      width: "100%"
-    }}>
-      <div className={classes.hero} style={{
-        backgroundImage: `url(/${post.image_path})`
-      }}>
+    <div
+      style={{
+        width: "100%",
+      }}
+    >
+      <div
+        className={classes.hero}
+      >
+        <Image
+          alt="Mountains"
+          src={`/${post.image_path}`}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+          priority
+        />
         <Overlay
           gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.016) 0%, rgba(0, 0, 0, .65) 100%)"
           opacity={1}
           zIndex={0}
         />
         <Container className={classes.container} size="md">
-          <Title className={classes.title}>
-            {post.big_title}
-          </Title>
+          <Title className={classes.title}>{post.big_title}</Title>
           <Text className={classes.description} size="xl" mt="xl">
             {post.title_subtext}
           </Text>
@@ -50,7 +63,6 @@ async function page({ params }: { params: { path: string }}) {
             size="lg"
             radius="xl"
             className={classes.control}
-             
           >
             Adquirir informacion
           </Button>
@@ -58,13 +70,10 @@ async function page({ params }: { params: { path: string }}) {
       </div>
 
       <div className={classes.banner}>
-        <Title className={classes.bannerTitle}>
-          {post.banner_title}
-        </Title>
-
+        <Title className={classes.bannerTitle}>{post.banner_title}</Title>
 
         <div className={classes.bannerDescription}>
-        <MDXRemote source={post.banner_content} components={components}/>
+          <MDXRemote source={post.banner_content} components={components} />
         </div>
 
         <Button
@@ -77,13 +86,18 @@ async function page({ params }: { params: { path: string }}) {
         </Button>
       </div>
 
-      <div className={classes.heroContac} style={{
-        backgroundImage: `url(/${post.image_path_2})`
-      }}>
-        
+      <div
+        className={classes.heroContac}
+        style={{
+          backgroundImage: `url(/${post.image_path_2})`,
+        }}
+      >
         <div>
           <div className={classes.containerContac}>
-          <MDXRemote source={post.questions_section} components={components}/>
+            <MDXRemote
+              source={post.questions_section}
+              components={components}
+            />
             <Button
               variant="gradient"
               size="lg"
@@ -101,18 +115,13 @@ async function page({ params }: { params: { path: string }}) {
         <HowWorks />
       </Container>
 
-
-      <div style={{ width: '100%', backgroundColor:"#0c1f47 "}}>
+      <div style={{ width: "100%", backgroundColor: "#0c1f47 " }}>
         <ClientsComments />
       </div>
-
-
 
       <Container className={classes.contactUsContainer} id="contact-us">
         <ContactUs />
       </Container>
-
-
     </div>
   );
 }
