@@ -11,3 +11,6 @@ export interface BlogPost {
     user_created: number,
     user_updated: number,
 }
+
+
+

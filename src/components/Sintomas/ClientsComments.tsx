@@ -5,6 +5,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Text, Avatar, Group, Container , Title} from '@mantine/core';
 import classes from './Clientscomments.module.css'; // Asegúrate de tener un archivo CSS (por ejemplo, ClientsComments.css) para los estilos personalizados.
+import { Rating } from '@mantine/core'; // Importa el componente Rating de Mantine
+
 
 export function ClientsComments() {
   return (
@@ -24,28 +26,29 @@ export function ClientsComments() {
       <div className={classes.comment}>
         <Group>
           <Avatar
-            src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png"
-            alt="Jacob Warnhalter"
+           src="/CommensUser.png"
+            alt="Cristian Ramirez"
             radius="xl"
             />
           <div>
-            <Text size="sm">Jacob Warnhalter</Text>
-            <Text size="xs" c="dimmed">
-              10 minutes ago
-            </Text>
+            <Text size="sm">Cristian Ramirez</Text>
+            
           </div>
         </Group>
+
         <Text pl={54} pt="sm" size="sm">
-          This Pokémon likes to lick its palms that are sweetened by being soaked in honey. Teddiursa
-          concocts its own honey by blending fruits and pollen collected by Beedrill. Blastoise has
-          water spouts that protrude from its shell. The water spouts are very accurate.
+        He visto su landing y servicios... De verdad que me encuentro impresionada. 
+        Nadie ha pensado tanto en la salud y bienestar de los usuarios. De lo poco que he leído, 
+        he visto muy buena formación en los programas que brinda. ¡Qué bien por Wellfit! ¡Espero que abran para agendar mi cita!.
         </Text>
+
+        <Rating value={4.5} readOnly size="sm" className={classes.stars} /> {/* Añade estrellas de puntuación aquí */}
       </div>
 
       <div className={classes.comment}>
         <Group>
           <Avatar
-            src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png"
+            src="/CommensUser2.png"
             alt="Jacob Warnhalter"
             radius="xl"
             />
@@ -56,11 +59,40 @@ export function ClientsComments() {
             </Text>
           </div>
         </Group>
+       
         <Text pl={54} pt="sm" size="sm">
-          This Pokémon likes to lick its palms that are sweetened by being soaked in honey. Teddiursa
-          concocts its own honey by blending fruits and pollen collected by Beedrill. Blastoise has
-          water spouts that protrude from its shell. The water spouts are very accurate.
+        Después de explorar su landing y los servicios que ofrecen, no puedo evitar estar asombrada.
+         Es evidente que han puesto mucho esfuerzo en cuidar la salud y el bienestar de los usuarios. 
+         La calidad de los programas que brindan es impresionante. ¡Kudos a Wellfit! 
+         ¡Espero con entusiasmo la apertura para poder reservar mi cita!
         </Text>
+
+        <Rating value={4.5} readOnly size="sm" className={classes.stars} /> {/* Añade estrellas de puntuación aquí */}
+      </div>
+
+      <div className={classes.comment}>
+        <Group>
+          <Avatar
+            src="/CommensUser2.png"
+            alt="Juan Rodríguez"
+            radius="xl"
+            />
+          <div>
+            <Text size="sm">Juan Rodríguez</Text>
+            <Text size="xs" c="dimmed">
+              10 minutes ago
+            </Text>
+          </div>
+        </Group>
+       
+        <Text pl={54} pt="sm" size="sm">
+        Después de explorar su landing y los servicios que ofrecen, no puedo evitar estar asombrada. 
+        Es evidente que han puesto mucho esfuerzo en cuidar la salud y el bienestar de los usuarios.
+         La calidad de los programas que brindan es impresionante. ¡Un abrazo Wellfit!
+          ¡Espero con entusiasmo la apertura para poder reservar mi cita!
+        </Text>
+
+        <Rating value={4.5} readOnly size="sm" className={classes.stars} /> {/* Añade estrellas de puntuación aquí */}
       </div>
 
 

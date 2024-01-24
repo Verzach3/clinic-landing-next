@@ -1,3 +1,9 @@
+
+.root {
+  --breakpoint-sm: 768px; /* Para tablet */
+  --breakpoint-xs: 480px; /* Para móvil */
+}
+
 .hero {
     position: relative;
     background-image: url(/About.png);
@@ -119,71 +125,68 @@
   }
   
   
-  
-  /* CORE VALUES ESTILES*/
-
-.coreValueCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
+  /* Variables para breakpoints */
+.root {
+  --breakpoint-md: 768px; /* Tablets y dispositivos medianos */
+  --breakpoint-sm: 480px; /* Teléfonos móviles y dispositivos pequeños */
 }
 
-.coreValueIcon {
-  margin-bottom: 10px;
-}
-
-.coreValueTitle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.coreValueDescription {
-  font-size: 1rem;
-  color: #666;
-}
-
-
-
-
+/* Sección de valores corporativos */
 .coreValuesSection {
-  padding: 40px 0;
+  padding: 40px 20px; /* Agrega un padding horizontal para evitar que se peguen a los bordes */
 }
 
+/* Título de la sección */
 .sectionTitle {
   font-size: 2rem;
   margin-bottom: 30px;
   text-align: center;
 }
 
+/* Grid de valores corporativos */
+.coreValuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Crea columnas que se ajustan al contenido */
+  gap: 20px; /* Espaciado entre tarjetas */
+}
+
+/* Tarjetas de valores */
 .coreValue {
-  padding: 20px;
-  background-color: var(--mantine-color-blue-6); /* Aplica el color azul de Mantine */
+  background-color: var(--mantine-color-blue-6);
   border-radius: 8px;
-  color: white; /* Ajusta el color del texto para mejorar la legibilidad */
+  color: white;
   margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
-
-.coreValueTitle {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-
+/* Título de la tarjeta */
 .coreValueTitle {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: white; /* Ajusta el color del título si es necesario */
+  text-align: center;
 }
 
+/* Descripción de la tarjeta */
 .coreValueDescription {
   font-size: 1rem;
-  color: white; /* Ajusta el color de la descripción si es necesario */
+  color: white;
 }
 
+/* Media query para dispositivos medianos (tablets) */
+@media (max-width: var(--breakpoint-md)) {
+  .coreValuesSection {
+    padding: 40px 15px; /* Ajusta el padding para dispositivos medianos */
+  }
+}
 
+/* Media query para dispositivos móviles */
+@media (max-width: var(--breakpoint-sm)) {
+  .coreValuesSection {
+    padding: 20px; /* Ajusta el padding para dispositivos móviles */
+  }
+
+  .coreValue {
+    margin: 10px; /* Añade margen alrededor de las tarjetas para evitar que se peguen a los bordes */
+  }
+}

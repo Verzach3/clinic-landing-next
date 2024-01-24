@@ -1,0 +1,101 @@
+/* Page.module.css */
+
+.pageContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+.title {
+  text-align: center;
+  color: #005A8D;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.contentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.imageContainer {
+  flex: 1;
+  max-width: 50%;
+}
+
+.imageContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.textContent {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la nueva sección */
+.section1 {
+  margin-top: 30px;
+}
+
+.contentContainer1 {
+  display: flex;
+  align-items: center;
+}
+
+/* Sobrescribe las propiedades específicas para colocar el texto a la izquierda y la imagen a la derecha */
+.textContentLeft {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainerLeft {
+  flex: 1;
+  max-width: 50%;
+}
+
+.imageContainerLeft img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos para títulos de sección */
+.h2 {
+  color: #007bff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Estilos para párrafos de sección */
+.p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Estilos para listas de sección */
+.ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.li {
+  margin-bottom: 5px;
+}
