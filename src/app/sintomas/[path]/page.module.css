@@ -159,24 +159,24 @@
 
 
   /* Banner.module.css */
-.banner {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-  align-items: center; /* Alinea verticalmente el contenido */
-  gap: 2rem; /* Espacio entre las columnas */
-  padding: var(--mantine-spacing-md) 0;
-  background-color: #0c1f47;
-
-
-}
+  .banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    align-items: center; /* Alinea verticalmente el contenido */
+    gap: 2rem; /* Espacio entre las columnas */
+    padding: var(--mantine-spacing-md) var(--mantine-spacing-lg); /* Agrega padding horizontal */
+    background-color: #0c1f47;
+  }
 
 .bannerTitle {
-  grid-column: 1 / 2;
-  margin-left: 160px;
+
   color: var(--mantine-color-white);
-    font-size: rem(30px);
-    font-weight: 900;
-    line-height: 1.1;
+  font-size: rem(30px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-left: auto; /* Asegúrate de que el margen izquierdo sea automático */
+  margin-right: auto; /* Asegúrate de que el margen derecho sea automático */
+  text-align: center; /* Centra el texto */
   
     @media (max-width: $mantine-breakpoint-sm) {
       font-size: rem(40px);
@@ -193,8 +193,9 @@
   
 }
 
+
 .bannerDescription {
-  grid-column: 2 / 3;  
+ 
   margin: 30px;
   color: white;  color: var(--mantine-color-white);
   max-width: rem(600px);
@@ -208,7 +209,7 @@
 }
 
 .bannerButton {
-  grid-column: 2 / 3; /* Coloca el botón en la segunda columna */
+
   justify-self: start; /* Alinea el botón al inicio de la columna */
   background-color: #4CAF50; /* Un verde bonito */
   color: white;
@@ -229,6 +230,7 @@
 @media (max-width: $mantine-breakpoint-md) {
   .banner {
     grid-template-columns: 1fr; /* Una sola columna para dispositivos más pequeños */
+    padding: var(--mantine-spacing-md); /* Ajusta el padding */
   }
 
   .bannerTitle, .bannerDescription, .bannerButton {
@@ -241,5 +243,23 @@
       width: 100%;
       max-width: 90%;
     }
+  }
+}
+
+
+@media (max-width: 480px) { /* Asumiendo 480px como breakpoint para móviles */
+  .bannerTitle {
+    font-size: rem(20px); /* Tamaño de fuente más pequeño para móviles */
+    margin: 0 20px; /* Agrega un poco de margen horizontal */
+  }
+
+  .bannerDescription {
+    /* Ajusta la descripción según sea necesario */
+  }
+
+  .bannerButton {
+    width: 100%;
+    max-width: 90%;
+    margin-top: 20px; /* Añade margen superior */
   }
 }

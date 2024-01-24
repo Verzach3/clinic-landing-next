@@ -70,6 +70,7 @@ const mockdata = [
       { label: "Recovery codes", link: "/" },
     ],
   },
+  
 ];
 
 export function InfoForWomens({ children }: { children: React.ReactNode }) {

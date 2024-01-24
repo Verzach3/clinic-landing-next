@@ -195,13 +195,19 @@ function About() {
       <div>
         {/* Sección de Valores Corporativos */}
         <Container className={classes.coreValuesSection}>
-          <Title className={classes.sectionTitle}>
-            Nuestros Valores Corporativos
-          </Title>
-          <SimpleGrid cols={3} spacing="lg">
-            {coreValuesElements}
-          </SimpleGrid>
-        </Container>
+        <Title className={classes.sectionTitle}>Nuestros Valores Corporativos</Title>
+        
+        <div className={classes.coreValuesGrid}>
+          {CORE_VALUES.map((value, index) => (
+            <div key={index} className={classes.coreValue}>
+              <Title order={4} className={classes.coreValueTitle}>
+                {value.title}
+              </Title>
+              <Text className={classes.coreValueDescription}>{value.description}</Text>
+            </div>
+          ))}
+        </div>
+      </Container>
       </div>
     </div>
   );
