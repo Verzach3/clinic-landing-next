@@ -31,7 +31,6 @@ export async function getCategoriesPost(slug: string) {
  
     })
   );
-  console.log(posts);
 
   return posts[0] as unknown as Categories ?? null;
  

@@ -20,7 +20,7 @@ const directus: DirectusClient<any> & RestClient<any> = createDirectus(
   })
 );
 
-export async function CategoriasNav(slug: string) {
+export async function getCategoriasNav(slug: string) {
   const posts = await directus.request(
     readItems("CategoriasNav" as any, {
       filter: {
@@ -31,7 +31,6 @@ export async function CategoriasNav(slug: string) {
  
     })
   );
-  console.log(posts);
 
   return posts[0] as unknown as CategoriasNav ?? null;
  
