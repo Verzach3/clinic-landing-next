@@ -168,6 +168,13 @@
     background-color: #0c1f47;
   }
 
+  /* Establecer el mismo tamaño de texto para bannerDescription en dispositivos móviles */
+@media (max-width: $mantine-breakpoint-md) {
+  .bannerDescription {
+    font-size: var(--mantine-font-size-sm); /* Establecer el mismo tamaño que el description en dispositivos móviles */
+  }
+}
+
 .bannerTitle {
 
   color: var(--mantine-color-white);
@@ -253,13 +260,29 @@
     margin: 0 20px; /* Agrega un poco de margen horizontal */
   }
 
-  .bannerDescription {
-    /* Ajusta la descripción según sea necesario */
-  }
+
 
   .bannerButton {
     width: 100%;
     max-width: 90%;
     margin-top: 20px; /* Añade margen superior */
+  }
+}
+
+/* En dispositivos de mayor tamaño */
+
+@media (min-width: $mantine-breakpoint-md) {
+  .banner {
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  }
+
+  .bannerTitle {
+    grid-column: 1 / 2; /* Título en la primera columna (izquierda) */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+
+  .bannerDescription, .bannerButton {
+    grid-column: 2 / 3; /* Descripción y botón en la segunda columna (derecha) */
+    text-align: right; /* Alinea el texto a la derecha */
   }
 }

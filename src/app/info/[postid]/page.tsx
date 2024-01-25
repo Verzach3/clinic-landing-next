@@ -5,13 +5,16 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getCategoriesPost } from "@/util/getCategoriesPost";
 import { NotFound } from "@/components/NotFound";
 import { HeroImage } from "@/components/WomensAndMens/HeroImage";
+import { log } from "console";
 
 
 
 const components = {
   h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"} />,
   h3: (props: any) => <Title {...props} order={2} ta={"center"} />,
-  h6: (props: any) => <Title {...props} size="xs" ta={"center"} c={"gray"} />,
+  h6: (props: any) => <Stylecomponent {...props}  />,
+
+
   p: (props: any) => (
     <Text {...props} size="xl" ta={"left"} mt={"xl"} mb={"xl"} />
   ),
@@ -20,6 +23,12 @@ const components = {
   )
 };
 
+function Stylecomponent (children:any){
+  console.log(children);
+  
+  
+  return null
+}
 async function page({ params }: { params: { postid: string } }) {
   let post;
   try {
@@ -30,6 +39,9 @@ async function page({ params }: { params: { postid: string } }) {
 
   if (!post) {
     return <NotFound />;
+
+
+
   }
 
   return (
