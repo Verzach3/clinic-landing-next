@@ -9,7 +9,6 @@ import { HeroImage } from "@/components/WomensAndMens/HeroImage";
 
 
 const components = {
-  
   h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"} />,
   h3: (props: any) => <Title {...props} order={2} ta={"center"} />,
   h6: (props: any) => <Title {...props} size="xs" ta={"center"} c={"gray"} />,
@@ -36,7 +35,6 @@ async function page({ params }: { params: { postid: string } }) {
   return (
     <Container>
     <HeroImage /> 
-    
         <Stack>
           <MDXRemote source={post.content} components={components} />
         </Stack>
