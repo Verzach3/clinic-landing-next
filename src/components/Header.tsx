@@ -97,7 +97,7 @@ const mockdataCategorias = [
     icon: IconGenderFemale,
     title: "Recursos para mujeres",
     description: "Conocer mas para contenido de Femenino",
-    path: "/info/info-hormonas",
+    path: "/info/hormonasbiodenticas-info",
   },
   
 ];

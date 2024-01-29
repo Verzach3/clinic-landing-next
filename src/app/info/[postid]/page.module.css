@@ -99,3 +99,136 @@
 .li {
   margin-bottom: 5px;
 }
+/* Agrega estos estilos a tu archivo page.module.css */
+.customGrid {
+  display: flex;
+  align-items: justify;
+}
+
+.customGridCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+}
+
+.subGrid {
+  width: 100%; /* Haz que el subgrid ocupe todo el ancho disponible */
+  padding: 20px; /* Añade espacio alrededor del subgrid */
+  border: 1px solid #ddd; /* Añade un borde para mayor claridad */
+  border-radius: 8px; /* Agrega bordes redondeados */
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Agrega estos estilos a tu archivo page.module.css */
+.fullWidthText {
+  flex: 1; /* Hace que el texto ocupe todo el espacio vertical disponible */
+  margin-top: 10px;
+  color: #555;
+  overflow: hidden; /* Oculta el texto que desborda el contenedor */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto desborda */
+  white-space: nowrap; /* Evita el ajuste de línea automático */
+  text-align: justify; /* Justifica el texto */
+}
+
+
+.titleContac {
+  color: var(--mantine-color-white);
+  font-size: rem(30px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: rem(30px);
+  margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(24px);
+  }
+}
+
+.subtitle {
+  color: var(--mantine-color-white);
+  font-size: rem(15px);
+  font-weight: 700;
+  line-height: 1.1;
+
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(18px);
+  }
+}
+
+.text {
+  color: var(--mantine-color-white);
+  font-size: rem(15px);
+  font-weight: 700;
+  line-height: 1.0;
+  margin-bottom: rem(10px);
+  margin-top: calc(var(--mantine-spacing-xl) * 1.0);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(16px);
+  }
+}
+
+.title {
+  color: var(--mantine-color-white);
+  font-size: rem(60px);
+  font-weight: 900;
+  line-height: 1.1;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(40px);
+    line-height: 1.2;
+  }
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: rem(28px);
+    line-height: 1.3;
+  }
+
+}
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlayContac {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.65) 80%);
+  opacity: 0.3; /* Ajusta la opacidad según sea necesario */
+  z-index: 0;
+}
+
+ 
+.description {
+  color: var(--mantine-color-white);
+  max-width: rem(600px);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    max-width: 100%;
+    font-size: var(--mantine-font-size-sm);
+  }
+}
+
+
+.container {
+  height: rem(400px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-bottom: calc(var(--mantine-spacing-xl) * 7); /* Aumentar el valor aquí según sea necesario */
+  z-index: 1;
+  position: relative;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    height: rem(500px);
+    padding-bottom: calc(var(--mantine-spacing-xl) * 3);
+  }
+}

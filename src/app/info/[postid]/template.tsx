@@ -23,7 +23,7 @@ const mockdata = [
     icon: IconGenderDemigirl,
 
     links: [
-      {label: "Estrogeno", link: "/"},
+      {label: "Estrogeno", link: "/info/homornas-estrogeno"},
       {label: "Progesterona", link: "/"},
       {label: "Testosterona", link: "/"},
       {label: "Cortisol", link: "/"},
