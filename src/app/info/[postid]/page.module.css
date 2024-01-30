@@ -1,16 +1,5 @@
 /* Page.module.css */
 
-.pageContainer {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f8f8;
-  color: #333;
-  line-height: 1.6;
-}
-
 /* Estilos comunes para títulos y textos */
 .title, .h2, .p, .fullWidthText {
   font-family: 'Roboto', sans-serif;
@@ -32,7 +21,7 @@
 }
 
 .p, .fullWidthText {
-  font-size: 1rem; /* Tamaño de fuente para párrafos */
+  font-size: 1rem;
   margin-bottom: 20px;
   text-align: justify;
 }
@@ -41,7 +30,7 @@
 .customGrid, .contentContainer, .contentContainer1 {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centra los elementos horizontalmente */
+  justify-content: center;
 }
 
 .customGridCol, .subGrid {
@@ -50,66 +39,32 @@
   border-radius: 8px;
   background-color: #f8f8f8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ocupa todo el ancho disponible */
+  width: 100%;
 }
 
 /* Estilos para contenedores de imágenes */
-.imageContainer, .imageContainerLeft {
+.imageContainer, .imageContainerLeft, .imageContainerRight {
   flex: 1;
   max-width: 50%;
 }
 
-.imageContainer img, .imageContainerLeft img {
+.imageContainer img, .imageContainerLeft img, .imageContainerRight img {
   max-width: 100%;
   height: auto;
-  object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor */
+  object-fit: contain;
 }
 
-/* Eliminando estilos redundantes o no utilizados */
-.ul, .li {
-  list-style-type: disc;
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-
-.li {
-  margin-bottom: 5px;
-}
-
-.descriptionContainer {
+/* Estilos para textos de descripción */
+.descriptionContainer, .descriptionText {
   font-family: 'Roboto', sans-serif;
   color: #555;
-  font-size: 1rem; /* Ajusta el tamaño de la fuente según tus preferencias */
+  font-size: 1rem;
   text-align: justify;
   line-height: 1.6;
 }
 
-/* Asegúrate de que todos los textos usen la misma fuente y color */
-.title, .h2, .p, .fullWidthText {
-  font-family: 'Roboto', sans-serif;
-  color: #555;
-}
-.descriptionText {
-  font-family: 'Roboto', sans-serif;
-  color: #555;
-  font-size: 1rem; /* Igual al tamaño de 'p' en tus componentes */
-  line-height: 1.2;
-  text-align: justify;
-}
-.h2 {
-  font-size: 1.7rem; /* Ajusta según tus preferencias */
-  font-weight: bold;
-  color: #000000; /* o cualquier color que prefieras */
-
-}
-
-.h4 {
-  font-size: 1.25rem; /* Ajusta según tus preferencias */
-  font-weight: bold;
-  color: #000000; /* o cualquier color que prefieras */
-
-}
-.h3 {
+/* Estilos para títulos específicos */
+.h3, .h1, .h4 {
   font-size: 1.35rem; /* Ajusta según tus preferencias */
   font-weight: bold;
   color: #000000; /* o cualquier color que prefieras */
@@ -117,16 +72,36 @@
 }
 
 .h1 {
-  font-size: 2.7rem; /* Ajusta según tus preferencias */
-  font-weight: bold;
-  color: #000000; /* o cualquier color que prefieras */
+  font-size: 2.7rem;
   margin-bottom: 10px;
 }
-.p {
-  font-size: 1.2rem; /* Ajusta según tus preferencias */
-  margin-top: none; /* Ajusta según tus preferencias */
-  margin-bottom: 20px; /* Ajusta según tus preferencias */
-  color: #333; /* o cualquier color que prefieras */
-  text-align: justify;
-  font-family: 'Roboto', sans-serif;
+
+.h4 {
+  font-size: 1.25rem;
+}
+
+/* CSS para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .customGridCol .subGrid .title,
+  .customGridCol .subGrid .h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .customGridCol {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .customGridCol .subGrid .imageContainer img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .customGridCol .subGrid .imageContainer,
+  .customGridCol .subGrid .imageContainerLeft,
+  .customGridCol .subGrid .imageContainerRight {
+    max-width: 100%;
+    flex: unset;
+  }
 }

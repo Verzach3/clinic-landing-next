@@ -57,13 +57,14 @@ function Stylecomponent({ children }: any) {
           </GridCol>
           <GridCol span={12} className="customGridCol">
             <div className="subGrid">
-              <Title style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{sectionTitle}</Title>
-              <Text  className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
+              <Title className={classes.h2} style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{sectionTitle}</Title>
+              <Text className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
             </div>
           </GridCol>
         </Grid>
       );
       break;
+    
     case "LeftComponent":
       layout = (
         <Grid gutter={20} className="customGrid">
@@ -74,20 +75,21 @@ function Stylecomponent({ children }: any) {
           </GridCol>
           <GridCol span={6} className="customGridCol">
             <div className="subGrid">
-              <Title style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{sectionTitle}</Title>
+              <Title className={classes.h2} style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{sectionTitle}</Title>
               <Text className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
             </div>
           </GridCol>
         </Grid>
       );
       break;
+    
     case "RightComponent":
       layout = (
         <Grid gutter={20} className={classes.customGridCol}>
           <GridCol span={6} className={classes.customGridCol}>
             <div className="subGrid">
-              <Title style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{sectionTitle}</Title>
-              <Text  className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
+              <Title className={classes.h2} style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{sectionTitle}</Title>
+              <Text className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
             </div>
           </GridCol>
           <GridCol span={6}>
