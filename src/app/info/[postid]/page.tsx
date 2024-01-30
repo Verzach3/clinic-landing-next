@@ -12,18 +12,16 @@ import Image from "next/image";
 const components = {
 
   h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"} />,
-  h3: (props: any) => <Title {...props} order={2} ta={"center"} />,
-
+  h3: (props: any) => <Title {...props} order={2}  />,
   code: (props: any) => <Stylecomponent {...props}  />,
-  
-
-
   p: (props: any) => (
-    <Text {...props} size="xl" ta={"left"} mt={"xl"} mb={"xl"} />
+    <Text {...props} size="xl" ta={"justify"} mt={"xl"} mb={"xl"} />
   ),
   img: (props: any) => (
     <Image {...props} style={{ objectFit: "contain", maxHeight: "40rem" }} />
-  )
+  ),
+  h2: (props: any) => <Title {...props} className={classes.h2} />,
+  h4: (props: any) => <Title {...props} className={classes.h4} order={4} />
   
 
 
@@ -53,12 +51,14 @@ function Stylecomponent({ children }: any) {
       layout = (
         <Grid gutter={20} className="customGrid">
           <GridCol span={12}>
-          <Image src={imagePath} alt="Component Image" width={500} height={300} style={{ objectFit: "contain", maxHeight: "40rem" }} />
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <Image src={imagePath} alt="Component Image" width={600} height={500} style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }} />
+            </div>
           </GridCol>
           <GridCol span={12} className="customGridCol">
             <div className="subGrid">
               <Title style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{sectionTitle}</Title>
-              <Text className="fullWidthText" style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
+              <Text  className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
             </div>
           </GridCol>
         </Grid>
@@ -68,12 +68,14 @@ function Stylecomponent({ children }: any) {
       layout = (
         <Grid gutter={20} className="customGrid">
           <GridCol span={6}>
-          <Image src={imagePath} alt="Component Image" width={500} height={300} style={{ objectFit: "contain", maxHeight: "60rem" }} />
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <Image src={imagePath} alt="Component Image" width={450} height={300} style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} />
+            </div>
           </GridCol>
           <GridCol span={6} className="customGridCol">
             <div className="subGrid">
               <Title style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{sectionTitle}</Title>
-              <Text className="fullWidthText" style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
+              <Text className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
             </div>
           </GridCol>
         </Grid>
@@ -85,11 +87,13 @@ function Stylecomponent({ children }: any) {
           <GridCol span={6} className={classes.customGridCol}>
             <div className="subGrid">
               <Title style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{sectionTitle}</Title>
-              <Text className="fullWidthText" style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
+              <Text  className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
             </div>
           </GridCol>
           <GridCol span={6}>
-          <Image src={imagePath} alt="Component Image" width={500} height={300} style={{ objectFit: "contain", maxHeight: "40rem" }} />
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+              <Image src={imagePath} alt="Component Image" width={400} height={300} style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} />
+            </div>
           </GridCol>
         </Grid>
       );
@@ -102,7 +106,6 @@ function Stylecomponent({ children }: any) {
 
   return layout;
 }
-
 async function page({ params }: { params: { postid: string } }) {
  
  
@@ -116,7 +119,11 @@ async function page({ params }: { params: { postid: string } }) {
  
     return (
 
+
       <Container>
+
+
+      
       <HeroImage /> 
           <Stack>
               <MDXRemote source={post.content} components={components} />
