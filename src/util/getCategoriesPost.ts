@@ -22,7 +22,7 @@ const directus: DirectusClient<any> & RestClient<any> = createDirectus(
 
 export async function getCategoriesPost(slug: string) {
   const posts = await directus.request(
-    readItems("InfoCategories" as any, {
+    readItems("CategoriasNav" as any, {
       filter: {
         slug: {
           _eq: slug

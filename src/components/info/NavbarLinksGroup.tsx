@@ -20,7 +20,7 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksG
       className={classes.link}
       href={link.link}
       key={link.label}
-      onClick={(event) => event.preventDefault()}
+
     >
       {link.label}
     </Text>

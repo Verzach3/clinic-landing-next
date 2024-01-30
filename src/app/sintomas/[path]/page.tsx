@@ -20,6 +20,7 @@ const components = {
 };
 
 async function page({ params }: { params: { path: string } }) {
+  
   const post = await getInfoPost(params.path);
   console.log(post);
 
