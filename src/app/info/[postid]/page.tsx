@@ -4,10 +4,12 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getCategoriesPost } from "@/util/getCategoriesPost";
 import { NotFound } from "@/components/NotFound";
-import { HeroImage } from "@/components/WomensAndMens/HeroImage";
-import { log } from "console";
+import { HeroImage } from "@/components/info/HeroImage";
+import  Stylecomponent from "@/components/info/Stylecomponent";
 import classes from "./page.module.css";
 import Image from "next/image";
+import { useMediaQuery } from '@mantine/hooks'; // Importa useMediaQuery desde @mantine/hooks
+
 
 const components = {
 
@@ -27,87 +29,6 @@ const components = {
 
 };
 
-function Stylecomponent({ children }: any) {
-  // Separar el contenido en líneas
-  const codeLines = children.trim().split("\n");
-
-  if (codeLines.length < 4) {
-    // Asegúrate de que haya al menos cuatro líneas dentro del bloque `code`
-    console.error("Se esperan al menos cuatro líneas dentro del bloque `code`");
-    return null;
-  }
-
-  // Obtener el nombre del componente, título, ruta de la imagen y descripción
-  const componentName = codeLines[0].trim();
-  const sectionTitle = codeLines[1].trim();
-  const imagePath = codeLines[2].trim();
-  const description = codeLines.slice(3).join("\n");
-
-  // Determinar el diseño según el nombre del componente
-  let layout;
-
-  switch (componentName) {
-    case "CenterComponent":
-      layout = (
-        <Grid gutter={20} className="customGrid">
-          <GridCol span={12}>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-              <Image src={imagePath} alt="Component Image" width={600} height={500} style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }} />
-            </div>
-          </GridCol>
-          <GridCol span={12} className="customGridCol">
-            <div className="subGrid">
-              <Title className={classes.h2} style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{sectionTitle}</Title>
-              <Text className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
-            </div>
-          </GridCol>
-        </Grid>
-      );
-      break;
-    
-    case "LeftComponent":
-      layout = (
-        <Grid gutter={20} className="customGrid">
-          <GridCol span={6}>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-              <Image src={imagePath} alt="Component Image" width={450} height={300} style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} />
-            </div>
-          </GridCol>
-          <GridCol span={6} className="customGridCol">
-            <div className="subGrid">
-              <Title className={classes.h2} style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{sectionTitle}</Title>
-              <Text className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
-            </div>
-          </GridCol>
-        </Grid>
-      );
-      break;
-    
-    case "RightComponent":
-      layout = (
-        <Grid gutter={20} className={classes.customGridCol}>
-          <GridCol span={6} className={classes.customGridCol}>
-            <div className="subGrid">
-              <Title className={classes.h2} style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{sectionTitle}</Title>
-              <Text className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
-            </div>
-          </GridCol>
-          <GridCol span={6}>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-              <Image src={imagePath} alt="Component Image" width={400} height={300} style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} />
-            </div>
-          </GridCol>
-        </Grid>
-      );
-      break;
-    default:
-      // Nombre de componente desconocido
-      console.error("Nombre de componente desconocido en el bloque `code`");
-      return null;
-  }
-
-  return layout;
-}
 async function page({ params }: { params: { postid: string } }) {
  
  
