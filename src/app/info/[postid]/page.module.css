@@ -64,17 +64,28 @@
 }
 
 /* Estilos para títulos específicos */
-.h3, .h1, .h4 {
-  font-size: 1.35rem; /* Ajusta según tus preferencias */
+.h3, .h1, .h4 , .h2 {
+ 
   font-weight: bold;
   color: #000000; /* o cualquier color que prefieras */
   text-align: left;
+  font-family: 'Roboto', sans-serif;
 }
 
 .h1 {
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   margin-bottom: 10px;
 }
+.h2 {
+  font-size: 1.8rem;
+  margin-top: 20px;
+}
+
+.h3{
+  font-size: 1.4rem;
+  margin-top: 20px;
+}
+
 
 .h4 {
   font-size: 1.25rem;
@@ -82,32 +93,127 @@
 
 
 
-/* CSS para dispositivos móviles */
-@media screen and (max-width: 768px) {
-  .customGridCol .subGrid .title,
-  .customGridCol .subGrid .h2 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
+/* CSS para Styles del HERO DINAMICO */
+/* CSS para Styles del HERO DINAMICO */
+.containerhero {
+  height: rem(700px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  z-index: 1;
+  position: relative;
+  margin-top: 1rem; /* Espaciado entre secciones */
+  padding: 1rem; /* Margen al contenido para centrarlo en dispositivos móviles */
+  padding-bottom: calc(var(--mantine-spacing-xl) * 7); /* Aumentar el valor aquí según sea necesario */
 
-  .customGridCol {
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    align-items: flex-start;
+  @media (max-width: 768px) {
+    /* Estilos para dispositivos móviles */
+    height: rem(550px); /* Altura reducida en dispositivos móviles */
+    padding: 1rem; /* Margen al contenido para centrarlo en dispositivos móviles */
   }
+  @media (min-width: $mantine-breakpoint-sm) {
+    /* Aplicar padding solo en dispositivos de escritorio */
+    padding: 3rem; /* Aumentar el valor aquí según sea necesario */
+  }
+}
 
-  .customGridCol .subGrid .imageContainer img {
-    max-width: 100%;
-    height: auto;
-    
-  }
+/* Espaciado entre elementos dentro del contenedor */
+.title {
+  margin-bottom: 0.5rem; /* Espaciado entre título y descripción en dispositivos móviles */
+  text-align: center; /* Centrar el título en dispositivos móviles */
+}
 
-  .customGridCol .subGrid .imageContainer,
-  .customGridCol .subGrid .imageContainerLeft,
-  .customGridCol .subGrid .imageContainerRight {
-    max-width: 100%;
-    flex: unset;
-  }
+.description {
+  margin-bottom: 1rem; /* Espaciado entre descripción y botón */
+  text-align: justify;
   
+  margin-top: 0.5rem; /* Espaciado entre el título y la descripción en dispositivos móviles */
+}
+
+.controls {
+  margin-top: 2rem; /* Empujar el botón hacia la parte inferior en dispositivos móviles */
+  text-align: center; /* Centrar el botón en dispositivos móviles */
+}
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.overlayContac {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.65) 80%);
+  opacity: 0.3; /* Ajusta la opacidad según sea necesario */
+  z-index: 0;
+}
+
+.title {
+  font-weight: 800;
+  font-size: rem(40px);
+  letter-spacing: rem(-1px);
+  color: var(--mantine-color-white);
+  margin-bottom: var(--mantine-spacing-xs);
+  text-align: center;
+  font-family: Greycliff CF, var(--mantine-font-family);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: rem(28px);
+    text-align: left;
+  }
+}
+
+.highlight {
+  color: var(--mantine-color-primary-4);
+}
+
+.description {
+  color: var(--mantine-color-gray-0);
+  text-align: justify;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: var(--mantine-font-size-md);
+    text-align: center;
+  }
+}
+
+.controls {
+  margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  display: flex;
+  justify-content: center;
+  padding-left: var(--mantine-spacing-md);
+  padding-right: var(--mantine-spacing-md);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    flex-direction: column;
+  }
+}
+
+.control {
+  height: rem(42px);
+  font-size: var(--mantine-font-size-md);
+
+  &:not(:first-of-type) {
+    margin-left: var(--mantine-spacing-md);
+  }
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    &:not(:first-of-type) {
+      margin-top: var(--mantine-spacing-md);
+      margin-left: 0;
+    }
+  }
+}
+
+.secondaryControl {
+  color: var(--mantine-color-white);
+  background-color: rgba(255, 255, 255, 0.4);
+
+  @mixin hover {
+    background-color: rgba(255, 255, 255, 0.45);
+  }
 }

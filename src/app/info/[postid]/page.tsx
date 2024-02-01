@@ -8,7 +8,7 @@ import { HeroImage } from "@/components/info/HeroImage";
 import  Stylecomponent from "@/components/info/Stylecomponent";
 import classes from "./page.module.css";
 import Image from "next/image";
-import { useMediaQuery } from '@mantine/hooks'; // Importa useMediaQuery desde @mantine/hooks
+
 
 
 const components = {
@@ -17,7 +17,7 @@ const components = {
   h3: (props: any) => <Title {...props} order={2}  />,
   code: (props: any) => <Stylecomponent {...props}  />,
   p: (props: any) => (
-    <Text {...props} size="xl" ta={"justify"} mt={"xl"} mb={"xl"} />
+    <Text {...props} ta={"justify"}  />
   ),
   img: (props: any) => (
     <Image {...props} style={{ objectFit: "contain", maxHeight: "40rem" }} />
@@ -44,10 +44,41 @@ async function page({ params }: { params: { postid: string } }) {
 
 
       <Container>
+<div
+        className={classes.hero}
+      >
+        <Image
+          alt="Mountains"
+          src={`/${post.image_path}`}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+          priority
+        />
+        <Overlay
+          gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.016) 0%, rgba(0, 0, 0, .65) 100%)"
+          opacity={1}
+          zIndex={0}
+        />
+        <Container className={classes.containerhero} size="md">
+        <Title className={classes.title}>{post.big_title}</Title>
+        <Text size="lg" className={classes.description}>
+            {post.title_subtext}
+          </Text>
 
+          <div className={classes.controls}>
+          <Button className={classes.control} variant="white" size="lg">
+          ¡Quiero este Plan!
+          </Button>
+        
+        </div>
+        </Container>
+      </div>
 
       
-      <HeroImage /> 
           <Stack>
               <MDXRemote source={post.content} components={components} />
           </Stack>
