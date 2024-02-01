@@ -36,6 +36,7 @@ RUN yarn build
 FROM base AS runner
 WORKDIR /app
 
+RUN yarn add sharp
 ENV NODE_ENV production
 ENV NEXT_SHARP_PATH=/app/node_modules/sharp
 # Uncomment the following line in case you want to disable telemetry during runtime.
