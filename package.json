@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@directus/sdk": "^14.0.0",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@mantine/carousel": "^7.4.0",
     "@mantine/core": "^7.4.0",
     "@mantine/dates": "^7.4.0",
