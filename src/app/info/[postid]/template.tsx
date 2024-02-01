@@ -24,7 +24,7 @@ const mockdata = [
 
     links: [
       {label: "Estrogeno", link: "/info/homornas-estrogeno"},
-      {label: "Progesterona", link: "/"},
+      {label: "Progesterona", link: "/info/hormonas-progesterona"},
       {label: "Testosterona", link: "/"},
       {label: "Cortisol", link: "/"},
       {label: "Dhea", link: "/"},

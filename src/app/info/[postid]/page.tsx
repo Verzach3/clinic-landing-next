@@ -8,7 +8,7 @@ import { HeroImage } from "@/components/info/HeroImage";
 import  Stylecomponent from "@/components/info/Stylecomponent";
 import classes from "./page.module.css";
 import Image from "next/image";
-import { useMediaQuery } from '@mantine/hooks'; // Importa useMediaQuery desde @mantine/hooks
+
 
 
 const components = {
@@ -17,7 +17,7 @@ const components = {
   h3: (props: any) => <Title {...props} order={2}  />,
   code: (props: any) => <Stylecomponent {...props}  />,
   p: (props: any) => (
-    <Text {...props} size="xl" ta={"justify"} mt={"xl"} mb={"xl"} />
+    <Text {...props} ta={"justify"}  />
   ),
   img: (props: any) => (
     <Image {...props} style={{ objectFit: "contain", maxHeight: "40rem" }} />
