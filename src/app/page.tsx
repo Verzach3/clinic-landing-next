@@ -11,7 +11,7 @@ export default function Home() {
       <div className={classes.hero}>
         <Image
           alt="Mountains"
-          src={`/Logo3.png`}
+          src={`/Logo3.png.avif`}
           quality={100}
           fill
           sizes="100vw"

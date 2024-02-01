@@ -26,7 +26,7 @@ export function ClientsComments() {
       <div className={classes.comment}>
         <Group>
           <Avatar
-           src="/CommensUser.png"
+           src="/CommensUser.png.avif"
             alt="Cristian Ramirez"
             radius="xl"
             />
@@ -48,7 +48,7 @@ export function ClientsComments() {
       <div className={classes.comment}>
         <Group>
           <Avatar
-            src="/CommensUser2.png"
+            src="/CommensUser2.png.avif"
             alt="Jacob Warnhalter"
             radius="xl"
             />
@@ -73,7 +73,7 @@ export function ClientsComments() {
       <div className={classes.comment}>
         <Group>
           <Avatar
-            src="/CommensUser2.png"
+            src="/CommensUser2.png.avif"
             alt="Juan Rodríguez"
             radius="xl"
             />
