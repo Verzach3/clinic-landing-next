@@ -48,7 +48,7 @@ async function page({ params }: { params: { postid: string } }) {
       >
         <Image
           alt="Mountains"
-          src={`/${post.image_path}`}
+          src={`/${post.image_path}.avif`}
           quality={100}
           fill
           sizes="100vw"
