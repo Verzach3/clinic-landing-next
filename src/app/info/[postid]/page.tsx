@@ -44,10 +44,41 @@ async function page({ params }: { params: { postid: string } }) {
 
 
       <Container>
+<div
+        className={classes.hero}
+      >
+        <Image
+          alt="Mountains"
+          src={`/${post.image_path}`}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+          priority
+        />
+        <Overlay
+          gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.016) 0%, rgba(0, 0, 0, .65) 100%)"
+          opacity={1}
+          zIndex={0}
+        />
+        <Container className={classes.containerhero} size="md">
+        <Title className={classes.title}>{post.big_title}</Title>
+        <Text size="lg" className={classes.description}>
+            {post.title_subtext}
+          </Text>
 
+          <div className={classes.controls}>
+          <Button className={classes.control} variant="white" size="lg">
+          ¡Quiero este Plan!
+          </Button>
+        
+        </div>
+        </Container>
+      </div>
 
       
-      <HeroImage /> 
           <Stack>
               <MDXRemote source={post.content} components={components} />
           </Stack>
