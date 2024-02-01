@@ -36,7 +36,8 @@ RUN yarn build
 FROM base AS runner
 WORKDIR /app
 
-RUN yarn add sharp
+RUN SHARP_IGNORE_GLOBAL_LIBVIPS=1 npm install --arch=x64 --platform=linux sharp
+
 ENV NODE_ENV production
 ENV NEXT_SHARP_PATH=/app/node_modules/sharp
 # Uncomment the following line in case you want to disable telemetry during runtime.
