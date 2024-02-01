@@ -1,10 +1,9 @@
 
-import { Container,Grid, GridCol, Stack, Title, Text, Center , SimpleGrid ,  Overlay , Button} from "@mantine/core";
+import { Container,  Stack, Title, Text ,  Overlay , Button} from "@mantine/core";
 import React from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getCategoriesPost } from "@/util/getCategoriesPost";
 import { NotFound } from "@/components/NotFound";
-import { HeroImage } from "@/components/info/HeroImage";
 import  Stylecomponent from "@/components/info/Stylecomponent";
 import classes from "./page.module.css";
 import Image from "next/image";

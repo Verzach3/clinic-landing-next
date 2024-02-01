@@ -13,7 +13,6 @@ import {
   
   import classes from './Howworks.module.css';
   import { RiFileList2Line, RiTeamLine  } from "react-icons/ri";
-  import { GiMedicines } from "react-icons/gi";
   import { FaChalkboardUser } from "react-icons/fa6";
   import { SiTestin } from "react-icons/si";
   import { MdOutlineHealthAndSafety } from "react-icons/md";

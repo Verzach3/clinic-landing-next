@@ -2,7 +2,7 @@
 'use client'
 import React from "react";
 import { useMediaQuery } from '@mantine/hooks'; // Importa useMediaQuery desde @mantine/hooks
-import { Container,Grid, GridCol, Stack, Title, Text, Center , SimpleGrid ,  Overlay , Button} from "@mantine/core";
+import { Grid, GridCol, Title, Text, SimpleGrid} from "@mantine/core";
 import Image from "next/image";
 import classes from "../../app/info/[postid]/page.module.css"
 

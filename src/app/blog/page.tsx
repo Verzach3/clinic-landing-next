@@ -1,5 +1,4 @@
 import { NotFound } from "@/components/NotFound";
-import { ArticlesCardsGrid } from "@/components/blog/ArticlesCardGrid";
 import { BlogCarousel } from "@/components/blog/BlogCarousel";
 import ImageCardGrid from "@/components/blog/ImageCardGrid";
 import { BlogPost } from "@/types/BlogPost";
