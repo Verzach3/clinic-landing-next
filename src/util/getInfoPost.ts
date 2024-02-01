@@ -1,4 +1,4 @@
-import { cache } from "react"
+
 import { createDirectus, rest, DirectusClient, RestClient, readItems } from "@directus/sdk"
 import { DIRECTUS_URL } from "@/constants"
 const directus: DirectusClient<any> & RestClient<any> = createDirectus(DIRECTUS_URL).with(rest({onRequest: (config) => {

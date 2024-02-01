@@ -1,4 +1,4 @@
-import cx from 'clsx';
+
 import { Title, Text, Container, Button, Overlay } from '@mantine/core';
 import classes from './Heroimage.module.css';
 
