@@ -1,8 +1,5 @@
 module.exports = {
     plugins: {
-        'cssnano': {
-            preset: 'default',
-        },
         'postcss-preset-mantine': {},
         'postcss-simple-vars': {
             variables: {
