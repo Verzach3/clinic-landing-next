@@ -1,8 +1,5 @@
 module.exports = {
     plugins: {
-        'cssnano': {
-            preset: 'default',
-        },
         '@fullhuman/postcss-purgecss': {
             content: ['./src/**/*.{js,ts,jsx,tsx}'],
             safelist: {
