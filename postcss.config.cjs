@@ -1,11 +1,5 @@
 module.exports = {
     plugins: {
-        '@fullhuman/postcss-purgecss': {
-            content: ['./src/**/*.{js,ts,jsx,tsx}'],
-            safelist: {
-                standard: [/^mantine-/],
-            },
-        },
         'postcss-preset-mantine': {},
         'postcss-simple-vars': {
             variables: {
