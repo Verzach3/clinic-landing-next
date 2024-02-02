@@ -8,6 +8,7 @@ import { getInfoPost } from "@/util/getInfoPost";
 import { NotFound } from "@/components/NotFound";
 import { HowWorks } from "@/components/Sintomas/HowWorks";
 import { ClientsComments } from "@/components/Sintomas/ClientsComments";
+import Footer from "@/components/Footer";
 
 const components = {
   h1: (props: any) => <Title {...props} className={classes.titleContac} />,
@@ -47,6 +48,7 @@ async function page({ params }: { params: { path: string } }) {
             objectFit: "cover",
           }}
           priority
+          unoptimized
         />
         <Overlay
           gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.016) 0%, rgba(0, 0, 0, .65) 100%)"
@@ -123,6 +125,7 @@ async function page({ params }: { params: { path: string } }) {
       <Container className={classes.contactUsContainer} id="contact-us">
         <ContactUs />
       </Container>
+      <Footer/>
     </div>
   );
 }

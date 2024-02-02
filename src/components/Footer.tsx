@@ -58,7 +58,7 @@ export function Footer() {
   });
 
   return (
-    <footer className={classes.footer}>
+    <div className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
           <Logo />
@@ -85,7 +85,7 @@ export function Footer() {
           </ActionIcon>
         </Group>
       </Container>
-    </footer>
+    </div>
   );
 }
 

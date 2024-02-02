@@ -1,22 +1,23 @@
-import { Container, Stack, Title, Text, Image, Center } from "@mantine/core";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import React, { Suspense } from "react";
-import { getBlogPost } from "@/util/getBlogPost";
-import { NotFound } from "@/components/NotFound";
-
+import {Container, Stack, Title, Text } from "@mantine/core";
+import {MDXRemote} from "next-mdx-remote/rsc";
+import React from "react";
+import {getBlogPost} from "@/util/getBlogPost";
+import {NotFound} from "@/components/NotFound";
+import Footer from "@/components/Footer";
+import Image from "next/image";
 const components = {
-  h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"} />,
-  h3: (props: any) => <Title {...props} order={2} ta={"center"} />,
-  h6: (props: any) => <Title {...props} size="xs" ta={"center"} c={"gray"} />,
+  h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"}/>,
+  h3: (props: any) => <Title {...props} order={2} ta={"center"}/>,
+  h6: (props: any) => <Title {...props} size="xs" ta={"center"} c={"gray"}/>,
   p: (props: any) => (
-    <Text {...props} size="xl" ta={"center"} mt={"xl"} mb={"xl"} />
+    <Text {...props} size="xl" ta={"center"} mt={"xl"} mb={"xl"}/>
   ),
   img: (props: any) => (
-    <Image {...props} style={{ objectFit: "contain", maxHeight: "40rem" }} />
+    <Image {...props} style={{objectFit: "contain", maxHeight: "40rem"}} unoptimized/>
   ),
 };
 
-async function page({ params }: { params: { postid: string } }) {
+async function page({params}: { params: { postid: string } }) {
   let post;
   try {
     post = await getBlogPost(params.postid);
@@ -25,17 +26,18 @@ async function page({ params }: { params: { postid: string } }) {
   }
 
   if (!post) {
-    return <NotFound />;
+    return <NotFound/>;
   }
 
   return (
-    <Container>
-      <Suspense fallback={<div>Loading...</div>}>
+    <>
+      <Container>
         <Stack>
-          <MDXRemote source={post.content} components={components} />
+          <MDXRemote source={post.content} components={components}/>
         </Stack>
-      </Suspense>
-    </Container>
+      </Container>
+      <Footer/>
+    </>
   );
 }
 

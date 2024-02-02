@@ -168,7 +168,7 @@ export function Header() {
 
   return (
     <>
-      <header className={classes.header}>
+      <div className={classes.header}>
         <Group justify="space-between" h="100%">
           <Logo />
           <Group h="101%" gap={0} visibleFrom="sm">
@@ -282,7 +282,7 @@ export function Header() {
             hiddenFrom="sm"
           />
         </Group>
-      </header>
+      </div>
 
       <Drawer
         opened={drawerOpened}
