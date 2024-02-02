@@ -217,3 +217,37 @@
     background-color: rgba(255, 255, 255, 0.45);
   }
 }
+
+
+/* CSS personalizado en tu archivo page.module.css */
+
+/* Estilos para centrar el botón horizontal y verticalmente */
+.centeredButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Estilos para el botón */
+.custom-button {
+  background-color: var(--mantine-color-primary-4); /* Color de fondo personalizado */
+  color: var(--mantine-color-white); /* Color de texto personalizado */
+  padding: 10px 20px; /* Espaciado interno del botón personalizado */
+  border: none; /* Quitar el borde del botón */
+  border-radius: 5px; /* Bordes redondeados personalizados */
+  cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+  font-size: 16px; /* Tamaño de fuente personalizado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+/* Estilos para hacer el botón responsive en dispositivos móviles */
+@media (max-width: 768px) {
+  .custom-button {
+    font-size: 14px; /* Ajustar el tamaño de fuente para dispositivos móviles */
+    padding: 8px 16px; /* Ajustar el espaciado interno para dispositivos móviles */
+  }
+}
