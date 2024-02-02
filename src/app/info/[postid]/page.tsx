@@ -19,7 +19,7 @@ const components = {
     <Text {...props} ta={"justify"}  />
   ),
   img: (props: any) => (
-    <Image {...props} style={{ objectFit: "contain", maxHeight: "40rem" }} />
+    <Image {...props} style={{ objectFit: "contain", maxHeight: "40rem" }} unoptimized />
   ),
   h2: (props: any) => <Title {...props} className={classes.h2} />,
   h4: (props: any) => <Title {...props} className={classes.h4} order={4} />

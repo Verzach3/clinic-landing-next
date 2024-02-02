@@ -19,7 +19,7 @@ import {
   rem,
   useMantineTheme,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import {useDisclosure} from "@mantine/hooks";
 import {
   IconStatusChange,
   IconThermometer,
@@ -34,8 +34,9 @@ import {
 import classes from "./Header.module.css";
 import Logo from "./Logo";
 import Link from "next/link";
-import { useAtom } from "jotai";
-import { navShown } from "@/state/navShown";
+import {useAtom} from "jotai";
+import {navShown} from "@/state/navShown";
+import Image from "next/image";
 
 const mockdata = [
   {
@@ -99,13 +100,13 @@ const mockdataCategorias = [
     description: "Conocer mas para contenido de Femenino",
     path: "/info/hormonasbiodenticas-info",
   },
-  
+
 ];
 
 export function Header() {
   const [drawerOpened, setDrawerOpened] = useAtom(navShown);
-  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
-  const [linksOpenedCategorias, { toggle: toggleLinksCategorias }] =
+  const [linksOpened, {toggle: toggleLinks}] = useDisclosure(false);
+  const [linksOpenedCategorias, {toggle: toggleLinksCategorias}] =
     useDisclosure(false);
   const theme = useMantineTheme();
   const theme1 = useMantineTheme();
@@ -115,13 +116,13 @@ export function Header() {
       href={item.path}
       key={item.title}
       shallow
-      style={{ textDecoration: "none", color: "black" }}
+      style={{textDecoration: "none", color: "black"}}
     >
       <UnstyledButton className={classes.subLink} onClick={() => setDrawerOpened(false)}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
             <item.icon
-              style={{ width: rem(22), height: rem(22) }}
+              style={{width: rem(22), height: rem(22)}}
               color={theme.colors.blue[6]}
             />
           </ThemeIcon>
@@ -143,13 +144,13 @@ export function Header() {
       href={item.path}
       key={item.title}
       shallow
-      style={{ textDecoration: "none", color: "black" }}
+      style={{textDecoration: "none", color: "black"}}
     >
       <UnstyledButton className={classes.subLink} onClick={() => setDrawerOpened(false)}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
             <item.icon
-              style={{ width: rem(22), height: rem(22) }}
+              style={{width: rem(22), height: rem(22)}}
               color={theme.colors.blue[6]}
             />
           </ThemeIcon>
@@ -168,9 +169,10 @@ export function Header() {
 
   return (
     <>
-      <header className={classes.header}>
+      <div className={classes.header}>
         <Group justify="space-between" h="100%">
-          <Logo />
+          <Image width={40} height={40}
+                 src={"/logo.avif"} alt={"/logo.avif"}/>
           <Group h="101%" gap={0} visibleFrom="sm">
             <a href="/" className={classes.link}>
               Home
@@ -189,14 +191,14 @@ export function Header() {
                       Sintomas
                     </Box>
                     <IconChevronDown
-                      style={{ width: rem(16), height: rem(16) }}
+                      style={{width: rem(16), height: rem(16)}}
                       color={theme.colors.blue[6]}
                     />
                   </Center>
                 </a>
               </HoverCard.Target>
 
-              <HoverCard.Dropdown style={{ overflow: "hidden" }}>
+              <HoverCard.Dropdown style={{overflow: "hidden"}}>
                 <Group justify="space-between" px="md">
                   <Text fw={500}>Sintomas</Text>
                   <Anchor href="#" fz="xs">
@@ -204,7 +206,7 @@ export function Header() {
                   </Anchor>
                 </Group>
 
-                <Divider my="sm" />
+                <Divider my="sm"/>
 
                 <SimpleGrid cols={2} spacing={0}>
                   {links}
@@ -247,14 +249,14 @@ export function Header() {
                       Categorias
                     </Box>
                     <IconChevronDown
-                      style={{ width: rem(16), height: rem(16) }}
+                      style={{width: rem(16), height: rem(16)}}
                       color={theme.colors.blue[6]}
                     />
                   </Center>
                 </a>
               </HoverCard.Target>
 
-              <HoverCard.Dropdown style={{ overflow: "hidden" }}>
+              <HoverCard.Dropdown style={{overflow: "hidden"}}>
                 <Group justify="space-between" px="md">
                   <Text fw={500}>Especialidad variada</Text>
                   <Anchor href="/infowoman" fz="xs">
@@ -266,7 +268,7 @@ export function Header() {
                   {linksCategorias}
                 </SimpleGrid>
 
-                <Divider my="sm" />
+                <Divider my="sm"/>
               </HoverCard.Dropdown>
             </HoverCard>
           </Group>
@@ -282,19 +284,23 @@ export function Header() {
             hiddenFrom="sm"
           />
         </Group>
-      </header>
+      </div>
 
       <Drawer
+        transitionProps={{ transition: 'rotate-left', duration: 150, timingFunction: 'linear' }}
         opened={drawerOpened}
+        styles={{
+          inner: {
+            maxWidth: "100vw"
+          }
+        }}
         onClose={() => setDrawerOpened(false)}
-        size="100%"
         padding="md"
-        title="Navigation"
+        title="WellFit Clinic"
         hiddenFrom="sm"
-        zIndex={1000000}
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-          <Divider my="sm" />
+          <Divider my="sm"/>
 
           <a href="/" className={classes.link}>
             Home
@@ -305,7 +311,7 @@ export function Header() {
                 Sintomas
               </Box>
               <IconChevronDown
-                style={{ width: rem(16), height: rem(16) }}
+                style={{width: rem(16), height: rem(16)}}
                 color={theme.colors.blue[6]}
               />
             </Center>
@@ -327,13 +333,13 @@ export function Header() {
                 Categorias
               </Box>
               <IconChevronDown
-                style={{ width: rem(16), height: rem(16) }}
+                style={{width: rem(16), height: rem(16)}}
                 color={theme1.colors.blue[6]}
               />
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpenedCategorias}>{linksCategorias}</Collapse>
-          <Divider my="sm" />
+          <Divider my="sm"/>
 
           <Group justify="center" grow pb="xl" px="md">
             <Button variant="default">Log in</Button>

@@ -1,13 +1,13 @@
 import "normalize.css";
 import "@mantine/core/styles.css";
-import { Provider } from "jotai";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import {Provider} from "jotai";
+import {ColorSchemeScript, MantineProvider} from "@mantine/core";
 
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type {Metadata} from "next";
+import {Inter} from "next/font/google";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "WellFit Clinic",
@@ -15,20 +15,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <head>
-        <ColorSchemeScript />
-      </head>
-      <body>
-        <MantineProvider>
-          <Provider>{children}</Provider>
-        </MantineProvider>
-      </body>
+    <head>
+      <ColorSchemeScript/>
+    </head>
+    <body>
+    <MantineProvider>
+      <Provider>{children}</Provider>
+    </MantineProvider>
+    </body>
     </html>
   );
 }
