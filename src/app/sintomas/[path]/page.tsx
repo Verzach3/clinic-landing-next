@@ -39,7 +39,7 @@ async function page({ params }: { params: { path: string } }) {
       >
         <Image
           alt="Mountains"
-          src={`/${post.image_path}`}
+          src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.image_path}.avif`}
           quality={100}
           fill
           sizes="100vw"
