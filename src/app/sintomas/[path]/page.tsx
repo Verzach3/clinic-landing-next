@@ -90,7 +90,7 @@ async function page({ params }: { params: { path: string } }) {
       <div
         className={classes.heroContac}
         style={{
-          backgroundImage: `url(/${post.image_path_2}.avif)`,
+          backgroundImage: `url(https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.image_path_2}.avif)`,
         }}
       >
         <div>

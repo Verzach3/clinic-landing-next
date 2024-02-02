@@ -2,7 +2,7 @@
   position: relative;
   padding-top: rem(180px); /* Aumenta esta propiedad para hacerlo más alto */
   padding-bottom: rem(180px); /* Aumenta esta propiedad para hacerlo más alto */
-  background-image: url(/HeroForWomens2.png.avif);
+  background-image: url(https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/HeroForWomens2.png.avif);
   background-size: cover;
   background-position: center;
   width: 100%; 
