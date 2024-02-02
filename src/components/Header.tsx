@@ -36,6 +36,7 @@ import Logo from "./Logo";
 import Link from "next/link";
 import {useAtom} from "jotai";
 import {navShown} from "@/state/navShown";
+import Image from "next/image";
 
 const mockdata = [
   {
@@ -170,7 +171,8 @@ export function Header() {
     <>
       <div className={classes.header}>
         <Group justify="space-between" h="100%">
-          <Logo/>
+          <Image width={40} height={40}
+                 src={"/logo.avif"} alt={"/logo.avif"}/>
           <Group h="101%" gap={0} visibleFrom="sm">
             <a href="/" className={classes.link}>
               Home

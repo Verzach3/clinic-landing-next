@@ -1,36 +1,37 @@
 'use client'
 
-import { Text, Container, ActionIcon, Group, rem } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import {Text, Container, ActionIcon, Group, rem} from '@mantine/core';
+import {IconBrandTwitter, IconBrandYoutube, IconBrandInstagram} from '@tabler/icons-react';
 import classes from "./Footer.module.css";
 import Logo from './Logo';
+import Image from "next/image";
 
 const data = [
   {
     title: 'About',
     links: [
-      { label: 'Features', link: '#' },
-      { label: 'Pricing', link: '#' },
-      { label: 'Support', link: '#' },
-      { label: 'Forums', link: '#' },
+      {label: 'Features', link: '#'},
+      {label: 'Pricing', link: '#'},
+      {label: 'Support', link: '#'},
+      {label: 'Forums', link: '#'},
     ],
   },
   {
     title: 'Project',
     links: [
-      { label: 'Contribute', link: '#' },
-      { label: 'Media assets', link: '#' },
-      { label: 'Changelog', link: '#' },
-      { label: 'Releases', link: '#' },
+      {label: 'Contribute', link: '#'},
+      {label: 'Media assets', link: '#'},
+      {label: 'Changelog', link: '#'},
+      {label: 'Releases', link: '#'},
     ],
   },
   {
     title: 'Community',
     links: [
-      { label: 'Join Discord', link: '#' },
-      { label: 'Follow on Twitter', link: '#' },
-      { label: 'Email newsletter', link: '#' },
-      { label: 'GitHub discussions', link: '#' },
+      {label: 'Join Discord', link: '#'},
+      {label: 'Follow on Twitter', link: '#'},
+      {label: 'Email newsletter', link: '#'},
+      {label: 'GitHub discussions', link: '#'},
     ],
   },
 ];
@@ -61,7 +62,8 @@ export function Footer() {
     <div className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Logo />
+          <Image width={40} height={40}
+                 src={"/logo.avif"} alt={"/logo.avif"}/>
           <Text size="xs" c="dimmed" className={classes.description}>
             Build fully functional accessible web applications faster than ever
           </Text>
@@ -75,13 +77,13 @@ export function Footer() {
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconBrandTwitter style={{width: rem(18), height: rem(18)}} stroke={1.5}/>
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandYoutube style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconBrandYoutube style={{width: rem(18), height: rem(18)}} stroke={1.5}/>
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandInstagram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconBrandInstagram style={{width: rem(18), height: rem(18)}} stroke={1.5}/>
           </ActionIcon>
         </Group>
       </Container>
