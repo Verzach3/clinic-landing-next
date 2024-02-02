@@ -6,5 +6,15 @@ const nextConfig = {
     swcPlugins: [['@swc-jotai/react-refresh', {}]]
   },
   output: "standalone",
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "curmgtrnrpyjsizyhdzy.supabase.co",
+        port: "",
+        pathname: "/storage/v1/object/public/landing-bucket/**"
+      }
+    ]
+  }
 }
 module.exports = nextConfig

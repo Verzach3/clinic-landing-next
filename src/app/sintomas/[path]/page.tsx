@@ -39,7 +39,7 @@ async function page({ params }: { params: { path: string } }) {
       >
         <Image
           alt="Mountains"
-          src={`/${post.image_path}`}
+          src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.image_path}.avif`}
           quality={100}
           fill
           sizes="100vw"
@@ -90,7 +90,7 @@ async function page({ params }: { params: { path: string } }) {
       <div
         className={classes.heroContac}
         style={{
-          backgroundImage: `url(/${post.image_path_2}.avif)`,
+          backgroundImage: `url(https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.image_path_2}.avif)`,
         }}
       >
         <div>
