@@ -12,7 +12,7 @@ function HomeTemplate({children}: { children: React.ReactNode }) {
         <Header/>
       </AppShell.Header>
       <AppShell.Main style={{
-        width: "100%",
+        width: "100vw",
       }}>
         {children}
       </AppShell.Main>
