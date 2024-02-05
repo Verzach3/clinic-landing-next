@@ -19,6 +19,7 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.4",
     "@react-spring/web": "^9.7.3",
+    "@supabase/supabase-js": "^2.39.3",
     "@swc-jotai/react-refresh": "^0.1.0",
     "@tabler/icons-react": "^2.45.0",
     "@types/mdx": "^2.0.10",

@@ -12,6 +12,7 @@ import {
 import classes from "./BlogCarousel.module.css";
 import { BlogPost } from "../../types/BlogPost";
 import Link from "next/link";
+import {Database} from "@/types/database.types";
 
 interface CardProps {
   cover_image: string;
@@ -43,13 +44,13 @@ function Card({ cover_image, title, category }: CardProps) {
   );
 }
 
-export function BlogCarousel({ items }: { items: BlogPost[]}) {
+export function BlogCarousel({ items }: { items: Database["public"]["Tables"]["blog_posts"]["Row"][]}) {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = items.map((item) => (
-    <Link href={`/blog/${item.slug}`} style={{ textDecoration: "none"}} shallow key={item.title}>
-    <Carousel.Slide key={item.title}>
-      <Card category="test" {...item} />
+    <Link href={`/blog/${item.Slug}`} style={{ textDecoration: "none"}} shallow key={item["Blog Name"]}>
+    <Carousel.Slide key={item["Blog Name"]}>
+      <Card category="test" cover_image={item["Cover Image"] ?? ""} title={item["Blog Name"]} key={item.id} />
     </Carousel.Slide>
     </Link>
   ));

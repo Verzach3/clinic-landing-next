@@ -1,7 +1,6 @@
 import { NotFound } from "@/components/NotFound";
 import { BlogCarousel } from "@/components/blog/BlogCarousel";
 import ImageCardGrid from "@/components/blog/ImageCardGrid";
-import { BlogPost } from "@/types/BlogPost";
 import { getBlogPosts } from "@/util/getBlogPosts";
 import { Center, Container } from "@mantine/core";
 
@@ -23,7 +22,7 @@ async function Blog() {
         <>
           <div style={{ marginBottom: "2rem" }}>
             <BlogCarousel
-              items={posts.filter((post) => post.in_carousel) as unknown as BlogPost[]}
+              items={posts.filter((post) => post["In Carousel"])}
             />
           </div>
           <ImageCardGrid posts={posts}/>
