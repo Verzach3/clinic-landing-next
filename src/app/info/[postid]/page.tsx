@@ -1,49 +1,35 @@
-
-import { Container,  Stack, Title, Text ,  Overlay , Button} from "@mantine/core";
+import {Container, Stack, Title, Text, Overlay, Button} from "@mantine/core";
 import React from "react";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { getCategoriesPost } from "@/util/getCategoriesPost";
-import { NotFound } from "@/components/NotFound";
-import  Stylecomponent from "@/components/info/Stylecomponent";
+import {MDXRemote} from "next-mdx-remote/rsc";
+import {getCategoriesPost} from "@/util/getCategoriesPost";
+import {NotFound} from "@/components/NotFound";
+import Stylecomponent from "@/components/info/Stylecomponent";
 import classes from "./page.module.css";
 import Image from "next/image";
 
 
-
 const components = {
-
-  h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"} />,
-  h3: (props: any) => <Title {...props} order={2}  />,
+  h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"}/>,
+  h3: (props: any) => <Title {...props} order={2}/>,
   code: (props: any) => <Stylecomponent {...props}  />,
   p: (props: any) => (
-    <Text {...props} ta={"justify"}  />
+    <Text {...props} ta={"justify"}/>
   ),
   img: (props: any) => (
-    <Image {...props} style={{ objectFit: "contain", maxHeight: "40rem" }} unoptimized />
+    <Image {...props} style={{objectFit: "contain", maxHeight: "40rem"}} unoptimized/>
   ),
-  h2: (props: any) => <Title {...props} className={classes.h2} />,
-  h4: (props: any) => <Title {...props} className={classes.h4} order={4} />
-  
-
-
+  h2: (props: any) => <Title {...props} className={classes.h2}/>,
+  h4: (props: any) => <Title {...props} className={classes.h4} order={4}/>
 };
-
-async function page({ params }: { params: { postid: string } }) {
- 
- 
+async function page({params}: { params: { postid: string } }) {
   const post = await getCategoriesPost(params.postid);
   console.log(post);
-
   if (!post) {
-    return <NotFound />;
+    return <NotFound/>;
   }
-
- 
-    return (
-
-
-      <Container>
-<div
+  return (
+    <Container>
+      <div
         className={classes.hero}
       >
         <Image
@@ -63,26 +49,23 @@ async function page({ params }: { params: { postid: string } }) {
           zIndex={0}
         />
         <Container className={classes.containerhero} size="md">
-        <Title className={classes.title}>{post.big_title}</Title>
-        <Text size="lg" className={classes.description}>
+          <Title className={classes.title}>{post.big_title}</Title>
+          <Text size="lg" className={classes.description}>
             {post.title_subtext}
           </Text>
 
           <div className={classes.controls}>
-          <Button className={classes.control} variant="white" size="lg">
-          ¡Quiero este Plan!
-          </Button>
-        
-        </div>
+            <Button className={classes.control} variant="white" size="lg">
+              ¡Quiero este Plan!
+            </Button>
+          </div>
         </Container>
       </div>
-
-      
-          <Stack>
-              <MDXRemote source={post.content} components={components} />
-          </Stack>
-      </Container>
-    );
-  } 
+      <Stack>
+        <MDXRemote source={post.content} components={components}/>
+      </Stack>
+    </Container>
+  );
+}
 
 export default page;

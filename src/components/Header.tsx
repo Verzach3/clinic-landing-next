@@ -29,10 +29,9 @@ import {
   IconMoodSick,
   IconChevronDown,
   IconGenderFemme,
-  IconGenderFemale,
+  IconGenderFemale, IconUser, IconLogin, IconLogin2,
 } from "@tabler/icons-react";
 import classes from "./Header.module.css";
-import Logo from "./Logo";
 import Link from "next/link";
 import {useAtom} from "jotai";
 import {navShown} from "@/state/navShown";
@@ -274,8 +273,7 @@ export function Header() {
           </Group>
 
           <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button rightSection={<IconLogin2 size={"1.3rem"}/>}>Mi Cuenta</Button>
           </Group>
 
           <Burger
@@ -342,8 +340,7 @@ export function Header() {
           <Divider my="sm"/>
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button>Mi Cuenta</Button>
           </Group>
         </ScrollArea>
       </Drawer>
