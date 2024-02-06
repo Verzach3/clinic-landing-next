@@ -6,7 +6,7 @@ export async function GET(request: Request): Promise<Response> {
   return new Response(blob, {
     headers: {
       "content-type": "text/plain",
-      "content-disposition": 'attachment; filename="loaderio-27e89dbc7e2acfdc6caff27596fdbcef"',
+      "content-disposition": 'attachment; filename="loaderio-27e89dbc7e2acfdc6caff27596fdbcef.txt"',
     },
   });
 }
