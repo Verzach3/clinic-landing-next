@@ -4,6 +4,7 @@ import classes from "./page.module.css";
 import Image from "next/image";
 import { ContactUs } from "@/components/Home/ContactUs";
 import { Features } from "@/components/Home/Features";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -70,6 +71,7 @@ export default function Home() {
       <Container className={classes.contactUsContainer} id="contact-us">
         <ContactUs />
       </Container>
+      <Footer/>
     </div>
   );
 }

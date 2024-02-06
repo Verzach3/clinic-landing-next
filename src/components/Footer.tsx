@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const data = [
   {
-    title: 'About',
+    title: 'Nosotros',
     links: [
       {label: 'Features', link: '#'},
       {label: 'Pricing', link: '#'},
@@ -17,7 +17,7 @@ const data = [
     ],
   },
   {
-    title: 'Project',
+    title: 'Servicios',
     links: [
       {label: 'Contribute', link: '#'},
       {label: 'Media assets', link: '#'},
@@ -26,7 +26,7 @@ const data = [
     ],
   },
   {
-    title: 'Community',
+    title: 'Comunidad',
     links: [
       {label: 'Join Discord', link: '#'},
       {label: 'Follow on Twitter', link: '#'},
@@ -65,14 +65,14 @@ export function Footer() {
           <Image width={40} height={40}
                  src={"/logo.avif"} alt={"/logo.avif"}/>
           <Text size="xs" c="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            lorem ipsum dolor sit amet
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © {(new Date()).getFullYear()} WellFit Clinic. Todos Los Derechos Reservados.
         </Text>
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">

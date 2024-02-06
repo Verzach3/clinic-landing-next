@@ -1,18 +1,23 @@
 "use client";
 
 import Header from "@/components/Header";
-import {AppShell} from "@mantine/core";
+import {AppShell, Center, ScrollArea} from "@mantine/core";
 
 function HomeTemplate({children}: { children: React.ReactNode }) {
   return (
-    <AppShell header={{height: 60}} footer={{ height: 60 }}>
+    <AppShell styles={{
+      root: {
+        overflow: "hidden"
+      }
+    }}
+              style={{overflow: "hidden"}} header={{height: 60}} footer={{height: 60}}>
       <AppShell.Header style={{
-        width: "100vw"
+        width: "100%"
       }}>
-        <Header/>
+          <Header/>
       </AppShell.Header>
       <AppShell.Main style={{
-        width: "100vw",
+        width: "100%",
       }}>
         {children}
       </AppShell.Main>
