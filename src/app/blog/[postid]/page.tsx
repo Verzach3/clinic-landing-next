@@ -19,16 +19,16 @@ const components = {
       {...
         props
       }
-      src={`url(${props.src}`}
+      src={`${props.src}`}
       width={50}
       height={50}
-      style={
+      contentconten={
         {
           objectFit: "contain", maxHeight:
             "40rem"
         }
       }
-      unoptimized/>)
+      />)
   },
 };
 
