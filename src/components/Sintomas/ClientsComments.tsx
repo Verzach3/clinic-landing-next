@@ -1,26 +1,33 @@
 'use client'
-import React from 'react';
-import {Carousel} from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import React, {useRef} from 'react';
 import {Text, Avatar, Group, Container, Title} from '@mantine/core';
 import classes from './Clientscomments.module.css';
 import {Rating} from '@mantine/core';
+import {Carousel} from "@mantine/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export function ClientsComments() {
+  const autoplay = useRef(Autoplay({delay: 2000}));
   return (
-
     <Container className={classes.container}>
       <Title className={classes.title}>Conoce la opinion de nuestros clientes</Title>
-
       <Carousel
-        showThumbs={false}
-        showStatus={false}
-        infiniteLoop
-        autoPlay
-        interval={5000}
-        className={classes.commentsCarousel}
+        align={"start"}
+        loop
+        height={250}
+        withControls={false}
+        style={{
+          width: "100%",
+          maxWidth: "100%",
+          margin: "auto",
+          padding: "0 20px",
+          height: "100%",
+        }}
+        plugins={[autoplay.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
       >
-        <div className={classes.comment}>
+        <Carousel.Slide className={classes.comment}>
           <Group>
             <Avatar
               src="https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/CommensUser.png.avif"
@@ -41,9 +48,8 @@ export function ClientsComments() {
           </Text>
 
           <Rating value={4.5} readOnly size="sm" className={classes.stars}/>
-        </div>
-
-        <div className={classes.comment}>
+        </Carousel.Slide>
+        <Carousel.Slide className={classes.comment}>
           <Group>
             <Avatar
               src="https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/CommensUser2.png.avif"
@@ -66,9 +72,9 @@ export function ClientsComments() {
           </Text>
 
           <Rating value={4.5} readOnly size="sm" className={classes.stars}/>
-        </div>
+        </Carousel.Slide>
 
-        <div className={classes.comment}>
+        <Carousel.Slide className={classes.comment}>
           <Group>
             <Avatar
               src="https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/CommensUser2.png.avif"
@@ -91,7 +97,7 @@ export function ClientsComments() {
           </Text>
 
           <Rating value={4.5} readOnly size="sm" className={classes.stars}/>
-        </div>
+        </Carousel.Slide>
       </Carousel>
     </Container>
   );

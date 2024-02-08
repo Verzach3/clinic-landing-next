@@ -76,7 +76,7 @@ async function page({ params }: { params: { path: string } }) {
         <Title className={classes.bannerTitle}>{post.banner_title}</Title>
 
         <div className={classes.bannerDescription}>
-          <MDXRemote source={post.banner_content} components={components} />
+          <MDXRemote source={post.banner_content!} components={components} />
         </div>
 
         <Button
@@ -98,7 +98,7 @@ async function page({ params }: { params: { path: string } }) {
         <div>
           <div className={classes.containerContac}>
             <MDXRemote
-              source={post.questions_section}
+              source={post.questions_section!}
               components={components}
             />
             <Button

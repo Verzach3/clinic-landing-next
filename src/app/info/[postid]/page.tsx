@@ -34,7 +34,7 @@ async function page({params}: { params: { postid: string } }) {
       >
         <Image
           alt="Mountains"
-          src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.image_path}.avif`}
+          src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.img_path_hero}.avif`}
           quality={100}
           fill
           sizes="100vw"
@@ -49,9 +49,9 @@ async function page({params}: { params: { postid: string } }) {
           zIndex={0}
         />
         <Container className={classes.containerhero} size="md">
-          <Title className={classes.title}>{post.big_title}</Title>
+          <Title className={classes.title}>{post.article_name}</Title>
           <Text size="lg" className={classes.description}>
-            {post.title_subtext}
+            {post.title_hero}
           </Text>
 
           <div className={classes.controls}>
@@ -62,7 +62,7 @@ async function page({params}: { params: { postid: string } }) {
         </Container>
       </div>
       <Stack>
-        <MDXRemote source={post.content} components={components}/>
+        <MDXRemote source={post.content ?? ""} components={components}/>
       </Stack>
     </Container>
   );

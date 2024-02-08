@@ -4,7 +4,7 @@ import {Database} from "@/types/database.types";
 export default function getSupaClient() {
   return createClient<Database>(url, anonKey, {
     global: {
-      fetch: (url, options) => fetch(url, {...options})
+      fetch: (url, options) => fetch(url, {cache: "no-cache",...options})
     }
   });
 }
