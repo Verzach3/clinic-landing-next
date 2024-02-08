@@ -1,5 +1,6 @@
 import "normalize.css";
 import "@mantine/core/styles.css";
+import "@mantine/carousel/styles.css";
 import {Provider} from "jotai";
 import {ColorSchemeScript, MantineProvider} from "@mantine/core";
 

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -26,6 +26,7 @@
     "@use-gesture/react": "^10.3.0",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
+    "embla-carousel-autoplay": "8.0.0-rc22",
     "embla-carousel-react": "8.0.0-rc19",
     "jotai": "^2.6.1",
     "next": "14.0.4",
