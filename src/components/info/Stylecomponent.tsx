@@ -41,7 +41,7 @@ function Stylecomponent({ children }: any) {
       <Grid gutter={20} className="customGrid">
         <GridCol span={12}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-            <Image src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${imagePath}.avif`} alt="Component Image" width={600} height={500} style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }} />
+            <Image src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${imagePath}.avif`} alt="Component Image" width={600} height={500} style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }} unoptimized />
           </div>
         </GridCol>
         <GridCol span={12} className="customGridCol">
@@ -58,7 +58,7 @@ function Stylecomponent({ children }: any) {
       layout = (
         <SimpleGrid className="customGridCol" cols={gridCols}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-            <Image src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${imagePath}.avif`} alt="Component Image" width={450} height={300} style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} />
+            <Image src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${imagePath}.avif`} alt="Component Image" width={450} height={300} style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} unoptimized/>
           </div>
           <div className="subGrid">
             <Title className={classes.h2} style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{sectionTitle}</Title>
@@ -76,7 +76,7 @@ function Stylecomponent({ children }: any) {
             <Text className={classes.p} style={{ marginTop: "10px", color: "#555", textWrap: "wrap", textAlign: "justify" }}>{description}</Text>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-            <Image src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${imagePath}.avif`} alt="Component Image" width={400} height={300} style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} />
+            <Image src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${imagePath}.avif`} alt="Component Image" width={400} height={300} style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} unoptimized />
           </div>
         </SimpleGrid>
       );

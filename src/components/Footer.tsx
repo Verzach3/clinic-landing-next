@@ -63,7 +63,7 @@ export function Footer() {
       <Container className={classes.inner}>
         <div className={classes.logo}>
           <Image width={40} height={40}
-                 src={"/logo.avif"} alt={"/logo.avif"}/>
+                 src={"/logo.avif"} alt={"/logo.avif"} unoptimized/>
           <Text size="xs" c="dimmed" className={classes.description}>
             lorem ipsum dolor sit amet
           </Text>

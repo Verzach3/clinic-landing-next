@@ -1,8 +1,8 @@
 'use client'
-import { Card, Image, Group, Text, Avatar, Badge } from "@mantine/core";
+import { Card, Group, Text, Avatar, Badge } from "@mantine/core";
 import classes from "./ArticleCard.module.css";
 import { BlogPost } from "../../types/BlogPost";
-
+import Image from "next/image";
 export function ArticleCard({ post }: { post: BlogPost }) {
   return (
     <Card withBorder padding="lg" radius="md" className={classes.card}>
@@ -11,6 +11,7 @@ export function ArticleCard({ post }: { post: BlogPost }) {
           src={`https://crm.caprover.wellfitclinic.com/assets/${post.cover_image}`}
           alt={`${post.title}`}
           height={180}
+          unoptimized
         />
       </Card.Section>
 
