@@ -4,7 +4,7 @@ import React from "react";
 import { useMediaQuery } from '@mantine/hooks'; // Importa useMediaQuery desde @mantine/hooks
 import { Grid, GridCol, Title, Text, SimpleGrid, Button} from "@mantine/core";
 import Image from "next/image";
-import classes from "../../app/info/[postid]/page.module.css"
+import classes from "@/app/info/[[...postid]]/page.module.css"
 
 function Stylecomponent({ children }: any) {
 
