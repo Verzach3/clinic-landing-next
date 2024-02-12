@@ -171,7 +171,7 @@ export function Header() {
       <div className={classes.header}>
         <Group justify="space-between" h="100%">
           <Image width={40} height={40} priority
-                 src={"/logo.avif"} alt={"/logo.avif"}/>
+                 src={"/logo.avif"} alt={"/logo.avif"} unoptimized/>
           <Group h="101%" gap={0} visibleFrom="sm">
             <a href="/" className={classes.link}>
               Home

@@ -20,6 +20,7 @@ export default function Home() {
             objectFit: "cover",
           }}
           priority
+          unoptimized
         />
         <Overlay
           gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, .65) 80%)"
