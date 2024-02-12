@@ -2,6 +2,9 @@
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   experimental: {
+    turbotrace: {},
+    turbo: {
+    },
     optimizePackageImports: ["@mantine/core", "@tabler/icons-react", "react-icons"],
     swcPlugins: [['@swc-jotai/react-refresh', {}]]
   },
