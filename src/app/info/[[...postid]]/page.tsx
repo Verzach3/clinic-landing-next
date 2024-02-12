@@ -22,7 +22,7 @@ const components = {
   h4: (props: any) => <Title {...props} className={classes.h4} order={4}/>
 };
 async function page({params}: { params: { postid: string } }) {
-  const post = await getCategoriesPost(params.postid);
+  const post = await getCategoriesPost(params.postid[0] ?? "");
   console.log(post);
   if (!post) {
     return <NotFound/>;

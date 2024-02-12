@@ -6,6 +6,7 @@ import {ColorSchemeScript, MantineProvider} from "@mantine/core";
 
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
+import Script from "next/script";
 
 
 const inter = Inter({subsets: ["latin"]});
@@ -22,6 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+    <Script src={"https://umami.containers.wellfitclinic.com/script.js"} data-website-id="ddd1df27-bd8e-472f-85b7-b6d75eb02b11" />
     <head>
       <ColorSchemeScript/>
     </head>
