@@ -1,195 +1,203 @@
-
-.root {
-    --breakpoint-sm: 768px; /* Para tablet */
-    --breakpoint-xs: 480px; /* Para móvil */
-}
-
-.hero {
-    position: relative;
-    background-image: url(https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/About.png.avif);
-    background-size: cover;
-    background-position: center;
-}
-
-.container {
-    height: rem(800px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding-bottom: calc(var(--mantine-spacing-xl) * 6);
-    z-index: 1;
-    position: relative;
-
-    @media (max-width: $mantine-breakpoint-sm) {
-        height: rem(500px);
-        padding-bottom: calc(var(--mantine-spacing-xl) * 3);
-    }
-}
-
-.missionTitle {
-    color: #123456; /* Elige un color apropiado */
-    margin-top: 20px;
-    font-size: 24px; /* Ajusta según sea necesario */
-}
-
-.missionText, .valuesText {
-    color: #565656; /* Elige un color apropiado */
-    margin-top: 15px;
-    font-size: 18px; /* Ajusta según sea necesario */
-}
-
-.valuesTitle {
-    color: #123456; /* Elige un color apropiado */
-    margin-top: 20px;
-    font-size: 22px; /* Ajusta según sea necesario */
-}
-
-.valueItem {
-    margin-top: 10px;
-}
-
-.title {
-    color: var(--mantine-color-white);
-    font-size: rem(60px);
-    font-weight: 900;
-    line-height: 1.1;
-
-    @media (max-width: $mantine-breakpoint-sm) {
-        font-size: rem(40px);
-        line-height: 1.2;
-    }
-
-    @media (max-width: $mantine-breakpoint-xs) {
-        font-size: rem(28px);
-        line-height: 1.3;
-    }
-}
-
-.title2 {
-    color: var(--mantine-color-black);
-    font-size: rem(60px);
-    font-weight: 900;
-    line-height: 1.1;
-
-    @media (max-width: $mantine-breakpoint-sm) {
-        font-size: rem(40px);
-        line-height: 1.2;
-    }
-
-    @media (max-width: $mantine-breakpoint-xs) {
-        font-size: rem(28px);
-        line-height: 1.3;
-    }
-}
-
-.description {
-    color: var(--mantine-color-white);
-    max-width: rem(600px);
-
-    @media (max-width: $mantine-breakpoint-sm) {
-        max-width: 100%;
-        font-size: var(--mantine-font-size-sm);
-    }
-}
-
-.control {
-    margin-top: calc(var(--mantine-spacing-xl) * 1.5);
-
-    @media (max-width: $mantine-breakpoint-sm) {
-        width: 100%;
-    }
-}
-
-.wrapper {
-    padding-top: calc(var(--mantine-spacing-xl) * 4);
-    padding-bottom: calc(var(--mantine-spacing-xl) * 4);
-}
-
-.title {
-    font-family: Greycliff CF,
-    var(--mantine-font-family);
-    font-weight: 900;
-    margin-bottom: var(--mantine-spacing-md);
-    text-align: center;
-
-    @media (max-width: $mantine-breakpoint-sm) {
-        font-size: rem(28px);
-        text-align: left;
-    }
-}
-
-.description {
-    text-align: center;
-
-    @media (max-width: $mantine-breakpoint-sm) {
-        text-align: left;
-    }
-}
-
-
 /* Variables para breakpoints */
 .root {
     --breakpoint-md: 768px; /* Tablets y dispositivos medianos */
     --breakpoint-sm: 480px; /* Teléfonos móviles y dispositivos pequeños */
+  }
+  
+  /* Estilos del héroe */
+  .hero {
+    position: relative;
+    background-image: url(https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/About.png.avif);
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+  }
+  
+/* Estilos del contenedor del héroe */
+.container {
+    height: rem(400px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Alineamos los elementos al centro */
+    padding: calc(var(--mantine-spacing-xl) * 5);
+    padding-bottom: calc(var(--mantine-spacing-xl) * 4);
+    z-index: 1;
+    position: relative;
+  
+    @media (max-width: var(--breakpoint-sm)) {
+      padding: calc(var(--mantine-spacing-xl) * 3); /* Ajustamos el padding para dispositivos móviles */
+    }
+  }
+  
+  /* Estilos del título */
+  .title {
+    color: var(--mantine-color-white);
+    font-size: rem(60px);
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center; /* Centramos el texto */
+    margin-bottom: calc(var(--mantine-spacing-xl) * 2); /* Añadimos margen inferior */
+  
+    @media (max-width: var(--breakpoint-sm)) {
+      font-size: rem(40px); /* Ajustamos el tamaño de fuente para dispositivos móviles */
+      margin-bottom: calc(var(--mantine-spacing-md)); /* Reducimos el margen inferior para dispositivos móviles */
+    }
+  }
+  
+/* Estilos de la descripción */
+.description {
+  color: var(--mantine-color-black);
+  max-width: rem(600px);
+  text-align: center; /* Centramos el texto */
+  margin: 0 auto; /* Centramos horizontalmente */
+  padding: calc(var(--mantine-spacing-xl) * 3) calc(var(--mantine-spacing-xl) * 1); /* Añadimos padding */
+
 }
 
-/* Sección de valores corporativos */
-.coreValuesSection {
+/* Estilos del contenedor wrapper */
+.wrapper2 {
+  text-align: center;
+
+  @media (max-width: var(--breakpoint-md)) {
+    padding-top: calc(var(--mantine-spacing-xl) * 1);
+    padding-left: calc(var(--mantine-spacing-xl) * 1); /* Añadimos más padding a la izquierda en dispositivos de tamaño mediano */
+    padding-right: calc(var(--mantine-spacing-xl) * 1); /* Añadimos más padding a la derecha en dispositivos de tamaño mediano */
+  }
+
+  @media (max-width: var(--breakpoint-sm)) {
+    padding-top: calc(var(--mantine-spacing-xl) * 1);
+    padding-bottom: calc(var(--mantine-spacing-xl) * 1);
+  }
+}
+
+
+  /* Estilos del control */
+  .control {
+    margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  
+    @media (max-width: var(--breakpoint-sm)) {
+      width: 100%;
+    }
+  }
+  
+  
+  
+  /* Estilos del título de la misión */
+  .missionTitle {
+    color: #123456;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  
+  /* Estilos del texto de la misión y valores */
+  .missionText,
+  .valuesText {
+    color: #565656;
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  
+  /* Estilos del título de valores */
+  .valuesTitle {
+    color: #123456;
+    margin-top: 20px;
+    font-size: 22px;
+  }
+  
+  /* Estilos de los elementos de valores */
+  .valueItem {
+    margin-top: 10px;
+  }
+  
+
+  
+  /* Estilos del título 2 */
+  .title2 {
+    color: var(--mantine-color-black);
+    font-size: rem(50px);
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+  
+    @media (max-width: var(--breakpoint-sm)) {
+      font-size: rem(40px);
+      line-height: 1.2;
+    }
+  
+    @media (max-width: var(--breakpoint-xs)) {
+      font-size: rem(22px);
+      line-height: 1.3;
+    }
+  }
+  
+ 
+ 
+  
+
+  /* Estilos de la sección de valores corporativos */
+  .coreValuesSection {
     padding: 40px 20px; /* Agrega un padding horizontal para evitar que se peguen a los bordes */
-}
-
-/* Título de la sección */
-.sectionTitle {
-    font-size: 2rem;
+  }
+  
+  /* Estilos del título de la sección */
+  .sectionTitle {
+    color: var(--mantine-color-black);
+    font-size: rem(50px);
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+  
     margin-bottom: 30px;
     text-align: center;
-}
-
-/* Grid de valores corporativos */
-.coreValuesGrid {
+    margin-top: 30px;
+  }
+  
+  /* Estilos del grid de valores corporativos */
+  .coreValuesGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Crea columnas que se ajustan al contenido */
     gap: 20px; /* Espaciado entre tarjetas */
-}
-
-/* Tarjetas de valores */
-.coreValue {
+  }
+  
+  /* Estilos de las tarjetas de valores */
+  .coreValue {
     background-color: var(--mantine-color-blue-6);
     border-radius: 8px;
     color: white;
     margin-bottom: 20px;
     padding: 20px;
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
-}
-
-/* Título de la tarjeta */
-.coreValueTitle {
+  }
+  
+  /* Estilos del título de la tarjeta */
+  .coreValueTitle {
     font-size: 1.2rem;
     margin-bottom: 10px;
     text-align: center;
-}
-
-/* Descripción de la tarjeta */
-.coreValueDescription {
+  }
+  
+  /* Estilos de la descripción de la tarjeta */
+  .coreValueDescription {
     font-size: 1rem;
     color: white;
-}
-
-/* Media query para dispositivos medianos (tablets) */
-@media (max-width: var(--breakpoint-md)) {
+  }
+  
+  /* Media query para dispositivos medianos (tablets) */
+  @media (max-width: var(--breakpoint-md)) {
     .coreValuesSection {
-        padding: 40px 15px; /* Ajusta el padding para dispositivos medianos */
+      padding: 40px 15px; /* Ajusta el padding para dispositivos medianos */
     }
-}
-
-/* Media query para dispositivos móviles */
-@media (max-width: var(--breakpoint-sm)) {
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media (max-width: var(--breakpoint-sm)) {
     .coreValuesSection {
-        padding: 20px; /* Ajusta el padding para dispositivos móviles */
+      padding: 20px; /* Ajusta el padding para dispositivos móviles */
     }
-
+  
     .coreValue {
-        margin: 10px; /* Añade margen alrededor de las tarjetas para evitar que se peguen a los bordes */
+      margin: 10px; /* Añade margen alrededor de las tarjetas para evitar que se peguen a los bordes */
     }
-}
+  }
+  

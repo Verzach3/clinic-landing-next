@@ -65,7 +65,7 @@ export function Footer() {
           <Image width={40} height={40}
                  src={"/logo.avif"} alt={"/logo.avif"} unoptimized/>
           <Text size="xs" c="dimmed" className={classes.description}>
-            lorem ipsum dolor sit amet
+           Haz de tu salud una prioridad con WellFit Clinic.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
