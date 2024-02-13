@@ -149,38 +149,32 @@ function About() {
           zIndex={0}
         />
         <Container className={classes.container} size="md">
-          <Title className={classes.title}>WellFit Clinic</Title>
-
-          <Title className={classes.title}>Mision:</Title>
-          <Text
-            className={`${classes.description} justifiedText`}
-            size="xl"
-            mt="xl"
-          >
-            En WellFit Clinics, nuestro compromiso es la excelencia en la
-            promoción de la salud y el bienestar personal.
-            <br />
-            <br />
-            Ofrecemos soluciones integrales para el fitness y la salud, desde
-            entrenamientos de alta energía y asesoramiento nutricional hasta
-            estrategias de manejo del estrés y prevención de enfermedades. Con
-            integridad y rigor científico, empoderamos a nuestros clientes para
-            tomar decisiones informadas y alcanzar sus metas de salud a largo
-            plazo.
-          </Text>
+          <Title className={classes.title}>WellFit Clinic Mision:</Title>
+       
         </Container>
       </div>
 
       <Container className={classes.wrapper}>
+  <Text
+    className={classes.description} 
+    size="xl"
+    mt="xl"
+  >
+    En WellFit Clinics,
+    Ofrecemos soluciones integrales para el fitness y la salud, desde
+    entrenamientos de alta energía y asesoramiento nutricional hasta
+    estrategias de manejo del estrés y prevención de enfermedades. Con
+    integridad y rigor científico, empoderamos a nuestros clientes para
+    tomar decisiones informadas y alcanzar sus metas de salud a largo
+    plazo.
+  </Text>
+</Container>
+ 
+
+      <Container className={classes.wrapper}>
         <Title className={classes.title2}>Lo que nos distingue</Title>
 
-        <Container size={560} p={0}>
-          <Text size="sm" className={classes.description}>
-            Every once in a while, you’ll see a Golbat that’s missing some
-            fangs. This happens when hunger drives it to try biting a Steel-type
-            Pokémon.
-          </Text>
-        </Container>
+  
 
         <SimpleGrid
           mt={60}

@@ -1,15 +1,32 @@
 .wrapper {
-  min-height: rem(400px);
-  background-image: linear-gradient(
-    -60deg,
-    var(--mantine-color-blue-4) 0%,
-    var(--mantine-color-blue-7) 100%
-  );
-  border-radius: var(--mantine-radius-md);
-  padding: calc(var(--mantine-spacing-xl) * 5.5);
+  min-height: 550px;
+  background-image: linear-gradient(-60deg, var(--mantine-color-blue-4) 0%, var(--mantine-color-blue-7) 100%);
+  border-radius: 10px;
+  padding: var(--mantine-spacing-xl); /* Ajustado para mayor coherencia */
+  display: flex; /* Asegura un layout flexible */
+  flex-direction: column; /* Organiza los hijos en columna */
+  align-items: center; /* Centra los hijos horizontalmente */
+  justify-content: center; /* Centra los hijos verticalmente */
+}
 
-  @media (max-width: $mantine-breakpoint-sm) {
-    padding: calc(var(--mantine-spacing-xl) * 1.5);
+.form {
+  background-color: var(--mantine-color-white);
+  padding: var(--mantine-spacing-md); /* Ajustado para tablets y móviles */
+  border-radius: var(--mantine-radius-md);
+  box-shadow: var(--mantine-shadow-lg);
+  width: 100%; /* Asegura que el formulario use el ancho disponible, pero no más */
+  max-width: 900px; /* Limita el ancho máximo del formulario para evitar que se expanda demasiado */
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el cálculo del ancho */
+}
+
+@media (min-width: $mantine-breakpoint-md) { /* Ajuste para tablets y dispositivos más grandes */
+  .wrapper {
+    flex-direction: row; /* Organiza los hijos en fila para pantallas más grandes */
+    justify-content: space-around; /* Distribuye el espacio alrededor de los hijos */
+    padding: var(--mantine-spacing-xl) 2rem; /* Aumenta el padding horizontalmente */
+  }
+  .form {
+    margin: 0; /* Elimina cualquier margen automático en pantallas más grandes */
   }
 }
 
@@ -30,12 +47,6 @@
   }
 }
 
-.form {
-  background-color: var(--mantine-color-white);
-  padding: var(--mantine-spacing-xl);
-  border-radius: var(--mantine-radius-md);
-  box-shadow: var(--mantine-shadow-lg);
-}
 
 .social {
   color: var(--mantine-color-white);
