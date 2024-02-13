@@ -24,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
     <head>
-      <Script async src={"https://umami.containers.wellfitclinic.com/script.js"}
+      <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+      <script async src={"https://umami.containers.wellfitclinic.com/script.js"}
               data-website-id="ddd1df27-bd8e-472f-85b7-b6d75eb02b11"/>
       <ColorSchemeScript/>
     </head>
