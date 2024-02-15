@@ -1,10 +1,10 @@
 import {createClient} from "@supabase/supabase-js";
 import {Database} from "@/types/database.types";
 
-export default function getSupaClient() {
+export default function getSupaClient(cached: RequestCache = "no-cache") {
   return createClient<Database>(url, anonKey, {
     global: {
-      fetch: (url, options) => fetch(url, {cache: "no-cache",...options})
+      fetch: (url, options) => fetch(url, {cache: cached,...options})
     }
   });
 }

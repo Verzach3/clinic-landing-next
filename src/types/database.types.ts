@@ -61,6 +61,7 @@ export type Database = {
           desc_hero: string | null
           id: string
           img_path_hero: string | null
+          notion_id: string
           seo_keywords: string | null
           slug: string | null
           sub_category: string
@@ -76,6 +77,7 @@ export type Database = {
           desc_hero?: string | null
           id?: string
           img_path_hero?: string | null
+          notion_id: string
           seo_keywords?: string | null
           slug?: string | null
           sub_category: string
@@ -91,6 +93,7 @@ export type Database = {
           desc_hero?: string | null
           id?: string
           img_path_hero?: string | null
+          notion_id?: string
           seo_keywords?: string | null
           slug?: string | null
           sub_category?: string
