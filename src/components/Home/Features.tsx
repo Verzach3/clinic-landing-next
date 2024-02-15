@@ -18,25 +18,25 @@ const features = [
     icon: GiPersonInBed,
     title: "Te sientes fatigado?",
     description:
-      "All packages are published under MIT license, you can use Mantine in any project",
+      "Sensación de cansancio constante, incluso después de descansar adecuadamente.",
   },
   {
     icon: GiNailedHead,
     title: "Problemas de concentración?",
     description:
-      "Build type safe applications, all components and hooks export types",
+      "Problemas para enfocar la atención o mantenerse alerta en tareas cotidianas.",
   },
   {
     icon: GiHairStrands,
     title: "Perdida de cabello?",
     description:
-      "With new :focus-visible selector focus ring will appear only when user navigates with keyboard",
+      "Reducción notable en la cantidad de cabello en el cuero cabelludo.",
   },
   {
     icon: PiSmileySadFill,
     title: "Ansiedad / Depresion?",
     description:
-      "Customize colors, spacing, shadows, fonts and many other settings with global theme object",
+      "Sensación de nerviosismo, preocupación constante o tristeza profunda.",
   },
 ];
 
@@ -71,10 +71,10 @@ export function Features() {
             Tienes alguno de estos sintomas?
           </Title>
           <Text c="dimmed">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. A
-            quibusdam quas similique eligendi! Nam harum deleniti neque nemo,
-            asperiores, ex, non ullam consectetur odio illum totam cumque.
-            Voluptas, quibusdam dolore!
+          En WellFit Clinic, estamos aquí para resolverlo. La fatiga persistente, 
+          dificultad para concentrarte, pérdida de cabello o sentimientos
+           de ansiedad y depresión pueden indicar posibles desequilibrios hormonales
+            o problemas de salud subyacentes
           </Text>
 
           <Button
