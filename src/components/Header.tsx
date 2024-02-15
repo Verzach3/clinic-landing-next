@@ -90,14 +90,14 @@ const mockdataCategorias = [
     icon: IconGenderFemme,
     title: "Recursos para Hombres",
     description: "Conocer mas para contenido de caballero",
-    path: "/info/men",
+    path: "/info/hormonashombres-hgh",
   },
 
   {
     icon: IconGenderFemale,
     title: "Recursos para mujeres",
     description: "Conocer mas para contenido de Femenino",
-    path: "/info/hormonasbiodenticas-info",
+    path: "/info/sintomasmenopauticos-aumentodepeso",
   },
 
 ];
