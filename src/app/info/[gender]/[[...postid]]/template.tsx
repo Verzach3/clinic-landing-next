@@ -1,22 +1,23 @@
 'use client'
 
-import {ScrollArea, AppShell, Drawer, Affix, ActionIcon, Loader, LoadingOverlay} from "@mantine/core";
+import {ScrollArea, AppShell, Drawer, Affix, ActionIcon, LoadingOverlay} from "@mantine/core";
 import {
   IconPlayerTrackNext,
 } from "@tabler/icons-react";
-
+import { usePathname} from "next/navigation";
 import classes from "./template.module.css"
 import {LinksGroup} from "@/components/info/NavbarLinksGroup";
-import {UserButton} from "@/components/info/UserButton";
 import {useDisclosure} from "@mantine/hooks";
 import React, {useEffect, useState} from "react";
 import {getNavBarData} from "@/util/getNavBarData";
 
 export function InfoForWomens({children}: { children: React.ReactNode }) {
   const [links, setLinks] = useState<React.ReactNode[]>([]);
-
+  const pathname = usePathname();
   useEffect(() => {
-    getNavBarData().then((data) => {
+    console.log(pathname)
+    getNavBarData(pathname.split("/")[2]).then((data) => {
+      console.log(data)
       setLinks(data.map((item) => {
         const IconComponent = item.icon;
         return <LinksGroup {...item} key={item.label} icon={IconComponent}/>

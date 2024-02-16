@@ -29,7 +29,7 @@ import {
   IconMoodSick,
   IconChevronDown,
   IconGenderFemme,
-  IconGenderFemale, IconUser, IconLogin, IconLogin2,
+  IconGenderFemale, IconUser, IconLogin, IconLogin2, IconGenderMale,
 } from "@tabler/icons-react";
 import classes from "./Header.module.css";
 import Link from "next/link";
@@ -37,7 +37,7 @@ import {useAtom} from "jotai";
 import {navShown} from "@/state/navShown";
 import Image from "next/image";
 
-const mockdata = [
+const headerSections = [
   {
     icon: IconThermometer,
     title: "Dolor de cabeza",
@@ -85,19 +85,19 @@ const mockdata = [
   },
 
 ];
-const mockdataCategorias = [
+const headerCategories = [
   {
-    icon: IconGenderFemme,
-    title: "Recursos para Hombres",
+    icon: IconGenderMale,
+    title: "Recursos Masculinos",
     description: "Conocer mas para contenido de caballero",
-    path: "/info/hormonashombres-hgh",
+    path: "/info/masculine/hormonashombres-hgh",
   },
 
   {
     icon: IconGenderFemale,
-    title: "Recursos para mujeres",
+    title: "Recursos Femeninos",
     description: "Conocer mas para contenido de Femenino",
-    path: "/info/sintomasmenopauticos-aumentodepeso",
+    path: "/info/feminine/sintomasmenopauticos-aumentodepeso",
   },
 
 ];
@@ -110,7 +110,7 @@ export function Header() {
   const theme = useMantineTheme();
   const theme1 = useMantineTheme();
 
-  const links = mockdata.map((item) => (
+  const links = headerSections.map((item) => (
     <Link
       href={item.path}
       key={item.title}
@@ -138,7 +138,7 @@ export function Header() {
     </Link>
   ));
 
-  const linksCategorias = mockdataCategorias.map((item) => (
+  const linksCategorias = headerCategories.map((item) => (
     <Link
       href={item.path}
       key={item.title}
