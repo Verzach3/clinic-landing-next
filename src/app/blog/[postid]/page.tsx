@@ -14,7 +14,6 @@ const components = {
     <Text {...props} size="xl" ta={"center"} mt={"xl"} mb={"xl"}/>
   ),
   img: (props: any) => {
-    console.log(props)
     return (< Image
       {...
         props
@@ -37,7 +36,6 @@ async function page({params}: { params: { postid: string } }) {
   try {
     post = await getBlogPost(params.postid);
   } catch (error) {
-    console.log(error);
   }
 
   if (!post) {
