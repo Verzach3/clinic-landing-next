@@ -23,7 +23,6 @@ const components = {
 };
 async function page({params}: { params: { postid: string } }) {
   const post = await getCategoriesPost(params.postid[0] ?? "");
-  console.log(post);
   if (!post) {
     return <NotFound/>;
   }

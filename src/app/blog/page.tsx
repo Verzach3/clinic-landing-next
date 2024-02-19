@@ -8,7 +8,6 @@ export const dynamic = 'force-dynamic'
 
 async function Blog() {
   const posts = await getBlogPosts()
-  console.log(posts);
   if (!posts || posts.length === 0) {
     return <NotFound/> 
   }

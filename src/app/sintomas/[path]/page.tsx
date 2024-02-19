@@ -1,34 +1,30 @@
-import { ContactUs } from "@/components/Home/ContactUs";
-import { Overlay, Container, Title, Button, Text } from "@mantine/core";
+import {ContactUs} from "@/components/Home/ContactUs";
+import {Overlay, Container, Title, Button, Text} from "@mantine/core";
 import Image from "next/image";
 import React from "react";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import {MDXRemote} from "next-mdx-remote/rsc";
 import classes from "./page.module.css";
-import { getInfoPost } from "@/util/getInfoPost";
-import { NotFound } from "@/components/NotFound";
-import { HowWorks } from "@/components/Sintomas/HowWorks";
-import { ClientsComments } from "@/components/Sintomas/ClientsComments";
+import {getInfoPost} from "@/util/getInfoPost";
+import {NotFound} from "@/components/NotFound";
+import {HowWorks} from "@/components/Sintomas/HowWorks";
+import {ClientsComments} from "@/components/Sintomas/ClientsComments";
 import Footer from "@/components/Footer";
 
 const components = {
-  h1: (props: any) => <Title {...props} className={classes.titleContac} />,
-  h2: (props: any) => <Title {...props} className={classes.text} />,
-  h3: (props: any) => <Title {...props} className={classes.text} />,
-  h4: (props: any) => <Title {...props} className={classes.subtitle} />,
+  h1: (props: any) => <Title {...props} className={classes.titleContac}/>,
+  h2: (props: any) => <Title {...props} className={classes.text}/>,
+  h3: (props: any) => <Title {...props} className={classes.text}/>,
+  h4: (props: any) => <Title {...props} className={classes.subtitle}/>,
   p: (props: any) => (
-    <Text {...props} className={classes.descriptionContac} size="md" mt="xl" />
+    <Text {...props} className={classes.descriptionContac} size="md" mt="xl"/>
   ),
 };
 
-async function page({ params }: { params: { path: string } }) {
-  
+async function page({params}: { params: { path: string } }) {
   const post = await getInfoPost(params.path);
-  console.log(post);
-
   if (!post) {
-    return <NotFound />;
+    return <NotFound/>;
   }
-
   return (
     <div
       style={{
@@ -76,7 +72,7 @@ async function page({ params }: { params: { path: string } }) {
         <Title className={classes.bannerTitle}>{post.banner_title}</Title>
 
         <div className={classes.bannerDescription}>
-          <MDXRemote source={post.banner_content!} components={components} />
+          <MDXRemote source={post.banner_content!} components={components}/>
         </div>
 
         <Button
@@ -115,15 +111,15 @@ async function page({ params }: { params: { path: string } }) {
       </div>
 
       <Container className={classes.HowWorks} id="HowWorks">
-        <HowWorks />
+        <HowWorks/>
       </Container>
 
-      <div style={{ width: "100%", backgroundColor: "#0c1f47 " }}>
-        <ClientsComments />
+      <div style={{width: "100%", backgroundColor: "#0c1f47 "}}>
+        <ClientsComments/>
       </div>
 
       <Container className={classes.contactUsContainer} id="contact-us">
-        <ContactUs />
+        <ContactUs/>
       </Container>
       <Footer/>
     </div>

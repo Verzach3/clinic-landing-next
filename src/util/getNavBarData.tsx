@@ -17,7 +17,6 @@ export async function getNavBarData(gender: string): Promise<MockData> {
   if (gender === "masculine") {
     gender = "Male"
   }
-  console.log(gender)
   const articles = (await getSupaClient().from("info_articles").select("category, sub_category, slug, tags")).data
   if (!articles) {
     return [];
@@ -27,7 +26,7 @@ export async function getNavBarData(gender: string): Promise<MockData> {
     if (!navBarData[article.category]) {
       navBarData[article.category] = [];
     }
-    navBarData[article.category].push({label: article.sub_category, link: `/info/${article.slug}`});
+    navBarData[article.category].push({label: article.sub_category, link: `${article.slug}`});
   }
 
   // Convert NavBarData to MockData

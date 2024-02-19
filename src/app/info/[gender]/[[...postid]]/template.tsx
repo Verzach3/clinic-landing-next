@@ -4,7 +4,7 @@ import {ScrollArea, AppShell, Drawer, Affix, ActionIcon, LoadingOverlay} from "@
 import {
   IconPlayerTrackNext,
 } from "@tabler/icons-react";
-import { usePathname} from "next/navigation";
+import {usePathname} from "next/navigation";
 import classes from "./template.module.css"
 import {LinksGroup} from "@/components/info/NavbarLinksGroup";
 import {useDisclosure} from "@mantine/hooks";
@@ -14,13 +14,26 @@ import {getNavBarData} from "@/util/getNavBarData";
 export function InfoForWomens({children}: { children: React.ReactNode }) {
   const [links, setLinks] = useState<React.ReactNode[]>([]);
   const pathname = usePathname();
+  const gender = pathname.split("/")[2]
   useEffect(() => {
-    console.log(pathname)
-    getNavBarData(pathname.split("/")[2]).then((data) => {
-      console.log(data)
+    let initialOpened = true;
+    getNavBarData(gender).then((data) => {
+      data = data.map((data) => {
+        return {
+          ...data,
+          links: data.links?.map((link) => {
+            return {
+              label: link.label,
+              link: link.link
+            }
+          })
+        }
+      })
       setLinks(data.map((item) => {
         const IconComponent = item.icon;
-        return <LinksGroup {...item} key={item.label} icon={IconComponent}/>
+        const comp = <LinksGroup {...item} key={item.label} icon={IconComponent} initiallyOpened={initialOpened}/>
+        initialOpened = false;
+        return comp
       }))
     })
   }, []);
@@ -47,11 +60,11 @@ export function InfoForWomens({children}: { children: React.ReactNode }) {
             overlayProps={{radius: "sm", blur: 2}}
           /> :
           <div>
-          <ScrollArea className={classes.links}>
-            <div className={classes.linksInner}>
-              {links}
-            </div>
-          </ScrollArea>
+            <ScrollArea className={classes.links}>
+              <div className={classes.linksInner}>
+                {links}
+              </div>
+            </ScrollArea>
           </div>
         }
       </Drawer>
