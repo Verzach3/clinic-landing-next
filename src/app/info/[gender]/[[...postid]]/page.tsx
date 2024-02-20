@@ -33,7 +33,7 @@ async function page({params}: { params: { postid: string } }) {
       >
         <Image
           alt="Mountains"
-          src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.img_path_hero === "" || post.img_path_hero === undefined ? "Desfatiga.png" : post.img_path_hero}.avif`}
+          src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.img_path_hero === "" || post.img_path_hero === undefined ? "Desfatiga.png.avif" : post.img_path_hero}`}
           quality={100}
           fill
           sizes="100vw"
