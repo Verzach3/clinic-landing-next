@@ -42,6 +42,7 @@ async function page({params}: { params: { postid: string } }) {
           }}
           priority
           unoptimized
+
         />
         <Overlay
           gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.016) 0%, rgba(0, 0, 0, .65) 100%)"

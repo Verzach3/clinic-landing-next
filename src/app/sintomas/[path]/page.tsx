@@ -79,8 +79,7 @@ async function page({params}: { params: { path: string } }) {
           variant="gradient"
           size="lg"
           radius="xl"
-          className={classes.bannerButton}
-        >
+          className={classes.bannerButton}>
           Quiero Mejorar mi vida
         </Button>
       </div>

@@ -10,10 +10,10 @@ const data = [
   {
     title: 'Nosotros',
     links: [
-      {label: 'Features', link: '#'},
-      {label: 'Pricing', link: '#'},
-      {label: 'Support', link: '#'},
-      {label: 'Forums', link: '#'},
+      {label: 'Acerca de nosotros', link: '#'},
+      {label: 'Atencion al cliente', link: '#'},
+      {label: 'Soporte', link: '#'},
+      {label: 'Ubicacion', link: '#'},
     ],
   },
   {
@@ -28,10 +28,10 @@ const data = [
   {
     title: 'Comunidad',
     links: [
-      {label: 'Join Discord', link: '#'},
-      {label: 'Follow on Twitter', link: '#'},
-      {label: 'Email newsletter', link: '#'},
-      {label: 'GitHub discussions', link: '#'},
+      {label: 'Instagram', link: '#'},
+      {label: 'X-Twitterr', link: '#'},
+      {label: 'Plataforma', link: '#'},
+      {label: 'Atencion Via WhatsApp', link: '#'},
     ],
   },
 ];

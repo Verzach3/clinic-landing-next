@@ -12,16 +12,15 @@ export function ClientsComments() {
     <Container className={classes.container}>
       <Title className={classes.title}>Conoce la opinion de nuestros clientes</Title>
       <Carousel
-        align={"start"}
+
+        align="start"
         loop
-        height={250}
         withControls={false}
         style={{
           width: "100%",
           maxWidth: "100%",
           margin: "auto",
           padding: "0 20px",
-          height: "100%",
         }}
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
@@ -98,6 +97,7 @@ export function ClientsComments() {
 
           <Rating value={4.5} readOnly size="sm" className={classes.stars}/>
         </Carousel.Slide>
+
       </Carousel>
     </Container>
   );
