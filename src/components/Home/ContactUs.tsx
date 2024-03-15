@@ -8,11 +8,12 @@ import {
   Group,
   ActionIcon,
 } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import { RiTwitterXLine } from "react-icons/ri";
+import { IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import { ContactIconsList } from './ContactIcons';
 import classes from './ContactUs.module.css';
 
-const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
+const social = [RiTwitterXLine , IconBrandYoutube, IconBrandInstagram];
 
 export function ContactUs() {
   const icons = social.map((Icon, index) => (

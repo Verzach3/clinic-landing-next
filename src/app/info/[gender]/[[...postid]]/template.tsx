@@ -63,7 +63,8 @@ export function InfoForWomens({children}: { children: React.ReactNode }) {
           </ActionIcon>
         </motion.div>
       </Affix>
-      <Drawer size={"md"} className={classes.navbar} opened={opened} onClose={close}>
+      <Drawer size={"md"} className={classes.navbar} 
+      opened={opened} onClose={close}>
         {links.length === 0 ?
           <LoadingOverlay
             loaderProps={{

@@ -6,8 +6,6 @@ import {ColorSchemeScript, MantineProvider} from "@mantine/core";
 
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
-import Script from "next/script";
-
 
 const inter = Inter({subsets: ["latin"]});
 

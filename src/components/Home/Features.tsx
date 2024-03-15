@@ -70,6 +70,7 @@ export function Features() {
           <Title className={classes.title} order={2}>
             ¿Tienes alguno de estos sintomas?
           </Title>
+          
           <Text className="dimmed justified">
           En WellFit Clinic, estamos aquí para resolverlo. La fatiga persistente, 
           dificultad para concentrarte, pérdida de cabello o sentimientos

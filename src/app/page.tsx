@@ -58,7 +58,7 @@ export default function Home() {
                 if (contactUsSection) {
                   contactUsSection.scrollIntoView({ behavior: "smooth" });
                 }
-              }}
+              } }
             >
               Contactanos
             </Button>
