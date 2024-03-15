@@ -8,11 +8,12 @@ import {
   Group,
   ActionIcon,
 } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import { RiTwitterXLine } from "react-icons/ri";
+import { IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import { ContactIconsList } from './ContactIcons';
 import classes from './ContactUs.module.css';
 
-const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
+const social = [RiTwitterXLine , IconBrandYoutube, IconBrandInstagram];
 
 export function ContactUs() {
   const icons = social.map((Icon, index) => (
@@ -25,9 +26,9 @@ export function ContactUs() {
     <div className={classes.wrapper}>
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
         <div>
-          <Title className={classes.title}>Contact us</Title>
-          <Text className={classes.description} mt="sm" mb={30}>
-            Leave your email and we will get back to you within 24 hours
+          <Title className={classes.title}>Contactanos</Title>
+          <Text className={classes.description} mt="sm" mb={30} style={{ textAlign: 'left' }}>
+         Deja tu correo electronico y nuestro equipo Wellfit se contactará contigo en menos de 24 horas. 
           </Text>
 
           <ContactIconsList />
@@ -37,27 +38,27 @@ export function ContactUs() {
         <div className={classes.form}>
           <TextInput
             label="Email"
-            placeholder="your@email.com"
+            placeholder="TuEmail@email.com"
             required
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <TextInput
-            label="Name"
-            placeholder="John Doe"
+            label="Nombre"
+            placeholder="Tu nombre"
             mt="md"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <Textarea
             required
-            label="Your message"
-            placeholder="I want to order your goods"
+            label="Motivo de consulta"
+            placeholder="Descripcion del problema o consulta"
             minRows={4}
             mt="md"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
 
           <Group justify="flex-end" mt="md">
-            <Button className={classes.control}>Send message</Button>
+            <Button className={classes.control}>Enviar</Button>
           </Group>
         </div>
       </SimpleGrid>

@@ -16,25 +16,25 @@ import { PiSmileySadFill } from "react-icons/pi";
 const features = [
   {
     icon: GiPersonInBed,
-    title: "Te sientes fatigado?",
+    title: "¿Te sientes fatigado?",
     description:
       "Sensación de cansancio constante, incluso después de descansar adecuadamente.",
   },
   {
     icon: GiNailedHead,
-    title: "Problemas de concentración?",
+    title: "¿Problemas de concentración?",
     description:
       "Problemas para enfocar la atención o mantenerse alerta en tareas cotidianas.",
   },
   {
     icon: GiHairStrands,
-    title: "Perdida de cabello?",
+    title: "¿Perdida de cabello?",
     description:
       "Reducción notable en la cantidad de cabello en el cuero cabelludo.",
   },
   {
     icon: PiSmileySadFill,
-    title: "Ansiedad / Depresion?",
+    title: "¿Ansiedad / Depresion?",
     description:
       "Sensación de nerviosismo, preocupación constante o tristeza profunda.",
   },
@@ -68,14 +68,15 @@ export function Features() {
       <Grid gutter={80}>
         <Grid.Col span={{ base: 12, md: 5 }}>
           <Title className={classes.title} order={2}>
-            Tienes alguno de estos sintomas?
+            ¿Tienes alguno de estos sintomas?
           </Title>
-          <Text c="dimmed">
+          
+          <Text className="dimmed justified">
           En WellFit Clinic, estamos aquí para resolverlo. La fatiga persistente, 
           dificultad para concentrarte, pérdida de cabello o sentimientos
-           de ansiedad y depresión pueden indicar posibles desequilibrios hormonales
-            o problemas de salud subyacentes
-          </Text>
+          de ansiedad y depresión pueden indicar posibles desequilibrios hormonales
+          o problemas de salud subyacentes.
+         </Text>
 
           <Button
             variant="gradient"

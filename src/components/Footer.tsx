@@ -1,19 +1,20 @@
 'use client'
 
 import {Text, Container, ActionIcon, Group, rem} from '@mantine/core';
-import {IconBrandTwitter, IconBrandYoutube, IconBrandInstagram} from '@tabler/icons-react';
+import {IconBrandYoutube, IconBrandInstagram} from '@tabler/icons-react';
 import classes from "./Footer.module.css";
-import Logo from './Logo';
+import { RiTwitterXLine } from "react-icons/ri";
+
 import Image from "next/image";
 
 const data = [
   {
     title: 'Nosotros',
     links: [
-      {label: 'Features', link: '#'},
-      {label: 'Pricing', link: '#'},
-      {label: 'Support', link: '#'},
-      {label: 'Forums', link: '#'},
+      {label: 'Acerca de nosotros', link: '#'},
+      {label: 'Atencion al cliente', link: '#'},
+      {label: 'Soporte', link: '#'},
+      {label: 'Ubicacion', link: '#'},
     ],
   },
   {
@@ -28,10 +29,10 @@ const data = [
   {
     title: 'Comunidad',
     links: [
-      {label: 'Join Discord', link: '#'},
-      {label: 'Follow on Twitter', link: '#'},
-      {label: 'Email newsletter', link: '#'},
-      {label: 'GitHub discussions', link: '#'},
+      {label: 'Instagram', link: '#'},
+      {label: 'X-Twitterr', link: '#'},
+      {label: 'Plataforma', link: '#'},
+      {label: 'Atencion Via WhatsApp', link: '#'},
     ],
   },
 ];
@@ -77,7 +78,7 @@ export function Footer() {
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter style={{width: rem(18), height: rem(18)}} stroke={1.5}/>
+            <RiTwitterXLine style={{width: rem(18), height: rem(18)}} stroke={1.5}/>
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
             <IconBrandYoutube style={{width: rem(18), height: rem(18)}} stroke={1.5}/>

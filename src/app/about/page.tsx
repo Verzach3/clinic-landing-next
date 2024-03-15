@@ -11,7 +11,7 @@ import classes from "./page.module.css";
 import { GrUserAdd, GrWorkshop, GrAchievement } from "react-icons/gr";
 import { GrSystem } from "react-icons/gr";
 import { IconGitPullRequest, IconSocial } from "@tabler/icons-react";
-
+import Footer from "@/components/Footer";
 // Datos de los valores corporativos (ejemplo)
 const CORE_VALUES = [
   {
@@ -103,6 +103,7 @@ interface FeatureProps {
 }
 
 function Feature({ icon: Icon, title, description }: FeatureProps) {
+  
   return (
     <div style={{ textAlign: "center" }}>
       <ThemeIcon
@@ -201,9 +202,13 @@ function About() {
             </div>
           ))}
         </div>
+
       </Container>
+      <Footer/>
       </div>
+    
     </div>
+    
   );
 }
 

@@ -9,17 +9,19 @@ import Image from "next/image";
 
 
 const components = {
-  h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"}/>,
-  h3: (props: any) => <Title {...props} order={2}/>,
+  h1: (props: any) => <Title {...props} ta={"center"} mt={"xl"}order={1}  />,
+  h2: (props: any) => <Title {...props}mt={"xl"} order={2}/>,
+  h3: (props: any) => <Title {...props}  order={3}/>,
+  h4: (props: any) => <Title {...props} order={4}/>,
   code: (props: any) => <Stylecomponent {...props}  />,
   p: (props: any) => (
     <Text {...props} ta={"justify"}/>
   ),
   img: (props: any) => (
-    <Image {...props} style={{objectFit: "contain", maxHeight: "40rem"}} unoptimized/>
+    <Image width={930} height={950} {...props} style={{objectFit: "contain", maxHeight: "40rem"}} unoptimized/>
   ),
-  h2: (props: any) => <Title {...props} className={classes.h2}/>,
-  h4: (props: any) => <Title {...props} className={classes.h4} order={4}/>
+
+
 };
 async function page({params}: { params: { postid: string } }) {
   const post = await getCategoriesPost(params.postid[0] ?? "");
@@ -42,6 +44,7 @@ async function page({params}: { params: { postid: string } }) {
           }}
           priority
           unoptimized
+
         />
         <Overlay
           gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.016) 0%, rgba(0, 0, 0, .65) 100%)"

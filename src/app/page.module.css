@@ -51,12 +51,27 @@
 
 
 
+
+
+.control {
+
+  justify-self: start; /* Alinea el botón al inicio de la columna */
+  color: white;
+  border: none;
+  border-radius: 20px; /* Botón redondeado */
+  padding: 10px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
+
+}
+
 .control {
   margin-top: calc(var(--mantine-spacing-xl) * 1.5);
-  display: flex;
-  justify-content: flex-end; 
-  text-align:right;
+
   @media (max-width: $mantine-breakpoint-sm) {
     width: 100%;
   }
 }
+

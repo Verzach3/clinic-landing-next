@@ -1,23 +1,44 @@
 /* Page.module.css */
 
 /* Estilos comunes para títulos y textos */
-.title, .h2, .p, .fullWidthText {
+.title, .p, .h1,.h2,.h3,.fullWidthText {
   font-family: 'Roboto', sans-serif;
-  color: #555;
+  color: #000000;
 }
-
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+}
 .title {
   text-align: center;
   color: #005A8D;
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.h1 {
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: black;
 }
 
 .h2 {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 15px;
+  color: black;
+}
+
+.h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: black;
 }
 
 .p, .fullWidthText {
@@ -62,36 +83,6 @@
   text-align: justify;
   line-height: 1.6;
 }
-
-/* Estilos para títulos específicos */
-.h3, .h1, .h4 , .h2 {
- 
-  font-weight: bold;
-  color: #000000; /* o cualquier color que prefieras */
-  text-align: left;
-  font-family: 'Roboto', sans-serif;
-}
-
-.h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-.h2 {
-  font-size: 1.8rem;
-  margin-top: 20px;
-}
-
-.h3{
-  font-size: 1.4rem;
-  margin-top: 20px;
-}
-
-
-.h4 {
-  font-size: 1.25rem;
-}
-
-
 
 
 /* CSS para Styles del HERO DINAMICO */

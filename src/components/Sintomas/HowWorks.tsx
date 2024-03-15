@@ -52,7 +52,7 @@ import {
       {
         title: '5. Equipo de conserjería dedicado',
         description:
-          'Nuestros médicos y equipo de atención integral trabajan juntos para brindar la mejor atención y poyo continuo. Están ahí para guiarlo a lo largo de su viaje de bienestar y ayudarlo a mantenerse encaminado.',
+          'Nuestros médicos y equipo de atención integral trabajan juntos para brindar la mejor atención y apoyo continuo. Están ahí para guiarlo a lo largo de su viaje de bienestar y ayudarlo a mantenerse encaminado.',
         icon: RiTeamLine,
       },
       {
