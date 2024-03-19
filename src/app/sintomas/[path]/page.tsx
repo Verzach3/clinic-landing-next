@@ -54,6 +54,8 @@ async function page({params}: { params: { path: string } }) {
         <Container className={classes.container} size="md">
           <Title className={classes.title}>{post.big_title}</Title>
           <Text className={classes.description} size="xl" mt="xl">
+
+            
             {post.title_subtext}
           </Text>
 
