@@ -21,7 +21,7 @@ export function ImageCard({post}: { post: Database["public"]["Tables"]["blog_pos
         className={classes.image}
         style={{
           backgroundImage:
-            "url(https://crm.caprover.wellfitclinic.com/assets/" +
+            "url(https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/Blog/" +
             post["Cover Image"] +
             ")",
         }}
