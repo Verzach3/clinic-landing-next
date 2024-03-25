@@ -132,14 +132,7 @@ function About() {
   const features = MOCKDATA.map((feature, index) => (
     <Feature {...feature} key={index} />
   ));
-  const coreValuesElements = CORE_VALUES.map((value, index) => (
-    <div key={index} className={classes.coreValue}>
-      <Title order={4} className={classes.coreValueTitle}>
-        {value.title}
-      </Title>
-      <Text className={classes.coreValueDescription}>{value.description}</Text>
-    </div>
-  ));
+  
 
   return (
     <div>
@@ -173,7 +166,7 @@ function About() {
  
 
       <Container className={classes.wrapper}>
-        <Title className={classes.title2}>Lo que nos distingue</Title>
+        <Title className={classes.title2}>Nuestro Sello: Innovación y Bienestar Integral</Title>
 
   
 

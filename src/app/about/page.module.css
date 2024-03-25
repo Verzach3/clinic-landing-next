@@ -17,7 +17,7 @@
   
 /* Estilos del contenedor del héroe */
 .container {
-    height: rem(350px);
+    height: rem(450px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,7 +53,7 @@
   max-width: rem(600px);
   text-align: center; /* Centramos el texto */
   margin: 0 auto; /* Centramos horizontalmente */
-  padding: calc(var(--mantine-spacing-xl) * 1); /* Añadimos padding */
+  padding: 5px;
   text-align: justify;
 }
 .coreValueDescription {
@@ -124,7 +124,7 @@
     font-weight: 900;
     line-height: 1.1;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 70px;
   
     @media (max-width: var(--breakpoint-sm)) {
       font-size: rem(40px);
@@ -149,7 +149,7 @@
   /* Estilos del título de la sección */
   .sectionTitle {
     color: var(--mantine-color-black);
-    font-size: rem(50px);
+    font-size: rem(40px);
     font-weight: 900;
     line-height: 1.1;
     text-align: center;
@@ -199,11 +199,11 @@
   /* Media query para dispositivos móviles */
   @media (max-width: var(--breakpoint-sm)) {
     .coreValuesSection {
-      padding: 20px; /* Ajusta el padding para dispositivos móviles */
+      padding: 20px;
     }
   
     .coreValue {
-      margin: 10px; /* Añade margen alrededor de las tarjetas para evitar que se peguen a los bordes */
+      margin: 10px; 
     }
   }
   

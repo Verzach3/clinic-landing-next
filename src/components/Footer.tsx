@@ -63,17 +63,17 @@ export function Footer() {
     <div className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Image width={40} height={40}
-                 src={"/logo.avif"} alt={"/logo.avif"} unoptimized/>
+          <Image width={130} height={100}
+                 src={"https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/wellfitclinic01.svg"} alt={"/logo.avif"} unoptimized/>
           <Text size="xs" c="dimmed" className={classes.description}>
-           Haz de tu salud una prioridad con WellFit Clinic.
+           Haz de tu salud una prioridad con WellFit Clinics.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
-          © {(new Date()).getFullYear()} WellFit Clinic. Todos Los Derechos Reservados.
+          © {(new Date()).getFullYear()} WellFit Clinics. Todos Los Derechos Reservados.
         </Text>
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">

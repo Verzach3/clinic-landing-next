@@ -42,6 +42,7 @@
 .description {
   color: var(--mantine-color-white);
   max-width: rem(600px);
+  text-align: justify;
 
   @media (max-width: $mantine-breakpoint-sm) {
     max-width: 100%;
