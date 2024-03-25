@@ -31,7 +31,7 @@ export default function Home() {
           <Title className={classes.title}>
             Descubre tu potencial con WellFit Clinics
           </Title>
-          <Text className={classes.description} size="xl" mt="xl">
+          <Text className={classes.description} size="xl" mt="xl" >
             Revoluciona tu enfoque hacia la salud y el bienestar con nuestros
             programas de bienestar hechos a medida. En WellFit Clinics,
             combinamos la ciencia del fitness con atención personalizada para
