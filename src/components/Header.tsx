@@ -226,12 +226,14 @@ export function Header() {
                 </div>
               </HoverCard.Dropdown>
             </HoverCard>
+
             <a href="/blog" className={classes.link}>
               Blog
             </a>
             <a href="/about" className={classes.link}>
               Nosotros
             </a>
+           
 
             <HoverCard
               width={600}
@@ -253,6 +255,9 @@ export function Header() {
                   </Center>
                 </a>
               </HoverCard.Target>
+              <a href="/services" className={classes.link}>
+              Servicios
+            </a>
 
               <HoverCard.Dropdown style={{overflow: "hidden"}}>
                 <Group justify="space-between" px="md">
@@ -299,9 +304,7 @@ export function Header() {
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
           <Divider my="sm"/>
 
-          <a href="/" className={classes.link}>
-            Home
-          </a>
+        
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
@@ -337,6 +340,18 @@ export function Header() {
           </UnstyledButton>
           <Collapse in={linksOpenedCategorias}>{linksCategorias}</Collapse>
           <Divider my="sm"/>
+
+          <UnstyledButton className={classes.link} onClick={toggleLinks}>
+            <Center inline>
+              <Box component="span" mr={5}>
+                Servicios
+              </Box>
+              <IconChevronDown
+                style={{width: rem(16), height: rem(16)}}
+                color={theme.colors.blue[6]}
+              />
+            </Center>
+          </UnstyledButton>
 
           <Group justify="center" grow pb="xl" px="md">
             <Button>Mi Cuenta</Button>
