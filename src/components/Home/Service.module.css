@@ -1,0 +1,96 @@
+.services {
+    background-image: linear-gradient(135deg, #1a5eb6e3, #69bff1);
+    padding: 4rem 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(227, 227, 227);
+    padding: 2rem;
+
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Establece la proporción de aspecto de la imagen (4:3 en este caso) */
+    overflow: hidden;
+  }
+  
+  .imageWrapperRight {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Establece la proporción de aspecto de la imagen (4:3 en este caso) */
+    overflow: hidden;
+  }
+  
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .textContent {
+    max-width: 700px;
+    text-align: justify;
+    padding: 3px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .divider {
+    width: 100px;
+    height: 4px;
+    background-color: #1a5eb6e3;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .list {
+    list-style-type: disc;
+    margin: 0 0 1rem 1.5rem;
+    padding-left: 1rem;
+  }
+  
+  .footer {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .button {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .imageWrapper {
+      border-radius: 0 200px 200px 0;
+    }
+  
+    .imageWrapperRight {
+      border-radius: 200px 0 0 200px;
+    }
+  }

@@ -147,6 +147,8 @@ function Feature({ icon: Icon, title, description }: FeatureProps) {
     </div>
   );
 }
+
+
 function About() {
   const features = MOCKDATA.map((feature, index) => (
     <Feature {...feature} key={index} />
@@ -232,6 +234,7 @@ function About() {
       </div>
     ))}
   </div>
+  
 </Container>
       <Footer/>
       </div>
