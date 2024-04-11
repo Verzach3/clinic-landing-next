@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Container, Title, Text, Button } from '@mantine/core';
+import { Container, Title, Text, Button, Paper } from '@mantine/core';
 import { Image } from '@mantine/core';
 import classes from './Service.module.css';
 
@@ -13,12 +13,11 @@ export function Services() {
             <Image
               src="https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/MedicinaCasa.avif?t=2024-04-08T14%3A31%3A29.722Z"
               alt="Atención urgente"
-        
               className={classes.image}
             />
           </div>
-          <div className={classes.textContent}>
-            <Title className={classes.title}>
+          <Paper shadow="md" p="xl" radius="md" className={classes.textContent}>
+            <Title className={classes.title} order={2}>
               Atención urgente, pruebas y diagnósticos rápidos
             </Title>
             <div className={classes.divider}></div>
@@ -38,27 +37,24 @@ export function Services() {
               variant="gradient"
               size="lg"
               radius="xl"
-              style={{
-                justifySelf: "right",
-              }}
-              className={classes.control}
+              className={classes.button}
               onClick={() => {
                 const contactUsSection = document.getElementById("contact-us");
                 if (contactUsSection) {
                   contactUsSection.scrollIntoView({ behavior: "smooth" });
                 }
-              } }
+              }}
             >
               Contactanos
             </Button>
-          </div>
+          </Paper>
         </div>
       </Container>
       <Container className={classes.container}>
         <div className={classes.content}>
-          <div className={classes.textContent}>
-            <Title className={classes.title}>
-              Atencion medica en casa
+          <Paper shadow="md" p="xl" radius="md" className={classes.textContent}>
+            <Title className={classes.title} order={2}>
+              Atención médica en casa
             </Title>
             <div className={classes.divider}></div>
             <Text className={classes.description}>
@@ -77,25 +73,21 @@ export function Services() {
               variant="gradient"
               size="lg"
               radius="xl"
-              style={{
-                justifySelf: "right",
-              }}
-              className={classes.control}
+              className={classes.button}
               onClick={() => {
                 const contactUsSection = document.getElementById("contact-us");
                 if (contactUsSection) {
                   contactUsSection.scrollIntoView({ behavior: "smooth" });
                 }
-              } }
+              }}
             >
               Contactanos
             </Button>
-          </div>
+          </Paper>
           <div className={classes.imageWrapperRight}>
             <Image
               src="https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/Atencion.avif?t=2024-04-08T16%3A44%3A24.780Z"
               alt="Atención urgente"
-
               className={classes.image}
             />
           </div>

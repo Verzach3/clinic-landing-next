@@ -28,7 +28,7 @@ const features = [
 ];
 
 export function Features() {
-  const words = [ "en cuatro pasos", "mejoramos"];
+  const words = [ "En cuatro pasos !"];
   const el = useRef<HTMLSpanElement>(null);
   const sleepTime = 100;
   const pauseTime = 1000;
@@ -81,7 +81,7 @@ export function Features() {
         <Grid gutter={80}>
           <Grid.Col span={12}>
             <Title className={classes.title} order={2}>
-              Mejora Tu Vida!{" "}
+              Mejora Tu Vida{" "}
               <span ref={el} className={classes.typedText} />
             </Title>
             <Divider className={classes.titleDivider} />
