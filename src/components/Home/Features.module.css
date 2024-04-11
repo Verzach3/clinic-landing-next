@@ -1,17 +1,55 @@
+.featuresBackground {
+  padding: calc(var(--mantine-spacing-xl) * 2) 0;
+}
+
 .wrapper {
-  padding: calc(var(--mantine-spacing-xl) * 2) var(--mantine-spacing-xl);
+  width: 100%; /* Usar todo el ancho disponible */
 }
 
 .title {
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
+  font-family: Greycliff CF, var(--mantine-font-family);
   font-size: rem(36px);
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: var(--mantine-spacing-md);
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  text-align: center; /* Centrar el título */
 }
+
+.typedText {
+  color: var(--mantine-color-blue-6);
+}
+
+.titleDivider {
+  margin: var(--mantine-spacing-md) auto;
+  width: 300px;
+  border-top-width: 3px;
+  border-top-color: var(--mantine-color-blue-6);
+}
+
+
+.iconDivider {
+  margin: var(--mantine-spacing-xs) auto;
+  width: 80px;
+  border-top-color: var(--mantine-color-blue-6);
+}
+
 .justified {
-  text-align: justify; /* Justificar el texto */
+  text-align: justify; /* Justificar el texto de la descripción */
+}
+
+.featureItem {
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+}
+
+.buttonWrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: var(--mantine-spacing-xl);
 }

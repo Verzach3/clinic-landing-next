@@ -5,9 +5,16 @@ import Image from "next/image";
 import { ContactUs } from "@/components/Home/ContactUs";
 import { Features } from "@/components/Home/Features";
 import Footer from "@/components/Footer";
+import { Coments } from "@/components/Home/Coments";
+import { useMediaQuery } from '@mantine/hooks';
+import { Services } from "@/components/Home/Services";
+
 
 export default function Home() {
+
+  const isMobile = useMediaQuery('(max-width: 768px)');
   return (
+
     <div>
       <div className={classes.hero}>
         <Image
@@ -65,13 +72,27 @@ export default function Home() {
           </div>
         </Container>
       </div>
-      <Container>
+     
+
+   
+
+ 
+   <Container>
         <Features />
       </Container>
+      
+      <Services/>
+<Container className={classes.contactUsContainer} id="contact-us">
+    <ContactUs />
+</Container>
 
-      <Container className={classes.contactUsContainer} id="contact-us">
-        <ContactUs />
-      </Container>
+<Container>
+    <Coments />
+</Container>
+
+
+
+
       <Footer/>
     </div>
   );

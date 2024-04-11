@@ -1,6 +1,6 @@
-import { Text, Box, Stack, rem } from '@mantine/core';
+import { Text, ThemeIcon, Stack, rem } from '@mantine/core';
 import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons-react';
-import classes from './ContactIcons.module.css';
+import classes from './ContactComent.module.css';
 
 interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
   icon: typeof IconSun;
@@ -8,12 +8,12 @@ interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, '
   description: React.ReactNode;
 }
 
-function ContactIcon({ icon: Icon, title, description, ...others }: ContactIconProps) {
+function ContactComentsIcons({ icon: Icon, title, description, ...others }: ContactIconProps) {
   return (
     <div className={classes.wrapper} {...others}>
-      <Box mr="md">
+      <ThemeIcon size={40} radius="md" className={classes.icon}>
         <Icon style={{ width: rem(24), height: rem(24) }} />
-      </Box>
+      </ThemeIcon>
 
       <div>
         <Text size="xs" className={classes.title}>
@@ -27,12 +27,12 @@ function ContactIcon({ icon: Icon, title, description, ...others }: ContactIconP
 
 const MOCKDATA = [
   { title: 'Email', description: 'info@wellfitclinic.com', icon: IconAt },
-  { title: 'Teléfono', description: '+57 310 768 6345', icon: IconPhone },
-  { title: 'Dirección', description: 'Cr 8 #16s-10', icon: IconMapPin },
-  { title: 'Horario de atención', description: '8 a.m. – 6 p.m.', icon: IconSun },
+  { title: 'Phone', description: '+57 310 768 6345', icon: IconPhone },
+  { title: 'Address', description: 'Cr 8 #16s-10', icon: IconMapPin },
+  { title: 'Working hours', description: '8 a.m. – 6 p.m.', icon: IconSun },
 ];
 
 export function ContactIconsList() {
-  const items = MOCKDATA.map((item, index) => <ContactIcon key={index} {...item} />);
+  const items = MOCKDATA.map((item, index) => <ContactComentsIcons key={index} {...item} />);
   return <Stack>{items}</Stack>;
 }

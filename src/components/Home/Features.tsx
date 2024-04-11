@@ -1,99 +1,101 @@
-'use client'
-
-import {
-  Title,
-  SimpleGrid,
-  Text,
-  Button,
-  ThemeIcon,
-  Grid,
-  rem,
-} from "@mantine/core";
+import { Title, SimpleGrid, Text, Button, ThemeIcon, Container, Grid, rem, Divider, Paper } from "@mantine/core";
 import classes from "./Features.module.css";
 import { GiNailedHead, GiPersonInBed, GiHairStrands } from "react-icons/gi";
-import { PiSmileySadFill } from "react-icons/pi";
+import { PiSneakerMoveFill } from "react-icons/pi";
+import { useEffect, useRef } from "react";
 
 const features = [
   {
     icon: GiPersonInBed,
-    title: "¿Te sientes fatigado?",
-    description:
-      "Sensación de cansancio constante, incluso después de descansar adecuadamente.",
+    title: "1. Responda nuestro cuestionario",
+    description: "Comience su viaje hacia un bienestar óptimo completando nuestro cuestionario inicial. Este paso crucial nos permite comprender mejor sus necesidades individuales y diseñar un plan personalizado para mejorar su salud y calidad de vida.",
   },
   {
     icon: GiNailedHead,
-    title: "¿Problemas de concentración?",
-    description:
-      "Problemas para enfocar la atención o mantenerse alerta en tareas cotidianas.",
+    title: "2. Consulta Gratis",
+    description: "Aproveche nuestra oferta de consulta gratuita y discuta abiertamente sus inquietudes de salud con nuestros expertos. Durante esta sesión, recibirá una evaluación inicial de su estado de salud y recomendaciones sobre cómo podemos ayudarlo a alcanzar sus objetivos de bienestar.",
   },
   {
     icon: GiHairStrands,
-    title: "¿Perdida de cabello?",
-    description:
-      "Reducción notable en la cantidad de cabello en el cuero cabelludo.",
+    title: "3. Consulta con el profesional",
+    description: "Dedique tiempo a una consulta individual con nuestros profesionales en bienestar. Esta sesión le brinda la oportunidad de profundizar en sus preocupaciones de salud, recibir orientación especializada y establecer objetivos realistas para mejorar su bienestar general.",
   },
   {
-    icon: PiSmileySadFill,
-    title: "¿Ansiedad / Depresion?",
-    description:
-      "Sensación de nerviosismo, preocupación constante o tristeza profunda.",
+    icon: PiSneakerMoveFill,
+    title: "Cita Medica- Informe Detallado",
+    description: "Reserve una cita médica completa y detallada con nuestro equipo médico. Durante esta consulta exhaustiva, recibirá un análisis completo de su salud, incluido un informe detallado que aborda sus inquietudes específicas.",
   },
 ];
 
 export function Features() {
+  const words = [ "En cuatro pasos !"];
+  const el = useRef<HTMLSpanElement>(null);
+  const sleepTime = 100;
+  const pauseTime = 1000;
+  const currWordIndex = useRef(0);
+
+  const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
+
+  const typewriterEffect = async () => {
+    while (true) {
+      const currWord = words[currWordIndex.current];
+      for (let i = 0; i < currWord.length; i++) {
+        if (el.current) {
+          el.current.textContent = currWord.substring(0, i + 1);
+        }
+        await sleep(sleepTime);
+      }
+      await sleep(pauseTime);
+      for (let i = currWord.length; i > 0; i--) {
+        if (el.current) {
+          el.current.textContent = currWord.substring(0, i - 1);
+        }
+        await sleep(sleepTime);
+      }
+      currWordIndex.current = (currWordIndex.current + 1) % words.length;
+    }
+  };
+
+  useEffect(() => {
+    typewriterEffect();
+  }, []);
+
   const items = features.map((feature) => (
-    <div key={feature.title}>
-      <ThemeIcon
-        size={44}
-        radius="md"
-        variant="gradient"
-        gradient={{ deg: 133, from: "blue", to: "cyan" }}
-      >
-        <feature.icon
-          style={{ width: rem(26), height: rem(26) }}
-          stroke={1.5}
-        />
+    <Paper key={feature.title} shadow="md" p="xl" radius="md" className={classes.featureItem}>
+      <ThemeIcon size={60} radius="md" variant="gradient" gradient={{ deg: 133, from: "blue", to: "cyan" }}>
+        <feature.icon style={{ width: rem(40), height: rem(40) }} stroke={1.5} />
       </ThemeIcon>
+      <Divider className={classes.iconDivider} />
       <Text fz="lg" mt="sm" fw={500}>
         {feature.title}
       </Text>
-      <Text c="dimmed" fz="sm">
+      <Text c="dimmed" fz="sm" className={classes.justified}>
         {feature.description}
       </Text>
-    </div>
+    </Paper>
   ));
 
   return (
-    <div className={classes.wrapper}>
-      <Grid gutter={80}>
-        <Grid.Col span={{ base: 12, md: 5 }}>
-          <Title className={classes.title} order={2}>
-            ¿Tienes alguno de estos sintomas?
-          </Title>
-          
-          <Text className="dimmed justified">
-          En WellFit Clinic, estamos aquí para resolverlo. La fatiga persistente, 
-          dificultad para concentrarte, pérdida de cabello o sentimientos
-          de ansiedad y depresión pueden indicar posibles desequilibrios hormonales
-          o problemas de salud subyacentes.
-         </Text>
-
-          <Button
-            variant="gradient"
-            gradient={{ deg: 133, from: "blue", to: "cyan" }}
-            size="lg"
-            radius="md"
-            mt="xl"
-          >
-            Contactanos
-          </Button>
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 7 }}>
-          <SimpleGrid cols={{ base: 1, md: 2 }} spacing={30}>
-            {items}
-          </SimpleGrid>
-        </Grid.Col>
-      </Grid>
+    <div className={classes.featuresBackground}>
+      <Container size="xl" className={classes.wrapper}>
+        <Grid gutter={80}>
+          <Grid.Col span={12}>
+            <Title className={classes.title} order={2}>
+              Mejora Tu Vida{" "}
+              <span ref={el} className={classes.typedText} />
+            </Title>
+            <Divider className={classes.titleDivider} />
+            <SimpleGrid cols={{ base: 1, sm: 1, lg: 2 }} spacing="xl">
+              {items}
+            </SimpleGrid>
+            <div className={classes.buttonWrapper}>
+              <Button variant="gradient" gradient={{ deg: 133, from: "blue", to: "cyan" }} size="lg" radius="md">
+                Inicia Tu Cambio
+              </Button>
+            </div>
+          </Grid.Col>
+        </Grid>
+      </Container>
     </div>
   );
 }
