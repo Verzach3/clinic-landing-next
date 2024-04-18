@@ -11,6 +11,7 @@ function Programs() {
   const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
 
   const handleTabChange = (value: string) => {
+    
     setActiveTab(value as 'men' | 'women');
   };
 
