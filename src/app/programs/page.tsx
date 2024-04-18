@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import classes from './page.module.css';
 import CardsProgramsMens from "@/components/programs/CardsProgramsMens";
 import CardsProgramsWomen from "@/components/programs/CardsProgramsWomen";
+import { Services } from '@/components/programs/Services';
 
 function Programs() {
   const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
@@ -44,6 +45,7 @@ function Programs() {
           </motion.div>
         </AnimatePresence>
       </Container>
+      <Services />
     </div>
   );
 }
