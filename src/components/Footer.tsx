@@ -78,7 +78,7 @@ export function Footer() {
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <RiTwitterXLine style={{width: rem(18), height: rem(18)}} stroke={1.5}/>
+            <RiTwitterXLine style={{width: rem(18), height: rem(18)}} />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
             <IconBrandYoutube style={{width: rem(18), height: rem(18)}} stroke={1.5}/>
