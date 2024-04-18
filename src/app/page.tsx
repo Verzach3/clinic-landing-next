@@ -13,6 +13,7 @@ import { Services } from "@/components/Home/Services";
 export default function Home() {
 
   const isMobile = useMediaQuery('(max-width: 768px)');
+  
   return (
 
     <div>
