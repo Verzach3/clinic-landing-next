@@ -1,0 +1,31 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .serviceCard {
+    background-color: var(--mantine-color-body);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .serviceCard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .serviceTitle {
+    font-family: Greycliff CF, var(--mantine-font-family);
+    color: #1a5eb6e3;
+  }
+  
+  .description {
+    color: #333;
+  }
