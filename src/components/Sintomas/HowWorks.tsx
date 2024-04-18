@@ -72,7 +72,6 @@ import {
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
         <feature.icon
           style={{ width: rem(50), height: rem(50) }}
-          stroke={2}
           color={theme.colors.blue[6]}
         />
         <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
