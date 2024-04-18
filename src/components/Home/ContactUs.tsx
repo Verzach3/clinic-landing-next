@@ -18,7 +18,7 @@ const social = [RiTwitterXLine , IconBrandYoutube, IconBrandInstagram];
 export function ContactUs() {
   const icons = social.map((Icon, index) => (
     <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
-      <Icon size="1.4rem" stroke={1.5} />
+      <Icon size="1.4rem"/>
     </ActionIcon>
   ));
 

@@ -57,13 +57,13 @@ export function Features() {
   };
 
   useEffect(() => {
-    typewriterEffect();
+    void typewriterEffect();
   }, []);
 
   const items = features.map((feature) => (
     <Paper key={feature.title} shadow="md" p="xl" radius="md" className={classes.featureItem}>
       <ThemeIcon size={60} radius="md" variant="gradient" gradient={{ deg: 133, from: "blue", to: "cyan" }}>
-        <feature.icon style={{ width: rem(40), height: rem(40) }} stroke={1.5} />
+        <feature.icon style={{ width: rem(40), height: rem(40) }} />
       </ThemeIcon>
       <Divider className={classes.iconDivider} />
       <Text fz="lg" mt="sm" fw={500}>
