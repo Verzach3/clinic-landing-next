@@ -1,56 +1,53 @@
 .wrapper {
-  min-height: 550px;
-  background-image: linear-gradient(-60deg, var(--mantine-color-blue-4) 0%, var(--mantine-color-blue-7) 100%);
+  min-height: 650px; 
+  background-image: linear-gradient(-60deg, #659fece3, #278fcb); /* Usar el color azul de la aplicación */
   border-radius: 10px;
-  padding: var(--mantine-spacing-xl); /* Ajustado para mayor coherencia */
-  display: flex; /* Asegura un layout flexible */
-  flex-direction: column; /* Organiza los hijos en columna */
-  align-items: center; /* Centra los hijos horizontalmente */
-  justify-content: center; /* Centra los hijos verticalmente */
+  padding: var(--mantine-spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .form {
   background-color: var(--mantine-color-white);
-  padding: var(--mantine-spacing-md); /* Ajustado para tablets y móviles */
+  padding: var(--mantine-spacing-md);
   border-radius: var(--mantine-radius-md);
   box-shadow: var(--mantine-shadow-lg);
-  width: 100%; /* Asegura que el formulario use el ancho disponible, pero no más */
-  max-width: 900px; /* Limita el ancho máximo del formulario para evitar que se expanda demasiado */
-  box-sizing: border-box; /* Asegura que padding y border se incluyan en el cálculo del ancho */
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
 }
 
-@media (min-width: $mantine-breakpoint-md) { /* Ajuste para tablets y dispositivos más grandes */
+@media (min-width: $mantine-breakpoint-md) {
   .wrapper {
-    flex-direction: row; /* Organiza los hijos en fila para pantallas más grandes */
-    justify-content: space-around; /* Distribuye el espacio alrededor de los hijos */
-    padding: var(--mantine-spacing-xl) 2rem; /* Aumenta el padding horizontalmente */
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3rem 2rem; /* Aumentar el padding horizontal */
   }
+
   .form {
-    margin: 0; /* Elimina cualquier margen automático en pantallas más grandes */
+    margin: 0;
   }
 }
 
 .title {
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
+  font-family: Greycliff CF, var(--mantine-font-family);
   color: var(--mantine-color-white);
   line-height: 1;
+  font-size: 2.5rem; /* Aumentar el tamaño de fuente */
 }
 
 .description {
-  color: var(--mantine-color-blue-0);
+  color: var(--mantine-color-white);
   max-width: rem(300px);
-
   @media (max-width: $mantine-breakpoint-sm) {
     max-width: 100%;
   }
 }
 
-
 .social {
   color: var(--mantine-color-white);
-
   @mixin hover {
     color: var(--mantine-color-blue-1);
   }
@@ -60,7 +57,6 @@
   background-color: var(--mantine-color-white);
   border-color: var(--mantine-color-gray-4);
   color: var(--mantine-color-black);
-
   &::placeholder {
     color: var(--mantine-color-gray-5);
   }
@@ -71,5 +67,5 @@
 }
 
 .control {
-  background-color: var(--mantine-color-blue-6);
+  background-color: #4381d1e3;
 }

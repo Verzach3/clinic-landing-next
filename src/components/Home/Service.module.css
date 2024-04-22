@@ -11,6 +11,11 @@
 
 .content {
   display: grid;
+  gap: 4rem;
+}
+
+.serviceItem {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   align-items: center;
@@ -52,9 +57,11 @@
 .textContent {
   max-width: 700px;
   text-align: justify;
-  padding: 3px;
+  padding: 2rem;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  position: relative;
   transition: box-shadow 0.3s ease;
 }
 
@@ -100,22 +107,106 @@
   font-size: 1rem;
   font-weight: bold;
   margin-top: 1rem;
-  background-color: #1a5eb6e3;
+  background-image: linear-gradient(135deg, #1a5eb6e3 0%, #69bff1 100%);
   color: #fff;
-  transition: background-color 0.3s ease;
+  transition: background-image 0.3s ease;
 }
 
 .button:hover {
-  background-color: #69bff1;
+  background-image: linear-gradient(135deg, #69bff1 0%, #1a5eb6e3 100%);
 }
 
 @media (max-width: 768px) {
-  .content {
+  .serviceItem {
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
   }
 
   .imageWrapper,
   .imageWrapperRight {
+    grid-row: 1;
     border-radius: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .serviceItem:nth-child(odd) .imageWrapper {
+    order: 1;
+  }
+
+  .serviceItem:nth-child(odd) .textContent {
+    order: 2;
+  }
+
+  .serviceItem:nth-child(even) .imageWrapper {
+    order: 2;
+    border-radius: 200px 0 0 200px;
+  }
+
+  .serviceItem:nth-child(even) .textContent {
+    order: 1;
+  }
+}
+
+/* Estilos adicionales */
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.underline {
+  width: 120px;
+  height: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 3rem;
+  }
+
+  .underline {
+    width: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sectionTitle {
+    font-size: 3.5rem;
+  }
+
+  .underline {
+    width: 200px;
+  }
+}
+
+.icon {
+  position: absolute;
+  top: -2rem;
+  left: 2rem;
+  color: #e1840b;
+  animation: iconBounce 0.8s infinite alternate;
+}
+
+@keyframes iconBounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
   }
 }
