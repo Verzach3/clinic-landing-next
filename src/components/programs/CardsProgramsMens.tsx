@@ -1,7 +1,9 @@
-import { Card, Image, ActionIcon, Group, Text, Badge, useMantineTheme, Button } from '@mantine/core';
-import { IconHeart, IconShare } from '@tabler/icons-react';
+import { Card, Image, Group, Text, Badge, useMantineTheme, Button } from '@mantine/core';
 import classes from './CardsProgramsMens.module.css';
 import { motion } from 'framer-motion';
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
+import {  WhatsappIcon,  FacebookIcon,  TwitterIcon,} from "react-share";
+
 const programsData = [
   {
     id: 1,
@@ -58,9 +60,9 @@ const programsData = [
   {
     id: 8,
     title: 'Programa Ejercicios Personalizados',
-    image: 'https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/ProgramsMens/ProgramaNutricional.avif',
+    image: 'https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/ProgramsMens/EjerciciosPersonalizados.avif',
     isMostPopular: false,
-    description: 'Cuida tu corazón y reduce el riesgo de enfermedades cardiovasculares.',
+    description: 'Los programas de ejercicios personalizados están diseñados por expertos para adaptarse a tus necesidades específicas y maximizar resultados sin riesgos.',
   },
   {
     id: 9,
@@ -77,19 +79,23 @@ const programsData = [
     description: 'HidraVital Therapy mejora la hidratación y revitaliza el cuerpo con sueroterapia intravenosa y otras terapias, aumentando energía y bienestar general.',
   },
 
-
   {
     id: 11,
     title: 'Programa de Terapia con Péptidos',
-    image: 'https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/ProgramsMens/AndropausiHombres.avif',
+    image: 'https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/ProgramsMens/Peptidos.avif',
     isMostPopular: false,
     description: 'Utiliza BPC-157 y Timosina Beta-4 para aprovechar sus propiedades curativas, mejorar la salud física, acelerar la recuperación y potenciar el bienestar.',
   },
 
 
 ];
+
 function CardsProgramsMens() {
+
+  const shareUrl = 'https://wellfitclinic.com/programs';
+
   const theme = useMantineTheme();
+  
 
   return (
     <div className={classes.cardContainer}>
@@ -102,7 +108,7 @@ function CardsProgramsMens() {
           transition={{ duration: 0.6 }}
           className={classes.cardWrapper}
         >
-          <Card className={classes.card}>
+           <Card className={classes.card}>
             <div className={classes.imageWrapper}>
               <Image src={program.image} alt={program.title} height={200} className={classes.image} />
             </div>
@@ -120,17 +126,25 @@ function CardsProgramsMens() {
             </div>
             <div className={classes.footer}>
               <Group align="apart">
-              
-                <div >
-                  <ActionIcon variant="subtle" color="gray">
-                    <IconHeart size={16} color={theme.colors.red[6]} stroke={1.5} />
-                  </ActionIcon>
-              
-                  <ActionIcon variant="subtle" color="gray">
-                    <IconShare size={16} color={theme.colors.blue[6]} stroke={1.5} />
-                  </ActionIcon>
-                </div>
+               
+                <div className={classes.shareContainer}>
+                  <FacebookShareButton  url={shareUrl} title={program.title}>
+         
+                      <FacebookIcon size={22} round />
+           
+                  </FacebookShareButton>
 
+                  <TwitterShareButton  url={shareUrl} title={program.title}>
+                   
+                      <TwitterIcon size={22} round />
+                
+                  </TwitterShareButton>
+                  <WhatsappShareButton  url={shareUrl} title={program.title}>
+        
+                      <WhatsappIcon size={22} round />
+        
+                  </WhatsappShareButton>
+                </div>
               </Group>
             </div>
           </Card>

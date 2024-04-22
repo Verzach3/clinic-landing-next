@@ -1,7 +1,10 @@
-import { Card, Image, ActionIcon, Group, Text, Badge, useMantineTheme , Button} from '@mantine/core';
-import { IconHeart, IconShare } from '@tabler/icons-react';
+import { Card, Image, Group, Text, Badge, useMantineTheme , Button} from '@mantine/core';
 import classes from './CardsProgramsWomen.module.css';
 import { motion } from 'framer-motion';
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
+import { WhatsappIcon, FacebookIcon, TwitterIcon } from "react-share";
+
+
 const programsData = [
     {
       id: 1,
@@ -78,8 +81,9 @@ const programsData = [
 
 
 
-  ];
-  function CardsProgramsWomen() {
+  ];function CardsProgramsWomen() {
+    const shareUrl = 'https://wellfitclinic.com/programs';
+  
     const theme = useMantineTheme();
   
     return (
@@ -110,15 +114,23 @@ const programsData = [
                 </Button>
               </div>
               <div className={classes.footer}>
-                <Group align="right">
-                  <div>
-                    <ActionIcon variant="subtle" color="gray">
-                      <IconHeart size={16} color={theme.colors.red[6]} stroke={1.5} />
-                    </ActionIcon>
-          
-                    <ActionIcon variant="subtle" color="gray">
-                      <IconShare size={16} color={theme.colors.blue[6]} stroke={1.5} />
-                    </ActionIcon>
+                <Group align="apart">
+                  <div className={classes.likeContainer}>
+                 
+                    <Text size="sm" color="dimmed" suppressHydrationWarning>
+      
+                    </Text>
+                  </div>
+                  <div className={classes.shareContainer}>
+                    <FacebookShareButton url={shareUrl} title={program.title}>
+                      <FacebookIcon size={22} round />
+                    </FacebookShareButton>
+                    <TwitterShareButton url={shareUrl} title={program.title}>
+                      <TwitterIcon size={22} round />
+                    </TwitterShareButton>
+                    <WhatsappShareButton url={shareUrl} title={program.title}>
+                      <WhatsappIcon size={22} round />
+                    </WhatsappShareButton>
                   </div>
                 </Group>
               </div>

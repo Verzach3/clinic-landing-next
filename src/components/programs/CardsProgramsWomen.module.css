@@ -58,22 +58,28 @@
   font-weight: 600;
   color: #1a5eb6e3;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .description {
   color: #333333;
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .button {
-  margin-top: 1rem;
-  background-image: linear-gradient(135deg, #6b39d4 0%, #22d3ee 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 0.1rem;
+  background-image: linear-gradient(135deg, #1a5eb6e3 0%, #69bff1 100%);
   color: #ffffff;
   transition: background-image 0.3s ease;
 }
 
 .button:hover {
-  background-image: linear-gradient(135deg, #22d3ee 0%, #6b39d4 100%);
+  background-image: linear-gradient(135deg, #69bff1 0%, #1a5eb6e3 100%);
 }
 
 .footer {
@@ -81,4 +87,20 @@
   border-top: 1px solid #e0e0e0;
   display: flex;
   justify-content: flex-end;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.likeContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shareContainer {
+  display: flex;
+  gap: 0.5rem;
 }

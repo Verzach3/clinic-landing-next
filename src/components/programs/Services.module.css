@@ -5,13 +5,13 @@
   }
   
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-align: center;
     color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
-  
   .serviceCard {
     background-color: var(--mantine-color-body);
     transition: box-shadow 0.3s ease;
