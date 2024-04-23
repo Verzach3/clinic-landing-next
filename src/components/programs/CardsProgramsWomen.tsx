@@ -2,7 +2,7 @@ import { Card, Image, Group, Text, Badge, useMantineTheme , Button} from '@manti
 import classes from './CardsProgramsWomen.module.css';
 import { motion } from 'framer-motion';
 import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
-import { WhatsappIcon, FacebookIcon, TwitterIcon } from "react-share";
+import { WhatsappIcon, FacebookIcon,   XIcon } from "react-share";
 
 
 const programsData = [
@@ -123,13 +123,13 @@ const programsData = [
                   </div>
                   <div className={classes.shareContainer}>
                     <FacebookShareButton url={shareUrl} title={program.title}>
-                      <FacebookIcon size={22} round />
+                      <FacebookIcon size={25} round />
                     </FacebookShareButton>
                     <TwitterShareButton url={shareUrl} title={program.title}>
-                      <TwitterIcon size={22} round />
+                      <XIcon size={25} round />
                     </TwitterShareButton>
                     <WhatsappShareButton url={shareUrl} title={program.title}>
-                      <WhatsappIcon size={22} round />
+                      <WhatsappIcon size={25} round />
                     </WhatsappShareButton>
                   </div>
                 </Group>
