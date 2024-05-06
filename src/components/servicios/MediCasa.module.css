@@ -1,46 +1,237 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.sectionContainer {
+  background-color: rgba(255, 254, 252, 0.988);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%; /* Asegúrate de que esto esté al 100% */
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1a5eb6e3;
+  text-align: center;
+}
+
+.sectionContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%; /* Esto asegura que el contenido interno pueda expandirse */
+}
+
+.sectionContentDat {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%; /* Esto asegura que el contenido interno pueda expandirse */
+}
+.contentBlock {
+  margin: 1rem;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contentBlockUnete {
+
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1a5eb6e3;
+  margin-top: 10px;
+
+}
+
+.description {
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.list {
+  padding: 0px;
+}
+
+.listItem {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+  text-align: justify;
+  padding: 5px;
+}
+
+.highlight {
+  color: #1a5eb6e3;
+  font-weight: bold;
+  text-align: left;
+}
+
+.button {
+  margin-top: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .description,
+  .listItem {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .contentBlock {
+      margin: 0rem;
+      width: 100%; /* Cambia de max-width a width y establece al 100% para ocupar todo el espacio horizontal */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+}
+
+@media (min-width: 770px) {
+  .contentBlock {
+
+    padding: 0 0rem; /* Ajusta el padding según sea necesario */
+  }
+
+  .sectionContent{
+    padding: 0 0rem; /* Ajusta el padding si es necesario */
+  }
+}
+
+.sectionContainer {
+  background-color: rgba(255, 254, 252, 0.988);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%; /* Asegura que esto esté al 100% */
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1a5eb6e3;
+  text-align: center;
+}
+
+.sectionContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%; /* Esto asegura que el contenido interno pueda expandirse */
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1a5eb6e3;
+  margin-top: 10px;
+}
+
+.listItem {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+  text-align: justify;
+  padding: 5px;
+}
+
+.highlight {
+  color: #1a5eb6e3;
+  font-weight: bold;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 0.5rem; /* Modificado de 2rem a 0.5rem como solicitaste */
+  }
+
+  .title {
+    font-size: 1.8rem; /* Tamaño más pequeño para el título en dispositivos móviles */
+  }
+
+  .subtitle {
+    font-size: 1.3rem; /* Tamaño más pequeño para subtítulos en dispositivos móviles */
+  }
+
+  .description,
+  .listItem {
+    font-size: 1rem; /* Texto más pequeño para descripciones y elementos de lista en dispositivos móviles */
+  }
+}
+
+@media (max-width: 1440px) {
+  .contentBlock {
+    margin: 0rem;
+    width: 100%; /* Cambia de max-width a width y establece al 100% para ocupar todo el espacio horizontal */
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%; /* Cambiado desde 100vw */
-    margin: 0 auto;
-  }
-  .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
     text-align: center;
-    color: #1a5eb6e3;
   }
-  
-  .description {
-    font-size: 1.1rem;
-    text-align: justify;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    color: #333333;
+}
 
+@media (min-width: 770px) {
+  .contentBlock {
+    padding: 0 0rem; /* Ajusta el padding según sea necesario */
   }
-  
-  .list {
-    margin-bottom: 2rem;
 
+  .sectionContent {
+    padding: 0 0rem; /* Ajusta el padding si es necesario */
   }
-  
-  .image {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Añade esta línea para centrar horizontalmente */
-    margin: 0 auto; /* Añade esta línea para centrar horizontalmente y establecer márgenes automáticos */
-  }
-  
-  .paper {
-    background-color: #ffffff;
-    border-radius: 8px;
-    width: 100%; /* Establece que el Paper ocupe todo el ancho del contenedor principal */
-
-  }
+}

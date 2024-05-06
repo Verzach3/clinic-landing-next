@@ -31,6 +31,46 @@ function Programs() {
 
   return (
     <div className={classes.programs}>
+
+<Container className={classes.container}>
+        <Title className={classes.title} order={2}>
+          Nuestros Servicios
+        </Title>
+        <Box className={classes.segmentedWrapper}>
+          <SegmentedControl
+            value={activeService}
+            onChange={handleServiceChange}
+            data={[
+              { label: 'Medicasa', value: 'medicasa' },
+              { label: 'DataSalud', value: 'dataSalud' },
+              { label: 'Pruebas', value: 'pruebasLaboratorios' },
+            ]}
+            className={`${classes.segmented} ${classes.segmentedMobile}`}
+            size="md"
+            radius="xl"
+            fullWidth
+          />
+        </Box>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeService}
+            variants={serviceVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className={classes.serviceContentWrapper}
+          >
+            <div className={classes.serviceContent}>
+              {activeService === 'medicasa' && <Medicasa />}
+              {activeService === 'dataSalud' && <DataSalud />}
+              {activeService === 'pruebasLaboratorios' && <PruebasLaboratorios />}
+              {activeService === 'talleres' && <Talleres />}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </Container>
+      
       <Container className={classes.container}>
         <Title className={classes.title} order={2}>
           Nuestros Programas
@@ -60,45 +100,7 @@ function Programs() {
           </motion.div>
         </AnimatePresence>
       </Container>
-      <Container className={classes.container}>
-        <Title className={classes.title} order={2}>
-          Nuestros Servicios
-        </Title>
-        <Box className={classes.segmentedWrapper}>
-          <SegmentedControl
-            value={activeService}
-            onChange={handleServiceChange}
-            data={[
-              { label: 'Medicasa', value: 'medicasa' },
-              { label: 'DataSalud', value: 'dataSalud' },
-              { label: 'Pruebas', value: 'pruebasLaboratorios' },
-              { label: 'Talleres', value: 'talleres' },
-            ]}
-            className={`${classes.segmented} ${classes.segmentedMobile}`}
-            size="md"
-            radius="xl"
-            fullWidth
-          />
-        </Box>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeService}
-            variants={serviceVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className={classes.serviceContentWrapper}
-          >
-            <div className={classes.serviceContent}>
-              {activeService === 'medicasa' && <Medicasa />}
-              {activeService === 'dataSalud' && <DataSalud />}
-              {activeService === 'pruebasLaboratorios' && <PruebasLaboratorios />}
-              {activeService === 'talleres' && <Talleres />}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </Container>
+   
       <Footer />
     </div>
   );

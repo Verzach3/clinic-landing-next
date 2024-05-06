@@ -1,0 +1,80 @@
+.sectionHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #1c64f2, #00b712);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-right: 10px;
+}
+
+.subtitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--mantine-color-dark-0);
+}
+
+.feature {
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.overlay {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--mantine-color-blue-light);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover .icon {
+  transform: scale(1.1);
+}
+
+.title {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  margin-top: 1rem;
+}
+
+.description {
+  margin-top: 0.5rem;
+}

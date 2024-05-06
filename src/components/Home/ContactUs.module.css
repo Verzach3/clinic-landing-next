@@ -1,5 +1,5 @@
 .wrapper {
-  min-height: 650px; 
+  min-height: 600px; 
   background-image: linear-gradient(-60deg, #659fece3, #278fcb); /* Usar el color azul de la aplicación */
   border-radius: 10px;
   padding: var(--mantine-spacing-xl);
@@ -7,15 +7,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width:100%;
 }
 
 .form {
   background-color: var(--mantine-color-white);
-  padding: var(--mantine-spacing-md);
+  padding: var(--mantine-spacing-sm);
   border-radius: var(--mantine-radius-md);
   box-shadow: var(--mantine-shadow-lg);
   width: 100%;
-  max-width: 1000px;
   box-sizing: border-box;
 }
 
@@ -28,6 +28,7 @@
 
   .form {
     margin: 0;
+    width: 370px;
   }
 }
 
