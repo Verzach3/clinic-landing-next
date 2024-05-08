@@ -13,7 +13,7 @@ export function Services() {
         <Title className={classes.sectionTitle} order={1}>
           Nuestros Servicios
         </Title>
-        <div className={classes.underline} />
+
       </div>
 
       <Container className={classes.container}>
@@ -48,7 +48,7 @@ export function Services() {
               <Text className={classes.footer}>
                 Para consultar la lista completa de afecciones que tratamos, haga clic aquí.
               </Text>
-              <Button variant="gradient" size="lg" radius="xl" className={classes.button}>
+              <Button variant="gradient" gradient={{ from: 'blue', to: 'green' }} size="lg" radius="xl" >
                 Contactanos
               </Button>
             </Paper>
@@ -96,7 +96,7 @@ export function Services() {
               <Text className={classes.footer}>
                 Para consultar la lista completa de afecciones que tratamos, haga clic aquí.
               </Text>
-              <Button variant="gradient" size="lg" radius="xl" className={classes.button}>
+              <Button variant="gradient" gradient={{ from: 'blue', to: 'green' }} size="lg" radius="xl" >
                 Contactanos
               </Button>
             </Paper>
@@ -126,7 +126,7 @@ export function Services() {
       <IconRobot size={48} className={classes.icon} />
     </motion.div>
         
-              <Title className={classes.title} order={2}>
+              <Title className={classes.title} order={2}> 
                 DataSalud Integral AI
               </Title>
               <div className={classes.divider}></div>
@@ -143,7 +143,7 @@ export function Services() {
                 <li>Cuidado Coordinado</li>
               </ul>
               <Text className={classes.footer}>Únete a DataSalud Integral, haga clic aquí.</Text>
-              <Button variant="gradient" size="lg" radius="xl" className={classes.button}>
+              <Button variant="gradient" gradient={{ from: 'blue', to: 'green' }} size="lg" radius="xl" >
                 Contactanos
               </Button>
             </Paper>
@@ -190,7 +190,7 @@ export function Services() {
               <Text className={classes.footer}>
                 Conoce sobre tu salud Hormonal, haga clic aquí.
               </Text>
-              <Button variant="gradient" size="lg" radius="xl" className={classes.button}>
+              <Button variant="gradient" gradient={{ from: 'blue', to: 'green' }} size="lg" radius="xl" >
                 Contactanos
               </Button>
             </Paper>

@@ -89,7 +89,7 @@ export function Features() {
               {items}
             </SimpleGrid>
             <div className={classes.buttonWrapper}>
-              <Button variant="gradient" gradient={{ deg: 133, from: "blue", to: "cyan" }} size="lg" radius="md">
+              <Button variant="gradient"      gradient={{ from: 'blue', to: 'green' }} size="lg" radius="md">
                 Inicia Tu Cambio
               </Button>
             </div>

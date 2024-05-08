@@ -23,8 +23,8 @@ export function ContactUs() {
   ));
 
   return (
-    <div className={classes.wrapper}>
-      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
+    <div className={classes.wrapper} >
+      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
         <div>
           <Title className={classes.title}>Contactanos</Title>
           <Text className={classes.description} mt="sm" mb={30} style={{ textAlign: 'left' }}>
@@ -40,28 +40,30 @@ export function ContactUs() {
             label="Email"
             placeholder="TuEmail@email.com"
             required
+            mt="lg"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <TextInput
             label="Nombre"
             placeholder="Tu nombre"
-            mt="md"
+            mt="lg"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <Textarea
             required
             label="Motivo de consulta"
             placeholder="Descripcion del problema o consulta"
-            minRows={4}
-            mt="md"
+            minRows={7}
+            mt="xl"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
 
           <Group justify="flex-end" mt="md">
-            <Button className={classes.control}>Enviar</Button>
+            <Button     gradient={{ from: 'blue', to: 'green' }} className={classes.control}>Enviar</Button>
           </Group>
         </div>
       </SimpleGrid>
+      
     </div>
   );
 }

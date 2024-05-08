@@ -67,3 +67,25 @@
   padding-bottom: var(--mantine-spacing-xl);
   border-top: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
 }
+
+.categoryTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+ padding: 10px;
+}
+
+.control {
+  padding-left: rem(50px);
+  padding-right: rem(50px);
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+  font-size: rem(22px);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    width: 100%;
+  }
+}
+

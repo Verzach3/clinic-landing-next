@@ -164,7 +164,7 @@ function About() {
           zIndex={0}
         />
         <Container className={classes.container} size="md">
-          <Title className={classes.title}>WellFit Clinic Mision:</Title>
+          <Title className={classes.title} >WellFit Clinic Mision:</Title>
        
         </Container>
       </div>

@@ -55,8 +55,10 @@ export default function Home() {
           >
             <Button
               variant="gradient"
+              gradient={{ from: 'blue', to: 'green' }}
               size="lg"
               radius="xl"
+              
               style={{
                 justifySelf: "right",
               }}
