@@ -1,4 +1,5 @@
-import { Text, SimpleGrid, Container, Title } from '@mantine/core';
+import React from 'react';
+import { Text, SimpleGrid, Container, Button } from '@mantine/core';
 import classes from './FeatureData.module.css';
 
 interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -56,6 +57,7 @@ export function FeatureData() {
       <Text ta="center" size="xl" mb={40}>
         Pasos para llevar tu Diagnostico y Data-Salud
       </Text>
+     
       <SimpleGrid cols={{ base: 1, sm: 3 }} spacing={50}>
         {items.map((item) => (
           <Feature
@@ -66,6 +68,21 @@ export function FeatureData() {
           />
         ))}
       </SimpleGrid>
+      <div style={{ textAlign: 'center', marginTop: '40px' }}>
+
+      <Text ta="center" size="lg" mb={20}>
+        Descubre cómo nuestra plataforma puede transformar la forma en que manejas los datos de salud
+      </Text>
+      <br></br>
+        <Button
+          variant="gradient"
+          gradient={{ from: 'blue', to: 'green' }}
+          size="xl"
+          className={classes.control}
+        >
+          Regístrate
+        </Button>
+      </div>
     </Container>
   );
 }

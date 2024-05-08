@@ -59,7 +59,7 @@ export function ContactUs() {
           />
 
           <Group justify="flex-end" mt="md">
-            <Button className={classes.control}>Enviar</Button>
+            <Button     gradient={{ from: 'blue', to: 'green' }} className={classes.control}>Enviar</Button>
           </Group>
         </div>
       </SimpleGrid>

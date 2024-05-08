@@ -24,7 +24,7 @@ export function HeroData() {
             servicio de salud avanzado diseñado para compilar, analizar y utilizar historiales médicos utilizando la inteligencia artificial (IA)
             </Text>
 
-            <Button
+            <Button 
               variant="gradient"
               gradient={{ from: 'blue', to: 'green' }}
               size="xl"
