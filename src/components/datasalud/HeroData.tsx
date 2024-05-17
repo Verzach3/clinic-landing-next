@@ -15,7 +15,7 @@ export function HeroData() {
                 variant="gradient"
                 gradient={{ from: 'blue', to: 'green' }}
               >
-                     Data salud 
+                     Data-Salud 
               </Text>{' '}
          
             </Title>
