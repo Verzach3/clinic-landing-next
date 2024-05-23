@@ -1,6 +1,6 @@
-import React from 'react';
-import { Text, SimpleGrid, Container, Button, ThemeIcon } from '@mantine/core';
-import { IconCircleCheck } from '@tabler/icons-react';
+'use client';
+import React, { useState } from 'react';
+import { Text, SimpleGrid, Container, Button, ThemeIcon, Modal, LoadingOverlay } from '@mantine/core';
 import classes from './FeatureData.module.css';
 
 interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -13,7 +13,6 @@ function Feature({ image, title, description, className, ...others }: FeaturePro
   return (
     <div className={`${classes.feature} ${className}`} {...others}>
       <div className={classes.content}>
-       
         <img src={image} alt={title} className={classes.icon} />
         <Text fw={700} fz="xl" mb="xs" mt={25} className={classes.title}>
           {title}
@@ -27,6 +26,20 @@ function Feature({ image, title, description, className, ...others }: FeaturePro
 }
 
 export function FeatureData() {
+  const [opened, setOpened] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleRegisterClick = () => {
+    setOpened(true);
+  };
+
+  const handleRedirect = () => {
+    setLoading(true);
+    setTimeout(() => {
+      window.location.href = 'https://platform.wellfitclinic.com';
+    }, 2000);
+  };
+
   const items = [
     {
       image: 'https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/DataSalud/AnalisisExhaustivo.avif',
@@ -39,7 +52,7 @@ export function FeatureData() {
       description: 'Nos comunicamos directamente con el paciente para obtener información adicional y generar conocimientos valiosos sobre su estado de salud.',
     },
     {
-      image: 'https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/DataSalud/Compilacion.avif',      
+      image: 'https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/DataSalud/Compilacion.avif',
       title: 'Compilación y Presentación de Resultados',
       description: 'Compilamos todos los hallazgos y resultados en un informe completo y fácil de entender, que se presenta al paciente y al equipo médico.',
     },
@@ -48,7 +61,7 @@ export function FeatureData() {
   return (
     <Container mt={80} mb={80} size="lg">
       <div className={classes.sectionHeader}>
-        <Text component="span" inherit variant="gradient"     gradient={{ from: 'blue', to: 'green' }}className={classes.title}>
+        <Text component="span" inherit variant="gradient" gradient={{ from: 'blue', to: 'green' }} className={classes.title}>
           Data-Salud
         </Text>{' '}
         <Text component="span" inherit className={classes.subtitle}>
@@ -63,12 +76,7 @@ export function FeatureData() {
       </Text>
       <SimpleGrid cols={{ base: 1, sm: 3 }} spacing={50}>
         {items.map((item, index) => (
-          <Feature
-            key={item.title}
-            image={item.image}
-            title={`${index + 1}. ${item.title}`}
-            description={item.description}
-          />
+          <Feature key={item.title} image={item.image} title={`${index + 1}. ${item.title}`} description={item.description} />
         ))}
       </SimpleGrid>
       <div className={classes.ctaContainer}>
@@ -80,19 +88,50 @@ export function FeatureData() {
           la forma en que manejas los datos de salud
         </Text>
         <Button
-               variant="gradient"
-               gradient={{ from: 'blue', to: 'green' }}
-          component="a"
-          href="#"
-          target="_blank"
+          variant="gradient"
+          gradient={{ from: 'blue', to: 'green' }}
           size="xl"
           radius="xl"
-
-        
+          onClick={handleRegisterClick}
         >
           Regístrate Ahora
         </Button>
       </div>
+      <Modal
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title={
+          <Text size="2xl" className={classes.modalTitle} >
+            ¡Bienvenido a WellfitClinic!
+          </Text>
+        }
+        centered
+        size="lg"
+        padding="xl"
+        className={classes.modal}
+      
+      >
+        <LoadingOverlay visible={loading} />
+        <div className={classes.modalContent}>
+          <Text size="lg" className={classes.modalText} >
+            Estamos encantados de tenerte aquí. En unos momentos serás redirigido a nuestra plataforma para completar tu registro.
+          </Text>
+          <Text size="lg" className={classes.modalText}>
+            Prepárate para una experiencia de salud única y personalizada con DataSalud.
+          </Text>
+          <Button
+            variant="gradient"
+            gradient={{ from: 'blue', to: 'green' }}
+            size="md"
+            radius="xl"
+            className={classes.modalButton}
+            onClick={handleRedirect}
+            loading={loading}
+          >
+            Ir a la plataforma
+          </Button>
+        </div>
+      </Modal>
     </Container>
   );
 }

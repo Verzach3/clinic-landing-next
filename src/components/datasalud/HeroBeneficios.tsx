@@ -14,6 +14,9 @@ export function HeroBeneficios() {
 
   const handleRegister = () => {
     setOpened(true);
+  };
+
+  const handleRedirect = () => {
     setLoading(true);
     setTimeout(() => {
       window.location.href = 'https://platform.wellfitclinic.com/';
@@ -109,22 +112,36 @@ export function HeroBeneficios() {
         opened={opened}
         onClose={() => setOpened(false)}
         title={
-          <Text size="xl" className={classes.modalTitle}>
+          <Text size="xl" className={classes.modalTitle} ta={"center"}>
             ¡Bienvenido a WellfitClinic!
           </Text>
         }
         centered
         size="lg"
+        padding="xl"
         className={classes.modal}
-
+     
       >
         <LoadingOverlay visible={loading} />
-        <Text size="lg" className={classes.modalText}>
-          Estamos encantados de tenerte aquí. En unos momentos serás redirigido a nuestra plataforma para completar tu registro.
-        </Text>
-        <Text size="lg" className={classes.modalText}>
-          Prepárate para una experiencia de salud única y personalizada con DataSalud.
-        </Text>
+        <div className={classes.modalContent}>
+          <Text size="lg" className={classes.modalText}>
+            Estamos encantados de tenerte aquí. En unos momentos serás redirigido a nuestra plataforma para completar tu registro.
+          </Text>
+          <Text size="lg" className={classes.modalText}>
+            Prepárate para una experiencia de salud única y personalizada con DataSalud.
+          </Text>
+          <Button
+            variant="gradient"
+            gradient={{ from: 'blue', to: 'green' }}
+            size="md"
+            radius="xl"
+            className={classes.modalButton}
+            onClick={handleRedirect}
+            loading={loading}
+          >
+            Ir a la plataforma
+          </Button>
+        </div>
       </Modal>
     </div>
   );

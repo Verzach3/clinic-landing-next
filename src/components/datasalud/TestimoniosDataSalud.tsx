@@ -78,7 +78,7 @@ export function TestimoniosDataSaludSection() {
       <Container size="lg" className={classes.container}>
         <Title order={2} className={classes.title}>
           <Text component="span" inherit variant="gradient" gradient={{ from: 'blue', to: 'green' }}>
-            DataSalud
+            Data-Salud
           </Text>
         </Title>
         <Text className={classes.description}>
