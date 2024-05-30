@@ -13,7 +13,6 @@ export function Services() {
         <Title className={classes.sectionTitle} order={1}>
           Nuestros Servicios
         </Title>
-
       </div>
 
       <Container className={classes.container}>
@@ -48,7 +47,14 @@ export function Services() {
               <Text className={classes.footer}>
                 Para consultar la lista completa de afecciones que tratamos, haga clic aquí.
               </Text>
-              <Button variant="gradient" gradient={{ from: 'blue', to: 'green' }} size="lg" radius="xl" >
+              <Button
+                variant="gradient"
+                gradient={{ from: 'blue', to: 'green' }}
+                size="lg"
+                radius="xl"
+                component="a"
+                href="/programs#pruebasLaboratorios"
+              >
                 Contactanos
               </Button>
             </Paper>
@@ -96,7 +102,14 @@ export function Services() {
               <Text className={classes.footer}>
                 Para consultar la lista completa de afecciones que tratamos, haga clic aquí.
               </Text>
-              <Button variant="gradient" gradient={{ from: 'blue', to: 'green' }} size="lg" radius="xl" >
+              <Button
+                variant="gradient"
+                gradient={{ from: 'blue', to: 'green' }}
+                size="lg"
+                radius="xl"
+                component="a"
+                href="/programs#medicasa"
+              >
                 Contactanos
               </Button>
             </Paper>
@@ -111,22 +124,20 @@ export function Services() {
             transition={{ duration: 0.6 }}
           >
             <Paper shadow="md" p="xl" radius="md" className={classes.textContent}>
-              
-            <motion.div
-      animate={{
-        scale: [1, 1.2, 1],
-        rotate: [0, 15, -15, 0],
-      }}
-      transition={{
-        duration: 1.2,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    >
-      <IconRobot size={48} className={classes.icon} />
-    </motion.div>
-        
-              <Title className={classes.title} order={2}> 
+              <motion.div
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 15, -15, 0],
+                }}
+                transition={{
+                  duration: 1.2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              >
+                <IconRobot size={48} className={classes.icon} />
+              </motion.div>
+              <Title className={classes.title} order={2}>
                 DataSalud Integral AI
               </Title>
               <div className={classes.divider}></div>
@@ -143,7 +154,14 @@ export function Services() {
                 <li>Cuidado Coordinado</li>
               </ul>
               <Text className={classes.footer}>Únete a DataSalud Integral, haga clic aquí.</Text>
-              <Button variant="gradient" gradient={{ from: 'blue', to: 'green' }} size="lg" radius="xl" >
+              <Button
+                variant="gradient"
+                gradient={{ from: 'blue', to: 'green' }}
+                size="lg"
+                radius="xl"
+                component="a"
+                href="/programs#dataSalud"
+              >
                 Contactanos
               </Button>
             </Paper>
@@ -156,7 +174,7 @@ export function Services() {
             </div>
           </motion.div>
 
-          {/* Talleres de Educación sobre Salud y Hormonas */}
+          {/* Talleres de Educación sobre Salud y Hormonas 
           <motion.div
             className={classes.serviceItem}
             initial={{ opacity: 0, y: 20 }}
@@ -190,11 +208,18 @@ export function Services() {
               <Text className={classes.footer}>
                 Conoce sobre tu salud Hormonal, haga clic aquí.
               </Text>
-              <Button variant="gradient" gradient={{ from: 'blue', to: 'green' }} size="lg" radius="xl" >
+              <Button
+                variant="gradient"
+                gradient={{ from: 'blue', to: 'green' }}
+                size="lg"
+                radius="xl"
+                component="a"
+                href="/programs#talleres"
+              >
                 Contactanos
               </Button>
             </Paper>
-          </motion.div>
+          </motion.div>*/}
         </div>
       </Container>
     </div>

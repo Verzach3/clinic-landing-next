@@ -10,6 +10,8 @@ import DataSalud from '@/components/servicios/DataSalud';
 import PruebasLaboratorios from '@/components/servicios/PruebasLaboratorios';
 import Talleres from '@/components/servicios/Talleres';
 import Footer from "@/components/Footer";
+import { useEffect } from 'react';
+
 
 const serviceVariants = {
   initial: { opacity: 0, y: 20 },
@@ -18,6 +20,18 @@ const serviceVariants = {
 };
 
 function Programs() {
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const serviceElement = document.querySelector(hash);
+      if (serviceElement) {
+        serviceElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
+
   const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
   const [activeService, setActiveService] = useState<'medicasa' | 'dataSalud' | 'pruebasLaboratorios' | 'talleres'>('medicasa');
 

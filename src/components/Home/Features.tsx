@@ -2,8 +2,8 @@ import { Title, SimpleGrid, Text, Button, ThemeIcon, Container, Grid, rem, Divid
 import classes from "./Features.module.css";
 import { GiNailedHead, GiPersonInBed, GiHairStrands } from "react-icons/gi";
 import { PiSneakerMoveFill } from "react-icons/pi";
-import { useEffect, useRef } from "react";
-
+import { useEffect, useRef, useState } from "react";
+import { RedirectionMessage }  from "@/components/datasalud/RedirectionMessage";
 const features = [
   {
     icon: GiPersonInBed,
@@ -33,6 +33,7 @@ export function Features() {
   const sleepTime = 100;
   const pauseTime = 1000;
   const currWordIndex = useRef(0);
+  const [modalOpened, setModalOpened] = useState(false); // Agrega esta línea para declarar el estado
 
   const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
 
@@ -75,6 +76,10 @@ export function Features() {
     </Paper>
   ));
 
+  const handleRedirect = () => {
+    window.location.href = "https://platform.wellfitclinic.com/login";
+  };
+
   return (
     <div className={classes.featuresBackground}>
       <Container size="xl" className={classes.wrapper}>
@@ -89,13 +94,24 @@ export function Features() {
               {items}
             </SimpleGrid>
             <div className={classes.buttonWrapper}>
-              <Button variant="gradient"      gradient={{ from: 'blue', to: 'green' }} size="lg" radius="md">
+              <Button
+                variant="gradient"
+                gradient={{ from: "blue", to: "green" }}
+                size="lg"
+                radius="md"
+                onClick={() => setModalOpened(true)}
+              >
                 Inicia Tu Cambio
               </Button>
             </div>
           </Grid.Col>
         </Grid>
       </Container>
+      <RedirectionMessage
+        opened={modalOpened}
+        onClose={() => setModalOpened(false)}
+        onRedirect={handleRedirect}
+      />
     </div>
   );
 }
