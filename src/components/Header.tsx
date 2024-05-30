@@ -38,6 +38,8 @@ import Link from "next/link";
 import { useAtom } from "jotai";
 import { navShown } from "@/state/navShown";
 import Image from "next/image";
+import { useState } from "react";
+import { RedirectionMessage } from "@/components/datasalud/RedirectionMessage";
 
 const headerSections = [
   {
@@ -102,12 +104,18 @@ const headerBlog = [
   },
 ];
 
+
 export function Header() {
   const [drawerOpened, setDrawerOpened] = useAtom(navShown);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const [linksOpenedCategorias, { toggle: toggleLinksCategorias }] = useDisclosure(false);
   const theme = useMantineTheme();
   const theme1 = useMantineTheme();
+  const [modalOpened, setModalOpened] = useState(false); 
+
+  const handleRedirect = () => {
+    window.location.href = "https://platform.wellfitclinic.com/login";
+  };
 
   const links = headerSections.map((item) => (
     <Link
@@ -286,6 +294,7 @@ export function Header() {
         rightSection={<IconLogin2 size={"1.3rem"} />}
         variant="gradient"
         gradient={{ from: 'blue', to: 'green' }}
+        onClick={() => setModalOpened(true)}
       >
         Mi Cuenta
       </Button>
@@ -366,6 +375,12 @@ export function Header() {
           </Group>
         </ScrollArea>
       </Drawer>
+
+      <RedirectionMessage
+        opened={modalOpened}
+        onClose={() => setModalOpened(false)}
+        onRedirect={handleRedirect}
+      />
     </>
   );
 }

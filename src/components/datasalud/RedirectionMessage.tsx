@@ -23,7 +23,7 @@ export function RedirectionMessage({ opened, onClose, onRedirect }: RedirectionM
       opened={opened}
       onClose={onClose}
       title={
-        <Text size="2xl" className={classes.modalTitle} variant="gradient" gradient={{ from: 'blue', to: 'green' }} >
+        <Text size="2xl" className={classes.modalTitle} >
           ¡Bienvenido a WellfitClinic!
         </Text>
       }
@@ -35,10 +35,10 @@ export function RedirectionMessage({ opened, onClose, onRedirect }: RedirectionM
     >
       <LoadingOverlay visible={loading} />
       <div className={classes.modalContent}>
-        <Text size="lg" className={classes.modalText} variant="gradient" gradient={{ from: 'blue', to: 'green' }}>
+        <Text size="lg" className={classes.modalText} >
           Estamos encantados de tenerte aquí. En unos momentos serás redirigido a nuestra plataforma para completar tu registro.
         </Text>
-        <Text size="lg" className={classes.modalText} variant="gradient" gradient={{ from: 'blue', to: 'green' }}>
+        <Text size="lg" className={classes.modalText}  >
           Prepárate para una experiencia de salud única y personalizada con DataSalud.
         </Text>
         <Button
