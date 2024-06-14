@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { Title, Text, List, ThemeIcon, Image, Button } from '@mantine/core';
 import { motion } from 'framer-motion';
 import classes from './MediCasa.module.css';
@@ -7,6 +7,8 @@ import  ManageScroll  from "@/components/servicios/ManageScroll";
 import { FaHouseMedicalFlag } from "react-icons/fa6";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { FaHandHoldingMedical } from "react-icons/fa6";
+import ModalMedicasaRedirection from './ModalMedicasaRedirection';
+
 const sectionVariants = {
   hidden: { opacity: 0, y: -100 },
   visible: {
@@ -34,6 +36,7 @@ const itemVariants = {
 };
 
 const Medicasa = () => {
+  const [modalOpened, setModalOpened] = useState(false);  // Estado para controlar el modal
   return (
     <div className={classes.container}>
       <ManageScroll/>
@@ -55,7 +58,7 @@ const Medicasa = () => {
             <Text className={classes.subtitle} size="lg">
               ¿Qué es MediCasa?
             </Text>
-            <Text className={classes.description}>
+            <Text className={classes.description} ta={"justify"}>
             MediCasa Salud Integral es un programa avanzado de atención médica domiciliaria que proporciona servicios médicos, 
             terapéuticos y de apoyo en el hogar del paciente. Nuestro enfoque se basa en combinar <span className={classes.highlight}>
               atención personalizada </span>   con acceso directo a             <span className={classes.highlight}>profesionales de la salud</span>, 
@@ -123,6 +126,16 @@ const Medicasa = () => {
                   </Text>
                 </List.Item>
               </motion.div>
+              <Button
+                className={classes.buttonDirection}
+                variant="gradient"
+                gradient={{ from: 'indigo', to: 'cyan' }}
+                size="lg"
+                radius="xl"
+                onClick={() => setModalOpened(true)}  // Abre el modal al hacer clic
+              >
+                Quiero Medicasa
+              </Button>
             </List>
           </motion.div>
         </div>
@@ -259,12 +272,12 @@ const Medicasa = () => {
         </div>
         <div className={classes.sectionContentDat}>
           <motion.div variants={itemVariants} className={classes.contentBlockUnete}>
-            <Text className={classes.description}>
+            <Text className={classes.description} ta={"justify"}>
               En WellFit Clinic y con MediCasa, nos comprometemos a mejorar tu salud y bienestar proporcionándote la mejor atención médica en la comodidad de tu hogar.
                Al inscribirte en MediCasa Salud Integral, te beneficiarás de un enfoque holístico y centrado en el paciente que transformará tu experiencia de cuidado de salud.
             </Text>
-            <Text className={classes.description}>
-            <span className={classes.highlight}>No esperes más para transformar tu cuidado médico</span>
+            <Text className={classes.description} ta={"justify"}>
+            <span className={classes.highlight} >No esperes más para transformar tu cuidado médico</span>
        . Contáctanos hoy mismo para obtener más información y registrarte en nuestro servicio innovador. Estamos aquí para ayudarte a vivir una vida más saludable y plena.
             </Text>
             <Button
@@ -273,13 +286,14 @@ const Medicasa = () => {
               gradient={{ from: 'indigo', to: 'cyan' }}
               size="lg"
               radius="xl"
+              onClick={() => setModalOpened(true)}  // Abre el modal al hacer clic
             >
-              Contáctanos
+              Quiero Medicasa
             </Button>
           </motion.div>
         </div>
       </motion.div>
-
+      <ModalMedicasaRedirection opened={modalOpened} setOpened={setModalOpened} />
       
     </div>
   );

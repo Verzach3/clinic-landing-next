@@ -13,6 +13,7 @@ import {
 import { IconSelector, IconChevronDown, IconChevronUp, IconSearch } from '@tabler/icons-react';
 import classes from './TablePruebas.module.css';
 
+
 interface RowData {
   exam: string;
   category: string;
@@ -143,105 +144,110 @@ const data: RowData[] = [
   ];
   
 
-function Th({ children, reversed, sorted, onSort }: { children: React.ReactNode, reversed: boolean, sorted: boolean, onSort: () => void }) {
-  const Icon = sorted ? (reversed ? IconChevronUp : IconChevronDown) : IconSelector;
-  return (
-    <Table.Th className={classes.th}>
-      <UnstyledButton onClick={onSort} className={classes.control}>
-        <Group justify="space-between">
-          <Text>{children}</Text>
-          <Center className={classes.icon}>
-            <Icon style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
-          </Center>
-        </Group>
-      </UnstyledButton>
-    </Table.Th>
-  );
-}
-
-function filterData(data: RowData[], search: string) {
-  const query = search.toLowerCase().trim();
-  return data.filter((item) =>
-    Object.values(item).some((value) => value.toString().toLowerCase().includes(query))
-  );
-}
-
-function sortData(
-  data: RowData[],
-  payload: { sortBy: keyof RowData | null; reversed: boolean; search: string }
-) {
-  const { sortBy } = payload;
-  if (!sortBy) {
-    return filterData(data, payload.search);
+  function Th({ children, reversed, sorted, onSort }: { children: React.ReactNode, reversed: boolean, sorted: boolean, onSort: () => void }) {
+    const Icon = sorted ? (reversed ? IconChevronUp : IconChevronDown) : IconSelector;
+    return (
+      <Table.Th className={classes.th}>
+        <UnstyledButton onClick={onSort} className={classes.control}>
+          <Group >
+            <Text fw={500}>{children}</Text>
+            <Center className={classes.icon}>
+              <Icon style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
+            </Center>
+          </Group>
+        </UnstyledButton>
+      </Table.Th>
+    );
   }
-  return filterData(
-    [...data].sort((a, b) => {
-      const valueA = a[sortBy].toString(),
-            valueB = b[sortBy].toString();
-      return payload.reversed ? valueB.localeCompare(valueA) : valueA.localeCompare(valueB);
-    }),
-    payload.search
-  );
-}
-
-export function TablePruebas() {
-  const [search, setSearch] = useState('');
-  const [sortedData, setSortedData] = useState(data);
-  const [sortBy, setSortBy] = useState<keyof RowData | null>(null);
-  const [reverseSortDirection, setReverseSortDirection] = useState(false);
-
-  const setSorting = (field: keyof RowData) => {
-    const reversed = field === sortBy ? !reverseSortDirection : false;
-    setReverseSortDirection(reversed);
-    setSortBy(field);
-    setSortedData(sortData(data, { sortBy: field, reversed, search }));
-  };
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.currentTarget;
-    setSearch(value);
-    setSortedData(sortData(data, { sortBy, reversed: reverseSortDirection, search: value }));
-  };
-
-  const rows = sortedData.map((row) => (
-    <Table.Tr key={row.exam}>
-      <Table.Td>{row.exam}</Table.Td>
-      <Table.Td>{row.category}</Table.Td>
-      <Table.Td>{row.purpose}</Table.Td>
-    </Table.Tr>
-  ));
-
-  return (
-    <ScrollArea>
-      <TextInput
-        placeholder="Search by any field"
-        mb="md"
-        leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
-        value={search}
-        onChange={handleSearchChange}
-      />
-      <Table horizontalSpacing="md" verticalSpacing="xs" layout="fixed">
-        <Table.Tbody>
-          <Table.Tr>
-            <Th sorted={sortBy === 'exam'} reversed={reverseSortDirection} onSort={() => setSorting('exam')}>Examen</Th>
-            <Th sorted={sortBy === 'category'} reversed={reverseSortDirection} onSort={() => setSorting('category')}>Categoría</Th>
-            <Th sorted={sortBy === 'purpose'} reversed={reverseSortDirection} onSort={() => setSorting('purpose')}>Para Qué Sirve</Th>
-          </Table.Tr>
-          {rows.length > 0 ? (
-            rows
-          ) : (
-            <Table.Tr>
-              <Table.Td colSpan={3}>
-                <Text fw={500} ta="center">
-                  Nothing found
-                </Text>
-              </Table.Td>
-            </Table.Tr>
-          )}
-        </Table.Tbody>
-      </Table>
-    </ScrollArea>
-  );
-}
-
-export default TablePruebas;
+  
+  function filterData(data: RowData[], search: string) {
+    const query = search.toLowerCase().trim();
+    return data.filter((item) =>
+      Object.values(item).some((value) => value.toString().toLowerCase().includes(query))
+    );
+  }
+  
+  function sortData(
+    data: RowData[],
+    payload: { sortBy: keyof RowData | null; reversed: boolean; search: string }
+  ) {
+    const { sortBy } = payload;
+    if (!sortBy) {
+      return filterData(data, payload.search);
+    }
+    return filterData(
+      [...data].sort((a, b) => {
+        const valueA = a[sortBy].toString(),
+          valueB = b[sortBy].toString();
+        return payload.reversed ? valueB.localeCompare(valueA) : valueA.localeCompare(valueB);
+      }),
+      payload.search
+    );
+  }
+  
+  export function TablePruebas() {
+    const [search, setSearch] = useState('');
+    const [sortedData, setSortedData] = useState(data);
+    const [sortBy, setSortBy] = useState<keyof RowData | null>(null);
+    const [reverseSortDirection, setReverseSortDirection] = useState(false);
+  
+    const setSorting = (field: keyof RowData) => {
+      const reversed = field === sortBy ? !reverseSortDirection : false;
+      setReverseSortDirection(reversed);
+      setSortBy(field);
+      setSortedData(sortData(data, { sortBy: field, reversed, search }));
+    };
+  
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.currentTarget;
+      setSearch(value);
+      setSortedData(sortData(data, { sortBy, reversed: reverseSortDirection, search: value }));
+    };
+  
+    const rows = sortedData.map((row) => (
+      <Table.Tr key={row.exam}>
+        <Table.Td>{row.exam}</Table.Td>
+        <Table.Td>{row.category}</Table.Td>
+        <Table.Td>{row.purpose}</Table.Td>
+      </Table.Tr>
+    ));
+  
+    return (
+      <div className={classes.tableContainer}>
+        <TextInput
+          placeholder="Buscar por cualquier campo"
+          mb="md"
+      
+          value={search}
+          onChange={handleSearchChange}
+          className={classes.searchInput}
+        />
+        <ScrollArea>
+          <Table horizontalSpacing="md" verticalSpacing="xs" layout="fixed">
+            <Table.Thead>
+              <Table.Tr>
+                <Th sorted={sortBy === 'exam'} reversed={reverseSortDirection} onSort={() => setSorting('exam')}>Examen</Th>
+                <Th sorted={sortBy === 'category'} reversed={reverseSortDirection} onSort={() => setSorting('category')}>Categoría</Th>
+                <Th sorted={sortBy === 'purpose'} reversed={reverseSortDirection} onSort={() => setSorting('purpose')}>Para Qué Sirve</Th>
+              </Table.Tr>
+            </Table.Thead>
+            <Table.Tbody>
+              {rows.length > 0 ? (
+                rows
+              ) : (
+                <Table.Tr>
+                  <Table.Td colSpan={3}>
+                    <Text fw={500} ta="center">
+                      No se encontró nada
+                    </Text>
+                  </Table.Td>
+                </Table.Tr>
+              )}
+            </Table.Tbody>
+          </Table>
+        </ScrollArea>
+      </div>
+    );
+  }
+  
+  export default TablePruebas;

@@ -1,0 +1,56 @@
+/* banner.css */
+
+.banner {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .bannerTitle {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .bannerDescription {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .bannerButton {
+    background-color: #1dd1a1;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bannerButton:hover {
+    background-color: #10b981;
+  }
+  
+  /* Modal Styles */
+  .modalTitle {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .modalText {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modalImage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .modalButton {
+    width: 100%;
+    background-color: #1dd1a1;
+    color: #fff;
+  }
+  
+  .modalButton:hover {
+    background-color: #10b981;
+  }
+  

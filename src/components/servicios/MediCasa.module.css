@@ -94,9 +94,10 @@
   text-align: left;
 }
 
-.button {
-  margin-top: 1rem;
+.button, .buttonDirection {
+  margin-top: 2rem;
 }
+
 
 .buttonContainer {
   display: flex;
@@ -198,7 +199,7 @@
 
 @media (max-width: 768px) {
   .sectionContainer {
-    padding: 0.5rem; /* Modificado de 2rem a 0.5rem como solicitaste */
+    padding: 2rem; /* Modificado de 2rem a 0.5rem como solicitaste */
   }
 
   .title {

@@ -29,7 +29,7 @@
   line-height: 1.1;
 
   @media (max-width: $mantine-breakpoint-sm) {
-    font-size: rem(40px);
+    font-size: rem(80px);
     line-height: 1.2;
   }
 
