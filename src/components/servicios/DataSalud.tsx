@@ -241,7 +241,9 @@ const DataSalud = () => {
                 </List.Item>
               </motion.div>
             </List>
-            <Button
+           
+          </motion.div>
+          <Button
               className={classes.button}
               variant="gradient"
               gradient={{ from: 'indigo', to: 'cyan' }}
@@ -251,7 +253,6 @@ const DataSalud = () => {
             >
               Quiero Data-Salud
             </Button>
-          </motion.div>
         </div>
       </motion.div>
 

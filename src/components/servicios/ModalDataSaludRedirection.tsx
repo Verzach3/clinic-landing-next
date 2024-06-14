@@ -15,7 +15,7 @@ const ModalDataSaludRedirection: React.FC<ModalDataSaludRedirectionProps> = ({ o
   const handleRedirect = () => {
     if (isPlatformRedirect) {
       // Redirigir a la plataforma
-      window.location.href = 'https://plataforma.datasalud.com'; // URL de la plataforma
+      window.location.href = 'https://platform.wellfitclinic.com'; // URL de la plataforma
     } else {
       // Redirigir a WhatsApp
       const whatsappNumber = '+573107686345';
