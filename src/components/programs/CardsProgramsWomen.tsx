@@ -3,6 +3,8 @@ import classes from './CardsProgramsWomen.module.css';
 import { motion } from 'framer-motion';
 import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
 import { WhatsappIcon, FacebookIcon,   XIcon } from "react-share";
+import { useState } from "react";
+import { RedirectionMessage } from "@/components/datasalud/RedirectionMessage";
 
 
 const programsData = [
@@ -85,6 +87,12 @@ const programsData = [
     const shareUrl = 'https://wellfitclinic.com/programs';
   
     const theme = useMantineTheme();
+    const [modalOpened, setModalOpened] = useState(false);
+    const [selectedProgram, setSelectedProgram] = useState(null);
+
+    const handleRedirect = () => {
+    window.location.href = "https://platform.wellfitclinic.com/login";
+    };
   
     return (
       <div className={classes.cardContainer}>
@@ -109,7 +117,7 @@ const programsData = [
                 )}
                 <Text className={classes.title}>{program.title}</Text>
                 <Text className={classes.description}>{program.description}</Text>
-                <Button variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }} className={classes.button}>
+                <Button variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }} className={classes.button}  onClick={() => setModalOpened(true)}>
                   Adquirir programa
                 </Button>
               </div>
@@ -137,6 +145,12 @@ const programsData = [
             </Card>
           </motion.div>
         ))}
+
+      <RedirectionMessage
+        opened={modalOpened}
+        onClose={() => setModalOpened(false)}
+        onRedirect={handleRedirect}
+      />
       </div>
     );
   }

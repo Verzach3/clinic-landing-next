@@ -1,6 +1,6 @@
 'use client';
-import React, { useState } from 'react';
-import { Container, Title, Box, SegmentedControl } from '@mantine/core';
+import React, { useState, useRef, useEffect } from 'react';
+import { Container, Title, Box, SegmentedControl, Button } from '@mantine/core';
 import { AnimatePresence, motion } from 'framer-motion';
 import classes from './page.module.css';
 import CardsProgramsMens from "@/components/programs/CardsProgramsMens";
@@ -10,8 +10,6 @@ import DataSalud from '@/components/servicios/DataSalud';
 import PruebasLaboratorios from '@/components/servicios/PruebasLaboratorios';
 import Talleres from '@/components/servicios/Talleres';
 import Footer from "@/components/Footer";
-import { useEffect } from 'react';
-
 
 const serviceVariants = {
   initial: { opacity: 0, y: 20 },
@@ -20,6 +18,10 @@ const serviceVariants = {
 };
 
 function Programs() {
+  const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
+  const [activeService, setActiveService] = useState<'medicasa' | 'dataSalud' | 'pruebasLaboratorios' | 'talleres'>('medicasa');
+  const programsRef = useRef<HTMLDivElement>(null);
+  const [showButton, setShowButton] = useState(true);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -31,9 +33,18 @@ function Programs() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setShowButton(scrollTop === 0);
+    };
 
-  const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
-  const [activeService, setActiveService] = useState<'medicasa' | 'dataSalud' | 'pruebasLaboratorios' | 'talleres'>('medicasa');
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleTabChange = (value: string) => {
     setActiveTab(value as 'men' | 'women');
@@ -43,10 +54,28 @@ function Programs() {
     setActiveService(value as 'medicasa' | 'dataSalud' | 'pruebasLaboratorios' | 'talleres');
   };
 
+  const handleScrollToPrograms = () => {
+    if (programsRef.current) {
+      programsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className={classes.programs}>
+      {showButton && (
+        <Button
+          onClick={handleScrollToPrograms}
+          className={`${classes.programsButton} ${classes.hideOnMobile}`}
+          variant="gradient"
+          gradient={{ from: 'blue', to: 'green' }}
+          size="md"
+          radius="xl"
+        >
+          Ver Programas
+        </Button>
+      )}
 
-<Container className={classes.container}>
+      <Container className={classes.container}>
         <Title className={classes.title} order={2}>
           Nuestros Servicios
         </Title>
@@ -58,6 +87,7 @@ function Programs() {
               { label: 'Medicasa', value: 'medicasa' },
               { label: 'DataSalud', value: 'dataSalud' },
               { label: 'Pruebas', value: 'pruebasLaboratorios' },
+              { label: 'Talleres', value: 'talleres' },
             ]}
             className={`${classes.segmented} ${classes.segmentedMobile}`}
             size="md"
@@ -76,16 +106,24 @@ function Programs() {
             className={classes.serviceContentWrapper}
           >
             <div className={classes.serviceContent}>
-              {activeService === 'medicasa' && <Medicasa />}
-              {activeService === 'dataSalud' && <DataSalud />}
-              {activeService === 'pruebasLaboratorios' && <PruebasLaboratorios />}
-              {activeService === 'talleres' && <Talleres />}
+              <div id="medicasa">
+                <Medicasa />
+              </div>
+              <div id="dataSalud">
+                <DataSalud />
+              </div>
+              <div id="pruebasLaboratorios">
+                <PruebasLaboratorios />
+              </div>
+              <div id="talleres">
+                <Talleres />
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
       </Container>
-      
-      <Container className={classes.container}>
+
+      <Container className={classes.container} ref={programsRef}>
         <Title className={classes.title} order={2}>
           Nuestros Programas
         </Title>
@@ -114,7 +152,7 @@ function Programs() {
           </motion.div>
         </AnimatePresence>
       </Container>
-   
+
       <Footer />
     </div>
   );

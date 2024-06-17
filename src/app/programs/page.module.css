@@ -63,3 +63,11 @@
 .cardTitle {
   font-family: Greycliff CF, var(--mantine-font-family);
 }
+
+.programsButton {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 100;
+}
+
