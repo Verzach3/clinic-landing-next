@@ -291,3 +291,9 @@
 }
 
 
+/* Añadir esta clase al final del archivo page.module.css */
+.buttonContainerRight {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px; /* Ajusta según sea necesario */
+}

@@ -1,11 +1,13 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { Title, Text, List, ThemeIcon, Image, Button } from '@mantine/core';
-import {  IconArrowRight, IconArrowRotaryFirstRight } from '@tabler/icons-react';
+import { IconArrowRight, IconArrowRotaryFirstRight } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import classes from './DataSalud.module.css';
-import  ManageScroll  from "@/components/servicios/ManageScroll";
+import ManageScroll from "@/components/servicios/ManageScroll";
 import { RiRobot2Line } from "react-icons/ri";
+import ModalDataSaludRedirection from './ModalDataSaludRedirection';
+
 const sectionVariants = {
   hidden: { opacity: 0, y: -100 },
   visible: {
@@ -33,6 +35,19 @@ const itemVariants = {
 };
 
 const DataSalud = () => {
+  const [modalOpened, setModalOpened] = useState(false);
+  const [isPlatformRedirect, setIsPlatformRedirect] = useState(false);
+
+  const handlePlatformRedirectClick = () => {
+    setIsPlatformRedirect(true);
+    setModalOpened(true);
+  };
+
+  const handleWhatsAppRedirectClick = () => {
+    setIsPlatformRedirect(false);
+    setModalOpened(true);
+  };
+
   return (
     <div className={classes.container}>
       <ManageScroll/>
@@ -121,6 +136,16 @@ const DataSalud = () => {
                 </List.Item>
               </motion.div>
             </List>
+            <Button
+              className={classes.button}
+              variant="gradient"
+              gradient={{ from: 'indigo', to: 'cyan' }}
+              size="lg"
+              radius="xl"
+              onClick={handlePlatformRedirectClick}
+            >
+              Quiero Data-Salud
+            </Button>
           </motion.div>
         </div>
       </motion.div>
@@ -216,8 +241,18 @@ const DataSalud = () => {
                 </List.Item>
               </motion.div>
             </List>
-
+           
           </motion.div>
+          <Button
+              className={classes.button}
+              variant="gradient"
+              gradient={{ from: 'indigo', to: 'cyan' }}
+              size="lg"
+              radius="xl"
+              onClick={handlePlatformRedirectClick}
+            >
+              Quiero Data-Salud
+            </Button>
         </div>
       </motion.div>
 
@@ -248,14 +283,15 @@ const DataSalud = () => {
               gradient={{ from: 'indigo', to: 'cyan' }}
               size="lg"
               radius="xl"
+              onClick={handleWhatsAppRedirectClick}
             >
-              Contáctanos
+              Agenda Data-Salud
             </Button>
           </motion.div>
         </div>
       </motion.div>
 
-      
+      <ModalDataSaludRedirection opened={modalOpened} setOpened={setModalOpened} isPlatformRedirect={isPlatformRedirect} />
     </div>
   );
 };

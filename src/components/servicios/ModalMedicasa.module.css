@@ -1,0 +1,46 @@
+/* ModalMedicasaRedirection.module.css */
+.title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1a5eb6e3;
+    margin-bottom: 1rem;
+  }
+  
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #40c244; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Botón redondeado */
+    padding: 5px 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+  
+    &:hover {
+      background-color: #45a049; /* Un poco más oscuro al pasar el mouse */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.3rem;
+    }
+  
+    .button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }

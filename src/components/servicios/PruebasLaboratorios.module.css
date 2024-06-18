@@ -1,3 +1,4 @@
+/* PruebasLaboratorios.module.css */
 .container {
   display: flex;
   flex-direction: column;
@@ -59,6 +60,10 @@
 .searchInput {
   width: 100%;
   max-width: 400px;
+}
+.highlight {
+  color: #1a5eb6e3; /* Blue color used for highlighting */
+  font-weight: bold;
 }
 
 .table {
@@ -192,13 +197,55 @@
 }
 
 .contactBlock {
-  max-width: 900px;
+  max-width: 900px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the section */
+  text-align: center; /* Center the text */
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+}
+
+.contactBlock .description {
+  margin-bottom: 0.5rem;
+}
+
+.contactBlock .button {
+  margin-top: 1rem;
 }
 
 .button {
   margin-top: 1rem;
+}
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+.benefitsImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.benefitsImage {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.benefitsTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefitsImageContainer,
+  .benefitsTextContainer {
+    justify-content: center;
+    align-items: center;
+  }
 }

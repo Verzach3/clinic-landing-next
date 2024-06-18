@@ -1,18 +1,69 @@
+.tableContainer {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput {
+  margin-bottom: 1rem;
+}
+
 .th {
-    padding: 0;
+  background-color: #f0f0f0;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: 0.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  text-align: left;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    max-width: 100%;
   }
-  
   .control {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .searchInput {
     width: 100%;
-    padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
-  
-    @mixin hover {
-      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
-    }
   }
-  
-  .icon {
-    width: rem(21px);
-    height: rem(21px);
-    border-radius: rem(21px);
-  }
+}

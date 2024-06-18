@@ -1,0 +1,88 @@
+.control {
+    margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      width: 100%;
+    }
+  }
+  
+  .controlContac {
+    margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+    max-width: rem(300px);
+    margin-bottom: rem(20px);
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  .bannerButton {
+    justify-self: start; /* Alinea el botón al inicio de la columna */
+    background-color: #4caf50; /* Un verde bonito */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Botón redondeado */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #45a049; /* Un poco más oscuro al pasar el mouse */
+    }
+  
+    @media (max-width: $mantine-breakpoint-md) {
+      justify-self: center; /* Centra el botón en dispositivos más pequeños */
+      width: 100%;
+      max-width: 90%;
+      margin-top: 20px; /* Añade margen superior */
+    }
+  }
+  
+  .modalContent {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .modalImage {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .modalButton {
+    background-color: #4caf50; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Botón redondeado */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  
+    &:hover {
+      background-color: #45a049; /* Un poco más oscuro al pasar el mouse */
+    }
+  }
+  
+  .modalButtonFullWidth {
+    width: 100%;
+  }
+  
+  /* Additional Modal Styling */
+  .modalHeader {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0c1f47;
+  }
+  
+  .modalDescription {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  

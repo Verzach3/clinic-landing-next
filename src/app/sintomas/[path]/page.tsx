@@ -1,48 +1,42 @@
-import {ContactUs} from "@/components/Home/ContactUs";
-import {Overlay, Container, Title, Button, Text} from "@mantine/core";
+import { ContactUs } from "@/components/Home/ContactUs";
+import { Overlay, Container, Title, Text } from "@mantine/core";
 import Image from "next/image";
 import React from "react";
-import {MDXRemote} from "next-mdx-remote/rsc";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import classes from "./page.module.css";
-import {getInfoPost} from "@/util/getInfoPost";
-import {NotFound} from "@/components/NotFound";
-import {HowWorks} from "@/components/Sintomas/HowWorks";
-import {ClientsComments} from "@/components/Sintomas/ClientsComments";
+import { getInfoPost } from "@/util/getInfoPost";
+import { NotFound } from "@/components/NotFound";
+import { HowWorks } from "@/components/Sintomas/HowWorks";
+import { ClientsComments } from "@/components/Sintomas/ClientsComments";
 import Footer from "@/components/Footer";
+import ClientComponent from "@/components/Sintomas/ClientComponent";
 
 const components = {
-  h1: (props: any) => <Title {...props} className={classes.titleContac}/>,
-  h2: (props: any) => <Title {...props} className={classes.text}/>,
-  h3: (props: any) => <Title {...props} className={classes.text}/>,
-  h4: (props: any) => <Title {...props} className={classes.subtitle}/>,
+  h1: (props: any) => <Title {...props} className={classes.titleContac} />,
+  h2: (props: any) => <Title {...props} className={classes.text} />,
+  h3: (props: any) => <Title {...props} className={classes.text} />,
+  h4: (props: any) => <Title {...props} className={classes.subtitle} />,
   p: (props: any) => (
-    <Text {...props} className={classes.descriptionContac} size="md" mt="xl"/>
+    <Text {...props} className={classes.descriptionContac} size="md" mt="xl" />
   ),
 };
 
-async function page({params}: { params: { path: string } }) {
+async function page({ params }: { params: { path: string } }) {
   const post = await getInfoPost(params.path);
   if (!post) {
-    return <NotFound/>;
+    return <NotFound />;
   }
+
   return (
-    <div
-      style={{
-        width: "100%",
-      }}
-    >
-      <div
-        className={classes.hero}
-      >
+    <div style={{ width: "100%" }}>
+      <div className={classes.hero}>
         <Image
           alt="Mountains"
           src={`https://curmgtrnrpyjsizyhdzy.supabase.co/storage/v1/object/public/landing-bucket/${post.image_path}.avif`}
           quality={100}
           fill
           sizes="100vw"
-          style={{
-            objectFit: "cover",
-          }}
+          style={{ objectFit: "cover" }}
           priority
           unoptimized
         />
@@ -54,19 +48,10 @@ async function page({params}: { params: { path: string } }) {
         <Container className={classes.container} size="md">
           <Title className={classes.title}>{post.big_title}</Title>
           <Text className={classes.description} size="xl" mt="xl">
-
-            
             {post.title_subtext}
           </Text>
 
-          <Button
-            variant="gradient"
-            size="lg"
-            radius="xl"
-            className={classes.control}
-          >
-            Adquirir informacion
-          </Button>
+          <ClientComponent />
         </Container>
       </div>
 
@@ -74,16 +59,13 @@ async function page({params}: { params: { path: string } }) {
         <Title className={classes.bannerTitle}>{post.banner_title}</Title>
 
         <div className={classes.bannerDescription}>
-          <MDXRemote source={post.banner_content!} components={components}/>
+          <MDXRemote source={post.banner_content!} components={components} />
+          <div className={classes.buttonContainerRight}>
+          <ClientComponent />
+        </div>
         </div>
 
-        <Button
-          variant="gradient"
-          size="lg"
-          radius="xl"
-          className={classes.bannerButton}>
-          Quiero Mejorar mi vida
-        </Button>
+       
       </div>
 
       <div
@@ -94,35 +76,27 @@ async function page({params}: { params: { path: string } }) {
       >
         <div>
           <div className={classes.containerContac}>
-            <MDXRemote
-              source={post.questions_section!}
-              components={components}
-            />
-            <Button
-              variant="gradient"
-              size="lg"
-              radius="xl"
-              className={classes.controlContac}
-            >
-              Adquirir informacion
-            </Button>
+            <MDXRemote source={post.questions_section!} components={components} />
+            <div className={classes.buttonContainerRight}>
+          <ClientComponent />
+        </div>
           </div>
           <div></div>
         </div>
       </div>
 
       <Container className={classes.HowWorks} id="HowWorks">
-        <HowWorks/>
+        <HowWorks />
       </Container>
 
-      <div style={{width: "100%", backgroundColor: "#0c1f47 "}}>
-        <ClientsComments/>
+      <div style={{ width: "100%", backgroundColor: "#0c1f47 " }}>
+        <ClientsComments />
       </div>
 
       <Container className={classes.contactUsContainer} id="contact-us">
-        <ContactUs/>
+        <ContactUs />
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
