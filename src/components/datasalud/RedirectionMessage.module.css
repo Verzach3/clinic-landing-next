@@ -1,0 +1,25 @@
+.modalTitle {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modalText {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .modalButton {
+    margin-top: 1rem;
+  }

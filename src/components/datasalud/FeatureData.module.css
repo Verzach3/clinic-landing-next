@@ -1,49 +1,52 @@
 .sectionHeader {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(to right, #1c64f2, #00b712);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-right: 10px;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
 .subtitle {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--mantine-color-dark-0);
+  color: var(--mantine-color-gray-7);
+}
+
+.highlight {
+  font-weight: 700;
+  font-style: italic;
 }
 
 .feature {
   position: relative;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  background-color: var(--mantine-color-white);
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .feature:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-15px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .overlay {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  top: -50px;
+  height: 120px;
+  width: 120px;
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--mantine-color-blue-light);
+  background: linear-gradient(to bottom right, var(--mantine-color-indigo-3), var(--mantine-color-cyan-3));  
   border-radius: 50%;
   z-index: 1;
 }
@@ -58,23 +61,69 @@
 }
 
 .icon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out;
 }
 
 .feature:hover .icon {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .title {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  margin-top: 1rem;
+  color: var(--mantine-color-dark-7);
+  margin-top: 1.5rem;
 }
 
 .description {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ctaContainer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.cta {
+  font-size: rem(20px);
+  padding: 20px 40px;
+  background: linear-gradient(to right, var(--mantine-color-indigo-7), var(--mantine-color-cyan-7));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos existentes del componente FeatureData */
+
+.modalTitle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modalText {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.modalButton {
+  margin-top: 1rem;
 }
