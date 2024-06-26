@@ -1,0 +1,63 @@
+.modal {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #ff4081; /* Unisex color */
+    text-align: center;
+  }
+  
+  .message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .redirectButton {
+    display: block;
+    width: 100%;
+    background-color: #4caf50; /* Green color */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .redirectButton:hover {
+    background-color: #45a049;
+  }
+  
+  .infoButton {
+    background-color: #ff4081; /* Unisex color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+  }
+  
+  .infoButton:hover {
+    background-color: #e91e63;
+  }
+  

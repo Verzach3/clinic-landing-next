@@ -5,6 +5,7 @@ import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 're
 import {  WhatsappIcon,  FacebookIcon,  XIcon,} from "react-share";
 import { useState } from "react";
 import { RedirectionMessage } from "@/components/datasalud/RedirectionMessage";
+import ModalProgramsMens from '@/components/programs/ModalProgramsMens'; 
 
 const programsData = [
   {
@@ -91,19 +92,20 @@ const programsData = [
 
 
 ];
-
 function CardsProgramsMens() {
-
   const shareUrl = 'https://wellfitclinic.com/programs';
-
   const theme = useMantineTheme();
   const [modalOpened, setModalOpened] = useState(false);
-  const [selectedProgram, setSelectedProgram] = useState(null);
+  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
 
   const handleRedirect = () => {
     window.location.href = "https://platform.wellfitclinic.com/login";
   };
 
+  const openModal = (programName: string) => {
+    setSelectedProgram(programName);
+    setModalOpened(true);
+  };
 
   return (
     <div className={classes.cardContainer}>
@@ -116,7 +118,7 @@ function CardsProgramsMens() {
           transition={{ duration: 0.6 }}
           className={classes.cardWrapper}
         >
-           <Card className={classes.card}>
+          <Card className={classes.card}>
             <div className={classes.imageWrapper}>
               <Image src={program.image} alt={program.title} height={200} className={classes.image} />
             </div>
@@ -132,30 +134,22 @@ function CardsProgramsMens() {
                 variant="gradient"
                 gradient={{ from: 'indigo', to: 'cyan' }}
                 className={classes.button}
-                onClick={() => setModalOpened(true)}
+                onClick={() => openModal(program.title)}
               >
                 Adquirir programa
               </Button>
             </div>
             <div className={classes.footer}>
               <Group align="apart">
-               
                 <div className={classes.shareContainer}>
-                  <FacebookShareButton  url={shareUrl} title={program.title}>
-         
-                      <FacebookIcon size={25} round />
-           
+                  <FacebookShareButton url={shareUrl} title={program.title}>
+                    <FacebookIcon size={25} round />
                   </FacebookShareButton>
-
-                  <TwitterShareButton  url={shareUrl} title={program.title}>
-                   
-                      <XIcon size={25} round />
-                
+                  <TwitterShareButton url={shareUrl} title={program.title}>
+                    <XIcon size={25} round />
                   </TwitterShareButton>
-                  <WhatsappShareButton  url={shareUrl} title={program.title}>
-        
-                      <WhatsappIcon size={25} round />
-        
+                  <WhatsappShareButton url={shareUrl} title={program.title}>
+                    <WhatsappIcon size={25} round />
                   </WhatsappShareButton>
                 </div>
               </Group>
@@ -163,11 +157,14 @@ function CardsProgramsMens() {
           </Card>
         </motion.div>
       ))}
-        <RedirectionMessage
-        opened={modalOpened}
-        onClose={() => setModalOpened(false)}
-        onRedirect={handleRedirect}
-      />
+      {selectedProgram && (
+        <ModalProgramsMens
+          opened={modalOpened}
+          onClose={() => setModalOpened(false)}
+          onRedirect={handleRedirect}
+          programName={selectedProgram}
+        />
+      )}
     </div>
   );
 }

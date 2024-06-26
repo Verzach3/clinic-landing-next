@@ -5,7 +5,7 @@ import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 're
 import { WhatsappIcon, FacebookIcon,   XIcon } from "react-share";
 import { useState } from "react";
 import { RedirectionMessage } from "@/components/datasalud/RedirectionMessage";
-
+import ModalProgramsWomens from '@/components/programs/ModalProgramsWomens'; 
 
 const programsData = [
     {
@@ -83,76 +83,88 @@ const programsData = [
 
 
 
-  ];function CardsProgramsWomen() {
-    const shareUrl = 'https://wellfitclinic.com/programs';
+  ];
   
-    const theme = useMantineTheme();
-    const [modalOpened, setModalOpened] = useState(false);
-    const [selectedProgram, setSelectedProgram] = useState(null);
+  
+function CardsProgramsWomen() {
+  const shareUrl = 'https://wellfitclinic.com/programs';
+  const theme = useMantineTheme();
+  const [modalOpened, setModalOpened] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
 
-    const handleRedirect = () => {
+  const handleRedirect = () => {
     window.location.href = "https://platform.wellfitclinic.com/login";
-    };
-  
-    return (
-      <div className={classes.cardContainer}>
-        {programsData.map((program) => (
-          <motion.div
-            key={program.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className={classes.cardWrapper}
-          >
-            <Card className={classes.card}>
-              <div className={classes.imageWrapper}>
-                <Image src={program.image} alt={program.title} height={200} className={classes.image} />
-              </div>
-              <div className={classes.cardContent}>
-                {program.isMostPopular && (
-                  <Badge variant="light" className={classes.badge}>
-                    Más comprado
-                  </Badge>
-                )}
-                <Text className={classes.title}>{program.title}</Text>
-                <Text className={classes.description}>{program.description}</Text>
-                <Button variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }} className={classes.button}  onClick={() => setModalOpened(true)}>
-                  Adquirir programa
-                </Button>
-              </div>
-              <div className={classes.footer}>
-                <Group align="apart">
-                  <div className={classes.likeContainer}>
-                 
-                    <Text size="sm" color="dimmed" suppressHydrationWarning>
-      
-                    </Text>
-                  </div>
-                  <div className={classes.shareContainer}>
-                    <FacebookShareButton url={shareUrl} title={program.title}>
-                      <FacebookIcon size={25} round />
-                    </FacebookShareButton>
-                    <TwitterShareButton url={shareUrl} title={program.title}>
-                      <XIcon size={25} round />
-                    </TwitterShareButton>
-                    <WhatsappShareButton url={shareUrl} title={program.title}>
-                      <WhatsappIcon size={25} round />
-                    </WhatsappShareButton>
-                  </div>
-                </Group>
-              </div>
-            </Card>
-          </motion.div>
-        ))}
+  };
 
-      <RedirectionMessage
-        opened={modalOpened}
-        onClose={() => setModalOpened(false)}
-        onRedirect={handleRedirect}
-      />
-      </div>
-    );
-  }
-  
-  export default CardsProgramsWomen;
+  const openModal = (programName: string) => {
+    setSelectedProgram(programName);
+    setModalOpened(true);
+  };
+
+  return (
+    <div className={classes.cardContainer}>
+      {programsData.map((program) => (
+        <motion.div
+          key={program.id}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className={classes.cardWrapper}
+        >
+          <Card className={classes.card}>
+            <div className={classes.imageWrapper}>
+              <Image src={program.image} alt={program.title} height={200} className={classes.image} />
+            </div>
+            <div className={classes.cardContent}>
+              {program.isMostPopular && (
+                <Badge variant="light" className={classes.badge}>
+                  Más comprado
+                </Badge>
+              )}
+              <Text className={classes.title}>{program.title}</Text>
+              <Text className={classes.description}>{program.description}</Text>
+              <Button
+                variant="gradient"
+                gradient={{ from: 'pink', to: 'orange' }}
+                className={classes.button}
+                onClick={() => openModal(program.title)}
+              >
+                Adquirir programa
+              </Button>
+            </div>
+            <div className={classes.footer}>
+              <Group align="apart">
+                <div className={classes.likeContainer}>
+                  <Text size="sm" color="dimmed" suppressHydrationWarning />
+                </div>
+                <div className={classes.shareContainer}>
+                  <FacebookShareButton url={shareUrl} title={program.title}>
+                    <FacebookIcon size={25} round />
+                  </FacebookShareButton>
+                  <TwitterShareButton url={shareUrl} title={program.title}>
+                    <XIcon size={25} round />
+                  </TwitterShareButton>
+                  <WhatsappShareButton url={shareUrl} title={program.title}>
+                    <WhatsappIcon size={25} round />
+                  </WhatsappShareButton>
+                </div>
+              </Group>
+            </div>
+          </Card>
+        </motion.div>
+      ))}
+
+      {selectedProgram && (
+        <ModalProgramsWomens
+          opened={modalOpened}
+          onClose={() => setModalOpened(false)}
+          onRedirect={handleRedirect}
+          programName={selectedProgram}
+        />
+      )}
+    </div>
+  );
+}
+
+export default CardsProgramsWomen;

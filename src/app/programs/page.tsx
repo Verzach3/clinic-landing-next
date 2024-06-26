@@ -8,7 +8,6 @@ import CardsProgramsWomen from "@/components/programs/CardsProgramsWomen";
 import Medicasa from '@/components/servicios/Medicasa';
 import DataSalud from '@/components/servicios/DataSalud';
 import PruebasLaboratorios from '@/components/servicios/PruebasLaboratorios';
-import Talleres from '@/components/servicios/Talleres';
 import Footer from "@/components/Footer";
 
 const serviceVariants = {
@@ -19,7 +18,7 @@ const serviceVariants = {
 
 function Programs() {
   const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
-  const [activeService, setActiveService] = useState<'medicasa' | 'dataSalud' | 'pruebasLaboratorios' | 'talleres'>('medicasa');
+  const [activeService, setActiveService] = useState<'medicasa' | 'dataSalud' | 'pruebasLaboratorios'>('medicasa');
   const programsRef = useRef<HTMLDivElement>(null);
   const [showButton, setShowButton] = useState(true);
 
@@ -51,7 +50,7 @@ function Programs() {
   };
 
   const handleServiceChange = (value: string) => {
-    setActiveService(value as 'medicasa' | 'dataSalud' | 'pruebasLaboratorios' | 'talleres');
+    setActiveService(value as 'medicasa' | 'dataSalud' | 'pruebasLaboratorios');
   };
 
   const handleScrollToPrograms = () => {
@@ -87,7 +86,6 @@ function Programs() {
               { label: 'Medicasa', value: 'medicasa' },
               { label: 'DataSalud', value: 'dataSalud' },
               { label: 'Pruebas', value: 'pruebasLaboratorios' },
-              { label: 'Talleres', value: 'talleres' },
             ]}
             className={`${classes.segmented} ${classes.segmentedMobile}`}
             size="md"
@@ -105,20 +103,9 @@ function Programs() {
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             className={classes.serviceContentWrapper}
           >
-            <div className={classes.serviceContent}>
-              <div id="medicasa">
-                <Medicasa />
-              </div>
-              <div id="dataSalud">
-                <DataSalud />
-              </div>
-              <div id="pruebasLaboratorios">
-                <PruebasLaboratorios />
-              </div>
-              <div id="talleres">
-                <Talleres />
-              </div>
-            </div>
+            {activeService === 'medicasa' && <Medicasa />}
+            {activeService === 'dataSalud' && <DataSalud />}
+            {activeService === 'pruebasLaboratorios' && <PruebasLaboratorios />}
           </motion.div>
         </AnimatePresence>
       </Container>
