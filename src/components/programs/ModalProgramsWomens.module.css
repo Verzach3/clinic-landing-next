@@ -1,0 +1,42 @@
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e91e63; /* Pink color */
+  }
+  
+  .modalContent {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .logo {
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .modalText {
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: justify;
+  }
+  
+  .highlight {
+    color: #e91e63; /* Pink color */
+    font-weight: bold;
+  }
+  
+  .redirectButton {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .redirectButton:hover {
+    background-color: #d81b60;
+  }
+  

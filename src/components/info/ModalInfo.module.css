@@ -1,0 +1,57 @@
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff69b4; /* Color unisex que llama la atención */
+  margin-bottom: 1rem;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.modal {
+  padding: 2rem;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.message {
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.programName {
+  color: #ff69b4; /* Color unisex */
+  font-weight: bold;
+}
+
+.button {
+  width: 100%;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff69b4; /* Color unisex */
+  color: white;
+  border: none;
+  border-radius: 10px; /* Botón más redondeado */
+  padding: 10px 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #2fb92f; /* Un poco más oscuro al pasar el mouse */
+  transform: scale(1.05);
+}
+
+.modal .mantine-Modal-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
