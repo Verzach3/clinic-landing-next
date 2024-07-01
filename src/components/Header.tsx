@@ -246,7 +246,37 @@ export function Header() {
               </HoverCard.Target>
 
               <HoverCard.Dropdown style={{ overflow: "hidden" }}>
-                {/* ... (contenido del dropdown permanece igual) */}
+              <Group justify="space-between" px="md"> 
+                  <Text fw={500}>Especialidad Variada</Text> 
+                  <Anchor href="/infowoman" fz="xs"> 
+                    View all 
+                  </Anchor> 
+                </Group> 
+ 
+                <SimpleGrid cols={2} spacing={0}> 
+                  {linksCategorias} 
+                </SimpleGrid> 
+ 
+                <Divider my="sm" /> 
+ 
+                <Group justify="space-between" px="md"> 
+                  <Text fw={500}>Categoria de Sintomas</Text> 
+                </Group> 
+ 
+                <SimpleGrid cols={2} spacing={0}> 
+                  {links} 
+                </SimpleGrid> 
+ 
+                <Divider my="sm" /> 
+ 
+                <Group justify="space-between" px="md"> 
+                  <Text fw={500}>Conoce nuestro Blog</Text> 
+                </Group> 
+ 
+                <SimpleGrid cols={2} spacing={0}> 
+                  {linksBlog} 
+                </SimpleGrid> 
+
               </HoverCard.Dropdown>
             </HoverCard>
 
@@ -321,7 +351,15 @@ export function Header() {
           </UnstyledButton>
           <Divider my="sm" />
           <Collapse in={linksOpenedCategorias}>
-            {/* ... (contenido del collapse permanece igual) */}
+          <Text className={classes.categoryTitle}>Especialidad Variada</Text> 
+            {linksCategorias} 
+            <Divider my="sm" /> 
+            <Text className={classes.categoryTitle}>Categoria de Sintomas</Text> 
+            {links} 
+            <Divider my="sm" /> 
+            <Text className={classes.categoryTitle}>Conoce nuestro Blog</Text> 
+            {linksBlog} 
+
           </Collapse>
 
           <a href="/programas" className={classes.link}>
